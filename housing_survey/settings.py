@@ -79,7 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'housing_survey',
-        'USER': 'root',
+        'USER': 'ahs',
+        'PASSWORD': '12345',
         'HOST': '127.0.0.1',
     }
 }
