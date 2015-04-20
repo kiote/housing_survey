@@ -9,6 +9,8 @@ class Newhouse(models.Model):
     metro3 = models.PositiveSmallIntegerField(db_column = 'METRO3', null = True)
 
     file_path = 'data/non-git/puf2013/newhouse.csv'
+    columns_file_path = 'data/columns/newhouse-smalldata.csv'
+    columns_generated_file_path = 'data/columns/generated/newhouse.gen'
 
     def readfile(self):
         with open(self.file_path, 'rb') as csvfile:
@@ -21,3 +23,17 @@ class Newhouse(models.Model):
                 nh.save()
 
                 print row[2]
+
+    def generate_columns(self):
+        with open(self.columns_file_path, 'rb') as csvcolumns:
+            reader = csv.reader(csvcolumns, delimiter = ',')
+            f = open(self.columns_generated_file_path, 'w')
+            for row in reader:
+                more_params = row[2]
+                if more_params != "":
+                    more_params = ', ' + more_params
+
+                prepared_string = "%s = models.%s(db_column = '%s'%s)\n" % \
+                    (row[0].lower(), row[1], row[0], more_params)
+                f.write(prepared_string)
+            f.close()
