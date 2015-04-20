@@ -59,30 +59,26 @@ class Newhouse(models.Model):
     columns_file_path = 'data/columns/newhouse-smalldata.csv'
     columns_generated_file_path = 'data/columns/generated/newhouse.gen'
 
-    '''
-    Opens CSV-file with newhouse data and read it to database
-    '''
     def read_data_file(self):
+        """Opens CSV-file with newhouse data and read it to database"""
         with open(self.file_path, 'rb') as csvfile:
             reader = csv.reader(csvfile, delimiter=',', skipinitialspace=True)
             next(reader, None)  # skip the headers
             for row in reader:
                 nh = Newhouse(control = int(row[0][1:-1]))
                 for i, name in enumerate(self.get_row_names()):
-                    value = row[i]
-                    if row[i][0] == "'":
-                        value = row[i][1:-1]
+                    value = row[i+1]
+                    if row[i+1][0] == "'":
+                        value = row[i+1][1:-1]
                     setattr(nh, name, value)
                 nh.save()
 
-                print row[0]
-
-    '''
-    Returns the list of names for rows in newhouse,
-    this list are used to save the data into the database,
-    so we don't need to have each row name in saving-to-database code
-    '''
     def get_row_names(self):
+        """
+        Returns the list of names for rows in newhouse,
+        this list are used to save the data into the database,
+        so we don't need to have each row name in saving-to-database code
+        """
         names = []
         with open(self.columns_file_path, 'rb') as csvcolumns:
             reader = csv.reader(csvcolumns, delimiter = ',')
@@ -90,11 +86,11 @@ class Newhouse(models.Model):
                 names.append(row[0].lower())
         return names
 
-    '''
-    Read prepared CSV-file with column names and data types and generate
-    Python-like sataments, based on this data
-    '''
     def generate_columns(self):
+        """
+        Read prepared CSV-file with column names and data types and generate
+        Python-like sataments, based on this data
+        """
         with open(self.columns_file_path, 'rb') as csvcolumns:
             reader = csv.reader(csvcolumns, delimiter = ',')
             f = open(self.columns_generated_file_path, 'w')
