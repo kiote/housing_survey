@@ -1,20 +1,5 @@
-REGION,PositiveSmallIntegerField,
-SMSA,CharField,max_length=4
-LMED,PositiveIntegerField,
-LMEDA,PositiveIntegerField,
-LMEDB,PositiveIntegerField,
-FMR,PositiveIntegerField,
-FMRA,PositiveIntegerField,
-FMRB,PositiveIntegerField,
-L30,PositiveIntegerField,
-L50,PositiveIntegerField,
-L80,PositiveIntegerField,
-L30A,PositiveIntegerField,
-L50A,PositiveIntegerField,
-L80A,PositiveIntegerField,
-L30B,PositiveIntegerField,
-L50B,PositiveIntegerField,
-L80B,PositiveIntegerField,
-IPOV,PositiveIntegerField,
-HISTRY,PositiveSmallIntegerField,
-CMSA,CharField,max_length=2
+DEGREE,PositiveSmallIntegerField,null = True
+METRO3,PositiveSmallIntegerField,null = True
+REGION,PositiveSmallIntegerField,null = True
+SMSA,PositiveSmallIntegerField,null = True
+LMED,PositiveIntegerField,null = True
