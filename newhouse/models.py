@@ -25,9 +25,10 @@ class Newhouse(models.Model):
     l80b = models.PositiveIntegerField(db_column = 'L80B', null = True)
     ipov = models.PositiveIntegerField(db_column = 'IPOV', null = True)
     histry = models.PositiveSmallIntegerField(db_column = 'HISTRY', null = True)
-    cmsa = models.CharField(db_column = 'CMSA', max_length=2, null = True)
-    division = models.CharField(db_column = 'DIVISION', max_length=2, null = True)
-    dish = models.CharField(db_column = 'DISH', max_length=2, null = True)
+    cmsa = models.PositiveSmallIntegerField(db_column = 'CMSA', null = True)
+    division = models.PositiveSmallIntegerField(db_column = 'DIVISION', null = True)
+    dish = models.PositiveSmallIntegerField(db_column = 'DISH', null = True)
+
     wash = models.CharField(db_column = 'WASH', max_length=2, null = True)
     dry = models.CharField(db_column = 'DRY', max_length=2, null = True)
     buyg = models.CharField(db_column = 'BUYG', max_length=2, null = True)
@@ -91,7 +92,7 @@ class Newhouse(models.Model):
             reader = csv.reader(csvcolumns, delimiter = ',')
             f = open(self.columns_generated_file_path, 'w')
             for row in reader:
-                more_params = row[2] if more_params == "" else ', ' + more_params
+                more_params = row[2] if row[2] == "" else ', ' + row[2]
 
                 prepared_string = "%s = models.%s(db_column = '%s'%s)\n" % \
                     (row[0].lower(), row[1], row[0], more_params)
