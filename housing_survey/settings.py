@@ -74,16 +74,31 @@ WSGI_APPLICATION = 'housing_survey.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
+#Use the following live settings to build on Travis CI
+if os.getenv('BUILD_ON_TRAVIS', None):
+    SECRET_KEY = "SecretKeyForUseOnTravis"
+    DEBUG = False
+    TEMPLATE_DEBUG = True
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'housing_survey',
-        'USER': 'ahs',
-        'PASSWORD': '12345',
-        'HOST': '127.0.0.1',
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'travis_ci_db',
+            'USER': 'travis',
+            'PASSWORD': '',
+            'HOST': '127.0.0.1',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'housing_survey',
+            'USER': 'ahs',
+            'PASSWORD': '12345',
+            'HOST': '127.0.0.1',
+        }
+    }
 
 
 # Internationalization
