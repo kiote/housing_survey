@@ -79,11 +79,9 @@ class Newhouse(models.Model):
         this list are used to save the data into the database,
         so we don't need to have each row name in saving-to-database code
         """
-        names = []
         with open(self.columns_file_path, 'rb') as csvcolumns:
             reader = csv.reader(csvcolumns, delimiter = ',')
-            for row in reader:
-                names.append(row[0].lower())
+            names = [row[0].lower() for row in reader]
         return names
 
     def generate_columns(self):
