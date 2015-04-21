@@ -1,3 +1,5 @@
+![](https://api.travis-ci.org/kiote/housing_survey.svg)
+
 ## Intro
 
 This project imports data from American Housing Survey (AHS) to MySQL database.
