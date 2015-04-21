@@ -67,9 +67,7 @@ class Newhouse(models.Model):
             for row in reader:
                 nh = Newhouse(control = int(row[0][1:-1]))
                 for i, name in enumerate(self.get_row_names()):
-                    value = row[i+1]
-                    if row[i+1][0] == "'":
-                        value = row[i+1][1:-1]
+                    value = row[i+1][1:-1] if row[i+1][0] == "'" else row[i+1]
                     setattr(nh, name, value)
                 nh.save()
 
@@ -93,9 +91,7 @@ class Newhouse(models.Model):
             reader = csv.reader(csvcolumns, delimiter = ',')
             f = open(self.columns_generated_file_path, 'w')
             for row in reader:
-                more_params = row[2]
-                if more_params != "":
-                    more_params = ', ' + more_params
+                more_params = row[2] if more_params == "" else ', ' + more_params
 
                 prepared_string = "%s = models.%s(db_column = '%s'%s)\n" % \
                     (row[0].lower(), row[1], row[0], more_params)

@@ -28,7 +28,5 @@ class NewhouseTestCase(TestCase):
             for row in reader:
                 for i, rowname in enumerate(row_names):
                     attr = getattr(newhouse, rowname)
-                    value = row[i+1]
-                    if row[i+1][0] == "'":
-                        value = row[i+1][1:-1]
+                    value = row[i+1][1:-1] if row[i+1][0] == "'" else row[i+1]
                     self.assertEqual(str(attr), str(value))
