@@ -2,7 +2,7 @@ import csv
 
 class Field:
     types = ['PositiveSmallIntegerField',
-             'SmallIntegerFiled',
+             'SmallIntegerField',
              'PositiveIntegerField',
              'IntegerField',
              'FloatField'
@@ -30,7 +30,7 @@ class Field:
 class PositiveSmallIntegerField(Field):
     pass
 
-class SmallIntegerFiled(Field):
+class SmallIntegerField(Field):
     pass
 
 class PositiveIntegerField(Field):
@@ -66,7 +66,7 @@ class DataTypeFactory:
                 self.__class__ = PositiveIntegerField
         else: # small
             if value < 0: #not positive
-                self.__class__ = SmallIntegerFiled
+                self.__class__ = SmallIntegerField
 
 
 class NewhouseDatatype:
@@ -104,12 +104,12 @@ class NewhouseDatatype:
         with open(self.data_type_path, 'wb') as typefile:
             writer = csv.writer(typefile, delimiter = ',')
             for k, v in rows_to_write.iteritems():
-                writer.writerow([k, v])
+                writer.writerow([k, v, 'null = True'])
 
 
     def data_type_by_name(self, name):
         values = [PositiveSmallIntegerField,
-                  SmallIntegerFiled,
+                  SmallIntegerField,
                   PositiveIntegerField,
                   IntegerField,
                   FloatField

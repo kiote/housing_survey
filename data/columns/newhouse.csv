@@ -1,758 +1,758 @@
-CELLAR,PositiveSmallIntegerField
-JWHNHD,PositiveSmallIntegerField
-OTHFN,PositiveSmallIntegerField
-NROWNR,PositiveSmallIntegerField
-WMQUAL,PositiveSmallIntegerField
-CFUEL,PositiveSmallIntegerField
-JHHPAR,PositiveSmallIntegerField
-MAJR3,PositiveSmallIntegerField
-MAJR2,PositiveSmallIntegerField
-MAJR1,PositiveSmallIntegerField
-FLOT,PositiveSmallIntegerField
-JILEAK,PositiveSmallIntegerField
-WMNFIT,PositiveSmallIntegerField
-JFRENT,PositiveSmallIntegerField
-JFOTHF,PositiveSmallIntegerField
-WNOTHR,PositiveSmallIntegerField
-MOPERM,PositiveSmallIntegerField
-NOINT,PositiveSmallIntegerField
-JRATS,PositiveSmallIntegerField
-EMISSW,PositiveSmallIntegerField
-OARSYS,PositiveSmallIntegerField
-JMCLOS,PositiveSmallIntegerField
-EMISSR,PositiveSmallIntegerField
-JQOTHER,PositiveSmallIntegerField
-HHPQWKCMP,PositiveSmallIntegerField
-HOTPIP,PositiveSmallIntegerField
-ISTATUS,PositiveSmallIntegerField
-JRATFREQ,PositiveSmallIntegerField
-JMPRIV,PositiveSmallIntegerField
-EXPOSE,PositiveSmallIntegerField
-ILEAK,PositiveSmallIntegerField
-JELDUS,PositiveSmallIntegerField
-DBOUT1WHY,PositiveSmallIntegerField
-JRSHOP,PositiveSmallIntegerField
-PREOCC,PositiveSmallIntegerField
-USEOTHR,PositiveSmallIntegerField
-FLRENT,PositiveSmallIntegerField
-WHYCD1,PositiveSmallIntegerField
-JHFUEL,PositiveSmallIntegerField
-MOSOCT,PositiveSmallIntegerField
-SAMEGAS,PositiveSmallIntegerField
-M12ROACH,PositiveSmallIntegerField
-JOAFUE,PositiveSmallIntegerField
-MOSALL,PositiveSmallIntegerField
-DFUEL,PositiveSmallIntegerField
-WATER,PositiveSmallIntegerField
-JM12ROACH,PositiveSmallIntegerField
-WHFIN,PositiveSmallIntegerField
-MCNT,PositiveSmallIntegerField
-FRPLI,PositiveSmallIntegerField
-WHYRD,PositiveSmallIntegerField
-FPINS,PositiveSmallIntegerField
-MVCNT1,PositiveSmallIntegerField
-MVCNT2,PositiveSmallIntegerField
-MVCNT3,PositiveSmallIntegerField
-WNSAFETY,PositiveSmallIntegerField
-BUYG2,PositiveSmallIntegerField
-JHSTAY,PositiveSmallIntegerField
-JVALU,PositiveSmallIntegerField
-EROACH,PositiveSmallIntegerField
-HHPMEMRY,PositiveSmallIntegerField
-JDISPL,PositiveSmallIntegerField
-JFCOLD,PositiveSmallIntegerField
-DBMISSMORT,PositiveSmallIntegerField
-LANPMT,PositiveSmallIntegerField
-TPARK,PositiveSmallIntegerField
-WGT90GEO,PositiveSmallIntegerField
-TRASH,PositiveSmallIntegerField
-JWASH,PositiveSmallIntegerField
-MARKET,PositiveSmallIntegerField
-JAMTI,PositiveSmallIntegerField
-JELLAR,PositiveSmallIntegerField
-JAMTO,PositiveSmallIntegerField
-JAMTE,PositiveSmallIntegerField
-JAMTG,PositiveSmallIntegerField
-JAMTF,PositiveSmallIntegerField
-JHHPQSS,PositiveSmallIntegerField
-LAUNDY,PositiveSmallIntegerField
-ELEV,PositiveSmallIntegerField
-HHSPOS,PositiveSmallIntegerField
-JHHMAR,PositiveSmallIntegerField
-JAMTT,PositiveSmallIntegerField
-JAMTW,PositiveSmallIntegerField
-JTXRE,PositiveSmallIntegerField
-DIRAC,PositiveSmallIntegerField
-JBILLT,PositiveSmallIntegerField
-JBILLW,PositiveSmallIntegerField
-WATERS,PositiveSmallIntegerField
-DBOUT1WHER,PositiveSmallIntegerField
-SNITEV,PositiveSmallIntegerField
-JUSPER,PositiveSmallIntegerField
-JBILLE,PositiveSmallIntegerField
-JBILLG,PositiveSmallIntegerField
-JBILLF,PositiveSmallIntegerField
-COOK,PositiveSmallIntegerField
-M12ROD,PositiveSmallIntegerField
-WMEVIC,PositiveSmallIntegerField
-WATERD,PositiveSmallIntegerField
-JHOTFE,PositiveSmallIntegerField
-MG,PositiveSmallIntegerField
-LVALUE,PositiveSmallIntegerField
-JMONHH,PositiveSmallIntegerField
-HPMP,PositiveSmallIntegerField
-NRPAYM,PositiveSmallIntegerField
-HHGRAD,PositiveSmallIntegerField
-JSEGAS,PositiveSmallIntegerField
-HALFB,PositiveSmallIntegerField
-MOSNOV,PositiveSmallIntegerField
-OTHCLD,PositiveSmallIntegerField
-BILLO,PositiveSmallIntegerField
-L50A,PositiveSmallIntegerField
-JNOTHR,PositiveSmallIntegerField
-L50B,PositiveSmallIntegerField
-TLRMOV,PositiveSmallIntegerField
-FLOORS,PositiveSmallIntegerField
-JURNER,PositiveSmallIntegerField
-JMHOUS,PositiveSmallIntegerField
-HHPVOTHER,PositiveSmallIntegerField
-AMTG,PositiveSmallIntegerField
-CLPEVA,PositiveSmallIntegerField
-JHHPQSSI,PositiveSmallIntegerField
-LRENT,PositiveSmallIntegerField
-JINING,PositiveSmallIntegerField
-BIGP,PositiveSmallIntegerField
-BURNER,PositiveSmallIntegerField
-VACANCY,PositiveSmallIntegerField
-JHHPVOTHER,PositiveSmallIntegerField
-JTPARK,PositiveSmallIntegerField
-HISTRY,PositiveSmallIntegerField
-NLOTHR,PositiveSmallIntegerField
-OTBUP,PositiveSmallIntegerField
-ANCHOR,PositiveSmallIntegerField
-KITCHEN,PositiveSmallIntegerField
-JHARPF,PositiveSmallIntegerField
-WMFORE,PositiveSmallIntegerField
-WMDISL,PositiveSmallIntegerField
-REFR,PositiveSmallIntegerField
-FMR,PositiveSmallIntegerField
-ENEFIC,PositiveSmallIntegerField
-VACANC2,PositiveSmallIntegerField
-JRECRM,PositiveSmallIntegerField
-MOSAPR,PositiveSmallIntegerField
-JTUB,PositiveSmallIntegerField
-MOSJAN,PositiveSmallIntegerField
-JWNAMEN,PositiveSmallIntegerField
-JDFUEL,PositiveSmallIntegerField
-WMJOBS,PositiveSmallIntegerField
-AFUEL,PositiveSmallIntegerField
-RESPTYP,PositiveSmallIntegerField
-L30,PositiveSmallIntegerField
-NOSTEP,PositiveSmallIntegerField
-WNPEPL,PositiveSmallIntegerField
-BLEAK,PositiveSmallIntegerField
-LOT,PositiveSmallIntegerField
-HHPQSAL,PositiveSmallIntegerField
-MHSETQ,PositiveSmallIntegerField
-MOSSEP,PositiveSmallIntegerField
-JWNLOT,PositiveSmallIntegerField
-JUMAIR,PositiveSmallIntegerField
-AMTF,PositiveSmallIntegerField
-DATE,PositiveSmallIntegerField
-INCP,PositiveSmallIntegerField
-ROACHFRQ,PositiveSmallIntegerField
-INCS,PositiveSmallIntegerField
-WMOTHR,PositiveSmallIntegerField
-JHYTON,PositiveSmallIntegerField
-BLDMNT,PositiveSmallIntegerField
-WMMARR,PositiveSmallIntegerField
-MINR2,PositiveSmallIntegerField
-MINR1,PositiveSmallIntegerField
-JLOORS,PositiveSmallIntegerField
-NUMBLOW,PositiveSmallIntegerField
-HHPAR,PositiveSmallIntegerField
-JQALIM,PositiveSmallIntegerField
-WNTRAN,PositiveSmallIntegerField
-CONTROL,PositiveSmallIntegerField
-JREUAD,PositiveSmallIntegerField
-NLMOV,PositiveSmallIntegerField
-HERRND,PositiveSmallIntegerField
-HHEAR,PositiveSmallIntegerField
-JROACHFRQ,PositiveSmallIntegerField
-JEWDUS,PositiveSmallIntegerField
-JHHPQOTHER,PositiveSmallIntegerField
-JHNGET,PositiveSmallIntegerField
-BUSPER,PositiveSmallIntegerField
-DBEVICTHT,PositiveSmallIntegerField
-JTYPE,PositiveSmallIntegerField
-JHHMOVE,PositiveSmallIntegerField
-WHDSN,PositiveSmallIntegerField
-WHSIZ,PositiveSmallIntegerField
-BEDRMS,PositiveSmallIntegerField
-ELECT,PositiveSmallIntegerField
-QRENT,PositiveSmallIntegerField
-JHHSPOS,PositiveSmallIntegerField
-LMEDB,PositiveSmallIntegerField
-MOSMAY,PositiveSmallIntegerField
-JHHPQSAL,PositiveSmallIntegerField
-JWNJOB,PositiveSmallIntegerField
-MOSMAR,PositiveSmallIntegerField
-HEARHS,PositiveSmallIntegerField
-WHNGET,PositiveSmallIntegerField
-TAXINC,PositiveSmallIntegerField
-ZINC2,PositiveSmallIntegerField
-MINR3,PositiveSmallIntegerField
-JWHQUL,PositiveSmallIntegerField
-DWNPAY,PositiveSmallIntegerField
-LOOKHS,PositiveSmallIntegerField
-HWALK,PositiveSmallIntegerField
-NUNIT2,PositiveSmallIntegerField
-MICE,PositiveSmallIntegerField
-JMMARR,PositiveSmallIntegerField
-WMFAML,PositiveSmallIntegerField
-JOTSUR,PositiveSmallIntegerField
-FAMRM,PositiveSmallIntegerField
-OTHRUN,PositiveSmallIntegerField
-RAC,PositiveSmallIntegerField
-DBEVICWHERE,PositiveSmallIntegerField
-RAN,PositiveSmallIntegerField
-RAM,PositiveSmallIntegerField
-HMEMRY,PositiveSmallIntegerField
-SXUREV,PositiveSmallIntegerField
-WNHOME,PositiveSmallIntegerField
-DBOUT1REAS,PositiveSmallIntegerField
-BUYW,PositiveSmallIntegerField
-NLMOBL,PositiveSmallIntegerField
-HHPQSSI,PositiveSmallIntegerField
-MOSFEB,PositiveSmallIntegerField
-NUMAIR,PositiveSmallIntegerField
-WELDUS,PositiveSmallIntegerField
-KEXCLU,PositiveSmallIntegerField
-JAMEDU,PositiveSmallIntegerField
-JIRSYS,PositiveSmallIntegerField
-CSTMNT,PositiveSmallIntegerField
-JDBMOUT,PositiveSmallIntegerField
-JMGOVT,PositiveSmallIntegerField
-SAMEHH2,PositiveSmallIntegerField
-JQWKCMP,PositiveSmallIntegerField
-BILLE,PositiveSmallIntegerField
-BILLF,PositiveSmallIntegerField
-BILLG,PositiveSmallIntegerField
-FRENT,PositiveSmallIntegerField
-NUMDRY,PositiveSmallIntegerField
-TPBPAI,PositiveSmallIntegerField
-JWNSCH,PositiveSmallIntegerField
-BILLT,PositiveSmallIntegerField
-WFUEL,PositiveSmallIntegerField
-BILLW,PositiveSmallIntegerField
-WNLOOK,PositiveSmallIntegerField
-HEQUIP,PositiveSmallIntegerField
-WMFEMP,PositiveSmallIntegerField
-JMOWNR,PositiveSmallIntegerField
-GRDMNT,PositiveSmallIntegerField
-JINCS,PositiveSmallIntegerField
-HHMOVM,PositiveSmallIntegerField
-NUNITS,PositiveSmallIntegerField
-JUSELECT,PositiveSmallIntegerField
-FRSIT,PositiveSmallIntegerField
-JSINK,PositiveSmallIntegerField
-DBEVICLK,PositiveSmallIntegerField
-JHHPQWKCMP,PositiveSmallIntegerField
-XNRATE,PositiveSmallIntegerField
-JDRY,PositiveSmallIntegerField
-HHPQOTHER,PositiveSmallIntegerField
-JHARFR,PositiveSmallIntegerField
-HHPQSS,PositiveSmallIntegerField
-QDIV,PositiveSmallIntegerField
-JENURE,PositiveSmallIntegerField
-SAMEDU,PositiveSmallIntegerField
-LISCH,PositiveSmallIntegerField
-JHARAT,PositiveSmallIntegerField
-CRACKS,PositiveSmallIntegerField
-WHAVL,PositiveSmallIntegerField
-TRUCKS,PositiveSmallIntegerField
-MOVAC,PositiveSmallIntegerField
-DENS,PositiveSmallIntegerField
-JVCNT1,PositiveSmallIntegerField
-JVCNT3,PositiveSmallIntegerField
-JVCNT2,PositiveSmallIntegerField
-PHONE,PositiveSmallIntegerField
-HHKIDU18,PositiveSmallIntegerField
-JQSSI,PositiveSmallIntegerField
-JREEZE,PositiveSmallIntegerField
-HHPCARE,PositiveSmallIntegerField
-ESAGR,PositiveSmallIntegerField
-WHOTH,PositiveSmallIntegerField
-ELEVWK,PositiveSmallIntegerField
-JCPRIC,PositiveSmallIntegerField
-WHNHD,PositiveSmallIntegerField
-JRUCKS,PositiveSmallIntegerField
-TIMSHR,PositiveSmallIntegerField
-IFFEE,PositiveSmallIntegerField
-S150MV,PositiveSmallIntegerField
-LEAK,PositiveSmallIntegerField
-QSELF,PositiveSmallIntegerField
-WHEXT,PositiveSmallIntegerField
-CROPSL,PositiveSmallIntegerField
-JMARKT,PositiveSmallIntegerField
-JHHPQRETIR,PositiveSmallIntegerField
-PROJ,PositiveSmallIntegerField
-BUYO2,PositiveSmallIntegerField
-JFAMRM,PositiveSmallIntegerField
-LPRICE,PositiveSmallIntegerField
-LMEDA,PositiveSmallIntegerField
-TOILET,PositiveSmallIntegerField
-JWFUEL,PositiveSmallIntegerField
-JHHMOVM,PositiveSmallIntegerField
-JHHRACE,PositiveSmallIntegerField
-JNITSF,PositiveSmallIntegerField
-JCLIMB,PositiveSmallIntegerField
-JATERS,PositiveSmallIntegerField
-YRRND,PositiveSmallIntegerField
-TADJ,PositiveSmallIntegerField
-SAMEELEC,PositiveSmallIntegerField
-MHSTAY,PositiveSmallIntegerField
-JQDIV,PositiveSmallIntegerField
-LANG,PositiveSmallIntegerField
-QOTHER,PositiveSmallIntegerField
-DBLVEFORC,PositiveSmallIntegerField
-SRENTV,PositiveSmallIntegerField
-JHYMOV,PositiveSmallIntegerField
-APTSP,PositiveSmallIntegerField
-JUNITS,PositiveSmallIntegerField
-JZINCN,PositiveSmallIntegerField
-VOTHER,PositiveSmallIntegerField
-JNPEPL,PositiveSmallIntegerField
-WMOWNR,PositiveSmallIntegerField
-SRECV,PositiveSmallIntegerField
-RCNTRL,PositiveSmallIntegerField
-HHMOVE,PositiveSmallIntegerField
-CARS,PositiveSmallIntegerField
-HHPQRETIR,PositiveSmallIntegerField
-FMHOTF,PositiveSmallIntegerField
-FREEZE,PositiveSmallIntegerField
-BOARDU,PositiveSmallIntegerField
-JBUYE2,PositiveSmallIntegerField
-WMREPR,PositiveSmallIntegerField
-AFUR,PositiveSmallIntegerField
-CLIMB,PositiveSmallIntegerField
-PLUGS,PositiveSmallIntegerField
-VACANC2B,PositiveSmallIntegerField
-SSELV,PositiveSmallIntegerField
-SINHV,PositiveSmallIntegerField
-JTHRUN,PositiveSmallIntegerField
-WNJOB,PositiveSmallIntegerField
-JMCHEP,PositiveSmallIntegerField
-JNLOOK,PositiveSmallIntegerField
-TUB,PositiveSmallIntegerField
-ZINCH,PositiveSmallIntegerField
-ZINCN,PositiveSmallIntegerField
-WMPRIV,PositiveSmallIntegerField
-L50,PositiveSmallIntegerField
-WHYTOH,PositiveSmallIntegerField
-JBUYI,PositiveSmallIntegerField
-JBUYO,PositiveSmallIntegerField
-DEGREE,PositiveSmallIntegerField
-WHYTON,PositiveSmallIntegerField
-VCHRMOV,PositiveSmallIntegerField
-JBUYG,PositiveSmallIntegerField
-JBUYF,PositiveSmallIntegerField
-JBUYE,PositiveSmallIntegerField
-APTAD,PositiveSmallIntegerField
-SINK,PositiveSmallIntegerField
-ZINC,PositiveSmallIntegerField
-JUBRNT,PositiveSmallIntegerField
-JBUYW,PositiveSmallIntegerField
-JBUYT,PositiveSmallIntegerField
-HHREL,PositiveSmallIntegerField
-JQRETIR,PositiveSmallIntegerField
-JIFFEE,PositiveSmallIntegerField
-QRETIR,PositiveSmallIntegerField
-QWELF,PositiveSmallIntegerField
-JALMV,PositiveSmallIntegerField
-JAIR,PositiveSmallIntegerField
-EBROKE,PositiveSmallIntegerField
-NUMSEW,PositiveSmallIntegerField
-DBMISSRENT,PositiveSmallIntegerField
-SEWDIS,PositiveSmallIntegerField
-POOR,PositiveSmallIntegerField
-DIVISION,PositiveSmallIntegerField
-JPLUGS,PositiveSmallIntegerField
-QALIM,PositiveSmallIntegerField
-JLEAK,PositiveSmallIntegerField
-NUMCOLD,PositiveSmallIntegerField
-DBOUT1VOL,PositiveSmallIntegerField
-NOWIRE,PositiveSmallIntegerField
-JLINE1,PositiveSmallIntegerField
-NLBSY,PositiveSmallIntegerField
-L30B,PositiveSmallIntegerField
-CONFEE,PositiveSmallIntegerField
-DBWHYEVIC,PositiveSmallIntegerField
-JQWELF,PositiveSmallIntegerField
-WMLARG,PositiveSmallIntegerField
-QSS,PositiveSmallIntegerField
-WNSCH,PositiveSmallIntegerField
-JREFR,PositiveSmallIntegerField
-JMICE,PositiveSmallIntegerField
-WHYMOVE,PositiveSmallIntegerField
-RENT,PositiveSmallIntegerField
-ZMVGRP,PositiveSmallIntegerField
-JBSINK,PositiveSmallIntegerField
-KIDU18,PositiveSmallIntegerField
-JUBSEW,PositiveSmallIntegerField
-JVACAN,PositiveSmallIntegerField
-DBIN1REAS,PositiveSmallIntegerField
-BUYE2,PositiveSmallIntegerField
-JHHPQDIV,PositiveSmallIntegerField
-STEAM,PositiveSmallIntegerField
-JHALFB,PositiveSmallIntegerField
-HHSEX,PositiveSmallIntegerField
-JCOOK,PositiveSmallIntegerField
-JWHDSN,PositiveSmallIntegerField
-JBIGP,PositiveSmallIntegerField
-JWNFAMILR,PositiveSmallIntegerField
-HHSAL,PositiveSmallIntegerField
-BATHS,PositiveSmallIntegerField
-JFBLOW,PositiveSmallIntegerField
-MOSAUG,PositiveSmallIntegerField
-DBIN1VOL,PositiveSmallIntegerField
-USEOIL,PositiveSmallIntegerField
-JLRENT,PositiveSmallIntegerField
-JWNSRV,PositiveSmallIntegerField
-VACVAC,PositiveSmallIntegerField
-DLINE1,PositiveSmallIntegerField
-JMFORE,PositiveSmallIntegerField
-DBOUTMOVE,PositiveSmallIntegerField
-JEROACH,PositiveSmallIntegerField
-JHHSPAN,PositiveSmallIntegerField
-JHHREL,PositiveSmallIntegerField
-REGION,PositiveSmallIntegerField
-WHQUL,PositiveSmallIntegerField
-JCFUEL,PositiveSmallIntegerField
-ALMV,PositiveSmallIntegerField
-JOWIRE,PositiveSmallIntegerField
-JOVEN,PositiveSmallIntegerField
-JELUMP,PositiveSmallIntegerField
-DINING,PositiveSmallIntegerField
-TPBPIP,PositiveSmallIntegerField
-WNFAMILR,PositiveSmallIntegerField
-RATS,PositiveSmallIntegerField
-OVEN,PositiveSmallIntegerField
-HELCN,PositiveSmallIntegerField
-JHHATVTY,PositiveSmallIntegerField
-JUSEOTHR,PositiveSmallIntegerField
-FPLWK,PositiveSmallIntegerField
-HELC,PositiveSmallIntegerField
-JFPLWK,PositiveSmallIntegerField
-JAPPLY,PositiveSmallIntegerField
-NONE,PositiveSmallIntegerField
-JIVING,PositiveSmallIntegerField
-L80,PositiveSmallIntegerField
-SMSA,PositiveSmallIntegerField
-JLPRIC,PositiveSmallIntegerField
-JBUYF2,PositiveSmallIntegerField
-HHPQALIM,PositiveSmallIntegerField
-PLEAK,PositiveSmallIntegerField
-JNTRAN,PositiveSmallIntegerField
-DBUTBILL,PositiveSmallIntegerField
-JEVROD,PositiveSmallIntegerField
-JHHMVG,PositiveSmallIntegerField
-JM12ROD,PositiveSmallIntegerField
-QFS1,PositiveSmallIntegerField
-BUYW2,PositiveSmallIntegerField
-ZSMHC,PositiveSmallIntegerField
-JQRENT,PositiveSmallIntegerField
-PRENT,PositiveSmallIntegerField
-NLNPR,PositiveSmallIntegerField
-JRSTOC,PositiveSmallIntegerField
-STOVE,PositiveSmallIntegerField
-JQSS,PositiveSmallIntegerField
-JIMSHR,PositiveSmallIntegerField
-JMCNT,PositiveSmallIntegerField
-JBUYO2,PositiveSmallIntegerField
-JPROJ,PositiveSmallIntegerField
-IFCOLD,PositiveSmallIntegerField
-NLUNK,PositiveSmallIntegerField
-BUYT2,PositiveSmallIntegerField
-TXRE,PositiveSmallIntegerField
-JHHAGE,PositiveSmallIntegerField
-PER,PositiveSmallIntegerField
-KITCH,PositiveSmallIntegerField
-MHOTFE,PositiveSmallIntegerField
-SHARAT,PositiveSmallIntegerField
-UNITSF,PositiveSmallIntegerField
-PRIN01,PositiveSmallIntegerField
-EHOLER,PositiveSmallIntegerField
-IFTLT,PositiveSmallIntegerField
-EGOOD,PositiveSmallIntegerField
-QINT,PositiveSmallIntegerField
-HSEE,PositiveSmallIntegerField
-JBILLO,PositiveSmallIntegerField
-APPLY,PositiveSmallIntegerField
-METRO3,PositiveSmallIntegerField
-OAFUEL,PositiveSmallIntegerField
-PERSINT,PositiveSmallIntegerField
-LODG,PositiveSmallIntegerField
-MARKT,PositiveSmallIntegerField
-JMOVAC,PositiveSmallIntegerField
-JQSELF,PositiveSmallIntegerField
-JRENEW,PositiveSmallIntegerField
-JOTHFN,PositiveSmallIntegerField
-RNTADJ,PositiveSmallIntegerField
-DBMORTFORC,PositiveSmallIntegerField
-PORCH,PositiveSmallIntegerField
-JROPSL,PositiveSmallIntegerField
-HHNATVTY,PositiveSmallIntegerField
-JKITCH,PositiveSmallIntegerField
-TPBSOL,PositiveSmallIntegerField
-PLF,PositiveSmallIntegerField
-JBUYT2,PositiveSmallIntegerField
-JBUILT,PositiveSmallIntegerField
-TYPE,PositiveSmallIntegerField
-WMCHTN,PositiveSmallIntegerField
-CUSHOM,PositiveSmallIntegerField
-NONREL,PositiveSmallIntegerField
-REGMOR,PositiveSmallIntegerField
-JEDRMS,PositiveSmallIntegerField
-AIR,PositiveSmallIntegerField
-WASH,PositiveSmallIntegerField
-RENEW,PositiveSmallIntegerField
-IFOTHF,PositiveSmallIntegerField
-JRENT,PositiveSmallIntegerField
-JARSYS,PositiveSmallIntegerField
-NUMMOR,PositiveSmallIntegerField
-JHHNUSYR,PositiveSmallIntegerField
-BUILT,PositiveSmallIntegerField
-JHHPQSELF,PositiveSmallIntegerField
-BUYE,PositiveSmallIntegerField
-BUYF,PositiveSmallIntegerField
-BUYG,PositiveSmallIntegerField
-VOTHER2,PositiveSmallIntegerField
-JCARS,PositiveSmallIntegerField
-DISAS,PositiveSmallIntegerField
-BUYO,PositiveSmallIntegerField
-BUYI,PositiveSmallIntegerField
-BUYT,PositiveSmallIntegerField
-HFUEL,PositiveSmallIntegerField
-OWNLOT,PositiveSmallIntegerField
-HHMAR,PositiveSmallIntegerField
-JVOTHER,PositiveSmallIntegerField
-FRPL,PositiveSmallIntegerField
-DBEVICNOTE,PositiveSmallIntegerField
-JTRASH,PositiveSmallIntegerField
-DBINFORC,PositiveSmallIntegerField
-JUNIT2,PositiveSmallIntegerField
-WMONHH,PositiveSmallIntegerField
-JHHPQRENT,PositiveSmallIntegerField
-BSINK,PositiveSmallIntegerField
-BBLDG,PositiveSmallIntegerField
-JMGOVP,PositiveSmallIntegerField
-RATFREQ,PositiveSmallIntegerField
-JHOLES,PositiveSmallIntegerField
-USFCHG,PositiveSmallIntegerField
-JMCHTN,PositiveSmallIntegerField
-JMFAML,PositiveSmallIntegerField
-PWT,PositiveSmallIntegerField
-FMRA,PositiveSmallIntegerField
-EBOARD,PositiveSmallIntegerField
-FMRB,PositiveSmallIntegerField
-ACCESS,PositiveSmallIntegerField
-USEGAS,PositiveSmallIntegerField
-MOBILTYP,PositiveSmallIntegerField
-SINVV,PositiveSmallIntegerField
-EXCLUS,PositiveSmallIntegerField
-ECRUMB,PositiveSmallIntegerField
-JMOTHR,PositiveSmallIntegerField
-HOTH,PositiveSmallIntegerField
-DRY,PositiveSmallIntegerField
-HHPQSELF,PositiveSmallIntegerField
-HHPQRENT,PositiveSmallIntegerField
-JHYTOH,PositiveSmallIntegerField
-MOSJUN,PositiveSmallIntegerField
-MOSJUL,PositiveSmallIntegerField
-JRSTHO,PositiveSmallIntegerField
-JDENS,PositiveSmallIntegerField
-HHMVG,PositiveSmallIntegerField
-USELECT,PositiveSmallIntegerField
-SHARFR,PositiveSmallIntegerField
-JNHOME,PositiveSmallIntegerField
-REUAD,PositiveSmallIntegerField
-JMDISL,PositiveSmallIntegerField
-FLIN,PositiveSmallIntegerField
-JEWDIS,PositiveSmallIntegerField
-HHSPAN,PositiveSmallIntegerField
-JWHSIZ,PositiveSmallIntegerField
-JIFDRY,PositiveSmallIntegerField
-BUYF2,PositiveSmallIntegerField
-PORTH,PositiveSmallIntegerField
-HHPQINT,PositiveSmallIntegerField
-JHHITSHP,PositiveSmallIntegerField
-PLUMB,PositiveSmallIntegerField
-JVOTHER2,PositiveSmallIntegerField
-DBGRPNUM,PositiveSmallIntegerField
-NUMTLT,PositiveSmallIntegerField
-JWHFIN,PositiveSmallIntegerField
-SUBRNT,PositiveSmallIntegerField
-HOWH,PositiveSmallIntegerField
-JMOSALL,PositiveSmallIntegerField
-LIVING,PositiveSmallIntegerField
-DBOUT1LEN,PositiveSmallIntegerField
-HOWN,PositiveSmallIntegerField
-JCNTRL,PositiveSmallIntegerField
-JHHPQINT,PositiveSmallIntegerField
-CAMF,PositiveSmallIntegerField
-JPORCH,PositiveSmallIntegerField
-IFBLOW,PositiveSmallIntegerField
-JHHPQWELF,PositiveSmallIntegerField
-JRACKS,PositiveSmallIntegerField
-TREP,PositiveSmallIntegerField
-CONDO,PositiveSmallIntegerField
-VCHER,PositiveSmallIntegerField
-JCCESS,PositiveSmallIntegerField
-SUBFIX,PositiveSmallIntegerField
-WMCNDO,PositiveSmallIntegerField
-JWHEXT,PositiveSmallIntegerField
-HHCITSHP,PositiveSmallIntegerField
-HHLDKID,PositiveSmallIntegerField
-CPRICE,PositiveSmallIntegerField
-NOTSUR,PositiveSmallIntegerField
-LOOKNS,PositiveSmallIntegerField
-JHHPQALIM,PositiveSmallIntegerField
-IPOV,PositiveSmallIntegerField
-MOSDEC,PositiveSmallIntegerField
-FRSTOC,PositiveSmallIntegerField
-JEXCLU,PositiveSmallIntegerField
-AIRSYS,PositiveSmallIntegerField
-COKST,PositiveSmallIntegerField
-HCARE,PositiveSmallIntegerField
-L80A,PositiveSmallIntegerField
-L80B,PositiveSmallIntegerField
-SAMEHH,PositiveSmallIntegerField
-WMHOUS,PositiveSmallIntegerField
-HHPERRND,PositiveSmallIntegerField
-JWHAVL,PositiveSmallIntegerField
-DBIN1WHER,PositiveSmallIntegerField
-WTRHRL,PositiveSmallIntegerField
-JWATER,PositiveSmallIntegerField
-WHYCD3,PositiveSmallIntegerField
-WHYCD2,PositiveSmallIntegerField
-PUBSEW,PositiveSmallIntegerField
-WNSRV,PositiveSmallIntegerField
-JMG,PositiveSmallIntegerField
-WHYCD5,PositiveSmallIntegerField
-WHYCD4,PositiveSmallIntegerField
-JIFTLT,PositiveSmallIntegerField
-JMEVIC,PositiveSmallIntegerField
-IFSEW,PositiveSmallIntegerField
-HELUMN,PositiveSmallIntegerField
-JAUNDY,PositiveSmallIntegerField
-WNAMEN,PositiveSmallIntegerField
-JUMSEW,PositiveSmallIntegerField
-QSSI,PositiveSmallIntegerField
-HELUMP,PositiveSmallIntegerField
-HHPLINE,PositiveSmallIntegerField
-HHTEN,PositiveSmallIntegerField
-JDISH,PositiveSmallIntegerField
-XHRATE,PositiveSmallIntegerField
-MOVEDLY,PositiveSmallIntegerField
-FRSTHO,PositiveSmallIntegerField
-HHPWALK,PositiveSmallIntegerField
-NLNLIK,PositiveSmallIntegerField
-JBUYG2,PositiveSmallIntegerField
-JANPMT,PositiveSmallIntegerField
-ELDER,PositiveSmallIntegerField
-JEGMOR,PositiveSmallIntegerField
-JEQUIP,PositiveSmallIntegerField
-HHPQDIV,PositiveSmallIntegerField
-L30A,PositiveSmallIntegerField
-TENURE,PositiveSmallIntegerField
-JHHSEX,PositiveSmallIntegerField
-JDIRAC,PositiveSmallIntegerField
-ZADULT,PositiveSmallIntegerField
-JBUYW2,PositiveSmallIntegerField
-APTCM,PositiveSmallIntegerField
-NLEAK2,PositiveSmallIntegerField
-JPRENT,PositiveSmallIntegerField
-JARAGE,PositiveSmallIntegerField
-JCONDO,PositiveSmallIntegerField
-NLEAK1,PositiveSmallIntegerField
-JBATHS,PositiveSmallIntegerField
-HHINUSYR,PositiveSmallIntegerField
-CMSA,PositiveSmallIntegerField
-HDSB,PositiveSmallIntegerField
-HUHIS,PositiveSmallIntegerField
-USFCAM,PositiveSmallIntegerField
-JWHOTH,PositiveSmallIntegerField
-JOPERM,PositiveSmallIntegerField
-JWNSAFETY,PositiveSmallIntegerField
-PILEAK,PositiveSmallIntegerField
-ROOMS,PositiveSmallIntegerField
-JQINT,PositiveSmallIntegerField
-HOLES,PositiveSmallIntegerField
-DBFORCWHR,PositiveSmallIntegerField
-JMJOBS,PositiveSmallIntegerField
-JMFEMP,PositiveSmallIntegerField
-QWKCMP,PositiveSmallIntegerField
-WMCLOS,PositiveSmallIntegerField
-ESLOPW,PositiveSmallIntegerField
-JELEV,PositiveSmallIntegerField
-JOILET,PositiveSmallIntegerField
-EBAR,PositiveSmallIntegerField
-WMCHEP,PositiveSmallIntegerField
-SOTHV,PositiveSmallIntegerField
-ZADEQ,PositiveSmallIntegerField
-WMGOVT,PositiveSmallIntegerField
-SHARPF,PositiveSmallIntegerField
-WMGOVP,PositiveSmallIntegerField
-DOWNPCT,PositiveSmallIntegerField
-JLOT,PositiveSmallIntegerField
-SEWDUS,PositiveSmallIntegerField
-NEWC,PositiveSmallIntegerField
-JUSEOIL,PositiveSmallIntegerField
-EVROD,PositiveSmallIntegerField
-RLEAK,PositiveSmallIntegerField
-DISH,PositiveSmallIntegerField
-RECRM,PositiveSmallIntegerField
-JASPIP,PositiveSmallIntegerField
-JOTPIP,PositiveSmallIntegerField
-WEIGHT,PositiveSmallIntegerField
-GARAGE,PositiveSmallIntegerField
-JPVALU,PositiveSmallIntegerField
-JDATE,PositiveSmallIntegerField
-WELL,PositiveSmallIntegerField
-GASPI2,PositiveSmallIntegerField
-JHHGRAD,PositiveSmallIntegerField
-HHPHEAR,PositiveSmallIntegerField
-LMED,PositiveSmallIntegerField
-HHAGE,PositiveSmallIntegerField
-PVALUE,PositiveSmallIntegerField
-STATUS,PositiveSmallIntegerField
-JASPI2,PositiveSmallIntegerField
-DISPL,PositiveSmallIntegerField
-NLHPPY,PositiveSmallIntegerField
-HHPQWELF,PositiveSmallIntegerField
-GASPIP,PositiveSmallIntegerField
-VALUE,PositiveSmallIntegerField
-JAFUEL,PositiveSmallIntegerField
-JWHYRD,PositiveSmallIntegerField
-HHPSEE,PositiveSmallIntegerField
-JMQUAL,PositiveSmallIntegerField
-JMLARG,PositiveSmallIntegerField
-DBIN1WHY,PositiveSmallIntegerField
-NUMHS,PositiveSmallIntegerField
-WLEAK,PositiveSmallIntegerField
-HHRACE,PositiveSmallIntegerField
-IFDRY,PositiveSmallIntegerField
-JMCNDO,PositiveSmallIntegerField
-AMTX,PositiveSmallIntegerField
-AMTW,PositiveSmallIntegerField
-AMTT,PositiveSmallIntegerField
-JXCLUS,PositiveSmallIntegerField
-JIFSEW,PositiveSmallIntegerField
-AMTO,PositiveSmallIntegerField
-DRSHOP,PositiveSmallIntegerField
-AMTI,PositiveSmallIntegerField
-JHHSAL,PositiveSmallIntegerField
-JSFCHG,PositiveSmallIntegerField
-AMTE,PositiveSmallIntegerField
-OTLEAK,PositiveSmallIntegerField
+CELLAR,SmallIntegerField,null = True
+JWHNHD,SmallIntegerField,null = True
+OTHFN,SmallIntegerField,null = True
+NROWNR,SmallIntegerField,null = True
+WMQUAL,SmallIntegerField,null = True
+CFUEL,SmallIntegerField,null = True
+JHHPAR,SmallIntegerField,null = True
+MAJR3,SmallIntegerField,null = True
+MAJR2,SmallIntegerField,null = True
+MAJR1,SmallIntegerField,null = True
+FLOT,SmallIntegerField,null = True
+JILEAK,SmallIntegerField,null = True
+WMNFIT,SmallIntegerField,null = True
+JFRENT,SmallIntegerField,null = True
+JFOTHF,SmallIntegerField,null = True
+WNOTHR,SmallIntegerField,null = True
+MOPERM,SmallIntegerField,null = True
+NOINT,SmallIntegerField,null = True
+JRATS,SmallIntegerField,null = True
+EMISSW,SmallIntegerField,null = True
+OARSYS,SmallIntegerField,null = True
+JMCLOS,SmallIntegerField,null = True
+EMISSR,SmallIntegerField,null = True
+JQOTHER,SmallIntegerField,null = True
+HHPQWKCMP,SmallIntegerField,null = True
+HOTPIP,SmallIntegerField,null = True
+ISTATUS,PositiveSmallIntegerField,null = True
+JRATFREQ,SmallIntegerField,null = True
+JMPRIV,SmallIntegerField,null = True
+EXPOSE,SmallIntegerField,null = True
+ILEAK,SmallIntegerField,null = True
+JELDUS,SmallIntegerField,null = True
+DBOUT1WHY,SmallIntegerField,null = True
+JRSHOP,SmallIntegerField,null = True
+PREOCC,SmallIntegerField,null = True
+USEOTHR,SmallIntegerField,null = True
+FLRENT,SmallIntegerField,null = True
+WHYCD1,SmallIntegerField,null = True
+JHFUEL,SmallIntegerField,null = True
+MOSOCT,SmallIntegerField,null = True
+SAMEGAS,SmallIntegerField,null = True
+M12ROACH,SmallIntegerField,null = True
+JOAFUE,SmallIntegerField,null = True
+MOSALL,SmallIntegerField,null = True
+DFUEL,SmallIntegerField,null = True
+WATER,SmallIntegerField,null = True
+JM12ROACH,SmallIntegerField,null = True
+WHFIN,SmallIntegerField,null = True
+MCNT,SmallIntegerField,null = True
+FRPLI,SmallIntegerField,null = True
+WHYRD,SmallIntegerField,null = True
+FPINS,SmallIntegerField,null = True
+MVCNT1,SmallIntegerField,null = True
+MVCNT2,SmallIntegerField,null = True
+MVCNT3,SmallIntegerField,null = True
+WNSAFETY,SmallIntegerField,null = True
+BUYG2,SmallIntegerField,null = True
+JHSTAY,SmallIntegerField,null = True
+JVALU,SmallIntegerField,null = True
+EROACH,SmallIntegerField,null = True
+HHPMEMRY,SmallIntegerField,null = True
+JDISPL,SmallIntegerField,null = True
+JFCOLD,SmallIntegerField,null = True
+DBMISSMORT,SmallIntegerField,null = True
+LANPMT,SmallIntegerField,null = True
+TPARK,SmallIntegerField,null = True
+WGT90GEO,FloatField,null = True
+TRASH,SmallIntegerField,null = True
+JWASH,SmallIntegerField,null = True
+MARKET,SmallIntegerField,null = True
+JAMTI,SmallIntegerField,null = True
+JELLAR,SmallIntegerField,null = True
+JAMTO,SmallIntegerField,null = True
+JAMTE,SmallIntegerField,null = True
+JAMTG,SmallIntegerField,null = True
+JAMTF,SmallIntegerField,null = True
+JHHPQSS,SmallIntegerField,null = True
+LAUNDY,SmallIntegerField,null = True
+ELEV,SmallIntegerField,null = True
+HHSPOS,SmallIntegerField,null = True
+JHHMAR,SmallIntegerField,null = True
+JAMTT,SmallIntegerField,null = True
+JAMTW,SmallIntegerField,null = True
+JTXRE,SmallIntegerField,null = True
+DIRAC,SmallIntegerField,null = True
+JBILLT,SmallIntegerField,null = True
+JBILLW,SmallIntegerField,null = True
+WATERS,SmallIntegerField,null = True
+DBOUT1WHER,SmallIntegerField,null = True
+SNITEV,SmallIntegerField,null = True
+JUSPER,SmallIntegerField,null = True
+JBILLE,SmallIntegerField,null = True
+JBILLG,SmallIntegerField,null = True
+JBILLF,SmallIntegerField,null = True
+COOK,SmallIntegerField,null = True
+M12ROD,SmallIntegerField,null = True
+WMEVIC,SmallIntegerField,null = True
+WATERD,SmallIntegerField,null = True
+JHOTFE,SmallIntegerField,null = True
+MG,SmallIntegerField,null = True
+LVALUE,PositiveIntegerField,null = True
+JMONHH,SmallIntegerField,null = True
+HPMP,SmallIntegerField,null = True
+NRPAYM,SmallIntegerField,null = True
+HHGRAD,SmallIntegerField,null = True
+JSEGAS,SmallIntegerField,null = True
+HALFB,SmallIntegerField,null = True
+MOSNOV,SmallIntegerField,null = True
+OTHCLD,SmallIntegerField,null = True
+BILLO,SmallIntegerField,null = True
+L50A,PositiveIntegerField,null = True
+JNOTHR,SmallIntegerField,null = True
+L50B,PositiveIntegerField,null = True
+TLRMOV,PositiveSmallIntegerField,null = True
+FLOORS,SmallIntegerField,null = True
+JURNER,SmallIntegerField,null = True
+JMHOUS,SmallIntegerField,null = True
+HHPVOTHER,PositiveIntegerField,null = True
+AMTG,PositiveIntegerField,null = True
+CLPEVA,PositiveIntegerField,null = True
+JHHPQSSI,SmallIntegerField,null = True
+LRENT,PositiveIntegerField,null = True
+JINING,SmallIntegerField,null = True
+BIGP,SmallIntegerField,null = True
+BURNER,SmallIntegerField,null = True
+VACANCY,SmallIntegerField,null = True
+JHHPVOTHER,SmallIntegerField,null = True
+JTPARK,SmallIntegerField,null = True
+HISTRY,PositiveSmallIntegerField,null = True
+NLOTHR,SmallIntegerField,null = True
+OTBUP,SmallIntegerField,null = True
+ANCHOR,SmallIntegerField,null = True
+KITCHEN,SmallIntegerField,null = True
+JHARPF,SmallIntegerField,null = True
+WMFORE,SmallIntegerField,null = True
+WMDISL,SmallIntegerField,null = True
+REFR,SmallIntegerField,null = True
+FMR,PositiveIntegerField,null = True
+ENEFIC,SmallIntegerField,null = True
+VACANC2,SmallIntegerField,null = True
+JRECRM,SmallIntegerField,null = True
+MOSAPR,SmallIntegerField,null = True
+JTUB,SmallIntegerField,null = True
+MOSJAN,SmallIntegerField,null = True
+JWNAMEN,SmallIntegerField,null = True
+JDFUEL,SmallIntegerField,null = True
+WMJOBS,SmallIntegerField,null = True
+AFUEL,SmallIntegerField,null = True
+RESPTYP,SmallIntegerField,null = True
+L30,PositiveIntegerField,null = True
+NOSTEP,SmallIntegerField,null = True
+WNPEPL,SmallIntegerField,null = True
+BLEAK,SmallIntegerField,null = True
+LOT,PositiveIntegerField,null = True
+HHPQSAL,SmallIntegerField,null = True
+MHSETQ,SmallIntegerField,null = True
+MOSSEP,SmallIntegerField,null = True
+JWNLOT,SmallIntegerField,null = True
+JUMAIR,SmallIntegerField,null = True
+AMTF,PositiveIntegerField,null = True
+DATE,PositiveIntegerField,null = True
+INCP,SmallIntegerField,null = True
+ROACHFRQ,SmallIntegerField,null = True
+INCS,SmallIntegerField,null = True
+WMOTHR,SmallIntegerField,null = True
+JHYTON,SmallIntegerField,null = True
+BLDMNT,SmallIntegerField,null = True
+WMMARR,SmallIntegerField,null = True
+MINR2,SmallIntegerField,null = True
+MINR1,SmallIntegerField,null = True
+JLOORS,SmallIntegerField,null = True
+NUMBLOW,SmallIntegerField,null = True
+HHPAR,SmallIntegerField,null = True
+JQALIM,SmallIntegerField,null = True
+WNTRAN,SmallIntegerField,null = True
+CONTROL,PositiveIntegerField,null = True
+JREUAD,SmallIntegerField,null = True
+NLMOV,SmallIntegerField,null = True
+HERRND,SmallIntegerField,null = True
+HHEAR,SmallIntegerField,null = True
+JROACHFRQ,SmallIntegerField,null = True
+JEWDUS,SmallIntegerField,null = True
+JHHPQOTHER,SmallIntegerField,null = True
+JHNGET,SmallIntegerField,null = True
+BUSPER,SmallIntegerField,null = True
+DBEVICTHT,SmallIntegerField,null = True
+JTYPE,SmallIntegerField,null = True
+JHHMOVE,SmallIntegerField,null = True
+WHDSN,SmallIntegerField,null = True
+WHSIZ,SmallIntegerField,null = True
+BEDRMS,SmallIntegerField,null = True
+ELECT,SmallIntegerField,null = True
+QRENT,SmallIntegerField,null = True
+JHHSPOS,SmallIntegerField,null = True
+LMEDB,PositiveIntegerField,null = True
+MOSMAY,SmallIntegerField,null = True
+JHHPQSAL,SmallIntegerField,null = True
+JWNJOB,SmallIntegerField,null = True
+MOSMAR,SmallIntegerField,null = True
+HEARHS,SmallIntegerField,null = True
+WHNGET,PositiveIntegerField,null = True
+TAXINC,SmallIntegerField,null = True
+ZINC2,PositiveIntegerField,null = True
+MINR3,SmallIntegerField,null = True
+JWHQUL,SmallIntegerField,null = True
+DWNPAY,SmallIntegerField,null = True
+LOOKHS,SmallIntegerField,null = True
+HWALK,SmallIntegerField,null = True
+NUNIT2,SmallIntegerField,null = True
+MICE,SmallIntegerField,null = True
+JMMARR,SmallIntegerField,null = True
+WMFAML,SmallIntegerField,null = True
+JOTSUR,SmallIntegerField,null = True
+FAMRM,SmallIntegerField,null = True
+OTHRUN,SmallIntegerField,null = True
+RAC,PositiveIntegerField,null = True
+DBEVICWHERE,SmallIntegerField,null = True
+RAN,SmallIntegerField,null = True
+RAM,SmallIntegerField,null = True
+HMEMRY,SmallIntegerField,null = True
+SXUREV,SmallIntegerField,null = True
+WNHOME,SmallIntegerField,null = True
+DBOUT1REAS,SmallIntegerField,null = True
+BUYW,SmallIntegerField,null = True
+NLMOBL,SmallIntegerField,null = True
+HHPQSSI,SmallIntegerField,null = True
+MOSFEB,SmallIntegerField,null = True
+NUMAIR,SmallIntegerField,null = True
+WELDUS,SmallIntegerField,null = True
+KEXCLU,SmallIntegerField,null = True
+JAMEDU,SmallIntegerField,null = True
+JIRSYS,SmallIntegerField,null = True
+CSTMNT,PositiveIntegerField,null = True
+JDBMOUT,SmallIntegerField,null = True
+JMGOVT,SmallIntegerField,null = True
+SAMEHH2,SmallIntegerField,null = True
+JQWKCMP,SmallIntegerField,null = True
+BILLE,SmallIntegerField,null = True
+BILLF,SmallIntegerField,null = True
+BILLG,SmallIntegerField,null = True
+FRENT,SmallIntegerField,null = True
+NUMDRY,SmallIntegerField,null = True
+TPBPAI,SmallIntegerField,null = True
+JWNSCH,SmallIntegerField,null = True
+BILLT,SmallIntegerField,null = True
+WFUEL,SmallIntegerField,null = True
+BILLW,SmallIntegerField,null = True
+WNLOOK,SmallIntegerField,null = True
+HEQUIP,SmallIntegerField,null = True
+WMFEMP,SmallIntegerField,null = True
+JMOWNR,SmallIntegerField,null = True
+GRDMNT,SmallIntegerField,null = True
+JINCS,SmallIntegerField,null = True
+HHMOVM,SmallIntegerField,null = True
+NUNITS,PositiveIntegerField,null = True
+JUSELECT,SmallIntegerField,null = True
+FRSIT,SmallIntegerField,null = True
+JSINK,SmallIntegerField,null = True
+DBEVICLK,SmallIntegerField,null = True
+JHHPQWKCMP,SmallIntegerField,null = True
+XNRATE,SmallIntegerField,null = True
+JDRY,SmallIntegerField,null = True
+HHPQOTHER,SmallIntegerField,null = True
+JHARFR,SmallIntegerField,null = True
+HHPQSS,SmallIntegerField,null = True
+QDIV,SmallIntegerField,null = True
+JENURE,SmallIntegerField,null = True
+SAMEDU,SmallIntegerField,null = True
+LISCH,SmallIntegerField,null = True
+JHARAT,SmallIntegerField,null = True
+CRACKS,SmallIntegerField,null = True
+WHAVL,SmallIntegerField,null = True
+TRUCKS,SmallIntegerField,null = True
+MOVAC,SmallIntegerField,null = True
+DENS,SmallIntegerField,null = True
+JVCNT1,SmallIntegerField,null = True
+JVCNT3,SmallIntegerField,null = True
+JVCNT2,SmallIntegerField,null = True
+PHONE,SmallIntegerField,null = True
+HHKIDU18,SmallIntegerField,null = True
+JQSSI,SmallIntegerField,null = True
+JREEZE,SmallIntegerField,null = True
+HHPCARE,SmallIntegerField,null = True
+ESAGR,SmallIntegerField,null = True
+WHOTH,SmallIntegerField,null = True
+ELEVWK,SmallIntegerField,null = True
+JCPRIC,SmallIntegerField,null = True
+WHNHD,SmallIntegerField,null = True
+JRUCKS,SmallIntegerField,null = True
+TIMSHR,SmallIntegerField,null = True
+IFFEE,SmallIntegerField,null = True
+S150MV,SmallIntegerField,null = True
+LEAK,SmallIntegerField,null = True
+QSELF,SmallIntegerField,null = True
+WHEXT,SmallIntegerField,null = True
+CROPSL,SmallIntegerField,null = True
+JMARKT,SmallIntegerField,null = True
+JHHPQRETIR,SmallIntegerField,null = True
+PROJ,SmallIntegerField,null = True
+BUYO2,SmallIntegerField,null = True
+JFAMRM,SmallIntegerField,null = True
+LPRICE,PositiveIntegerField,null = True
+LMEDA,PositiveIntegerField,null = True
+TOILET,SmallIntegerField,null = True
+JWFUEL,SmallIntegerField,null = True
+JHHMOVM,SmallIntegerField,null = True
+JHHRACE,SmallIntegerField,null = True
+JNITSF,SmallIntegerField,null = True
+JCLIMB,SmallIntegerField,null = True
+JATERS,SmallIntegerField,null = True
+YRRND,SmallIntegerField,null = True
+TADJ,SmallIntegerField,null = True
+SAMEELEC,SmallIntegerField,null = True
+MHSTAY,SmallIntegerField,null = True
+JQDIV,SmallIntegerField,null = True
+LANG,SmallIntegerField,null = True
+QOTHER,SmallIntegerField,null = True
+DBLVEFORC,SmallIntegerField,null = True
+SRENTV,SmallIntegerField,null = True
+JHYMOV,SmallIntegerField,null = True
+APTSP,SmallIntegerField,null = True
+JUNITS,SmallIntegerField,null = True
+JZINCN,SmallIntegerField,null = True
+VOTHER,PositiveIntegerField,null = True
+JNPEPL,SmallIntegerField,null = True
+WMOWNR,SmallIntegerField,null = True
+SRECV,SmallIntegerField,null = True
+RCNTRL,SmallIntegerField,null = True
+HHMOVE,PositiveIntegerField,null = True
+CARS,SmallIntegerField,null = True
+HHPQRETIR,SmallIntegerField,null = True
+FMHOTF,SmallIntegerField,null = True
+FREEZE,SmallIntegerField,null = True
+BOARDU,SmallIntegerField,null = True
+JBUYE2,SmallIntegerField,null = True
+WMREPR,SmallIntegerField,null = True
+AFUR,SmallIntegerField,null = True
+CLIMB,SmallIntegerField,null = True
+PLUGS,SmallIntegerField,null = True
+VACANC2B,SmallIntegerField,null = True
+SSELV,SmallIntegerField,null = True
+SINHV,SmallIntegerField,null = True
+JTHRUN,SmallIntegerField,null = True
+WNJOB,SmallIntegerField,null = True
+JMCHEP,SmallIntegerField,null = True
+JNLOOK,SmallIntegerField,null = True
+TUB,SmallIntegerField,null = True
+ZINCH,SmallIntegerField,null = True
+ZINCN,IntegerField,null = True
+WMPRIV,SmallIntegerField,null = True
+L50,PositiveIntegerField,null = True
+WHYTOH,SmallIntegerField,null = True
+JBUYI,SmallIntegerField,null = True
+JBUYO,SmallIntegerField,null = True
+DEGREE,PositiveSmallIntegerField,null = True
+WHYTON,SmallIntegerField,null = True
+VCHRMOV,SmallIntegerField,null = True
+JBUYG,SmallIntegerField,null = True
+JBUYF,SmallIntegerField,null = True
+JBUYE,SmallIntegerField,null = True
+APTAD,SmallIntegerField,null = True
+SINK,SmallIntegerField,null = True
+ZINC,PositiveIntegerField,null = True
+JUBRNT,SmallIntegerField,null = True
+JBUYW,SmallIntegerField,null = True
+JBUYT,SmallIntegerField,null = True
+HHREL,SmallIntegerField,null = True
+JQRETIR,SmallIntegerField,null = True
+JIFFEE,SmallIntegerField,null = True
+QRETIR,SmallIntegerField,null = True
+QWELF,SmallIntegerField,null = True
+JALMV,SmallIntegerField,null = True
+JAIR,SmallIntegerField,null = True
+EBROKE,SmallIntegerField,null = True
+NUMSEW,SmallIntegerField,null = True
+DBMISSRENT,SmallIntegerField,null = True
+SEWDIS,SmallIntegerField,null = True
+POOR,PositiveIntegerField,null = True
+DIVISION,PositiveSmallIntegerField,null = True
+JPLUGS,SmallIntegerField,null = True
+QALIM,SmallIntegerField,null = True
+JLEAK,SmallIntegerField,null = True
+NUMCOLD,SmallIntegerField,null = True
+DBOUT1VOL,SmallIntegerField,null = True
+NOWIRE,SmallIntegerField,null = True
+JLINE1,SmallIntegerField,null = True
+NLBSY,SmallIntegerField,null = True
+L30B,PositiveIntegerField,null = True
+CONFEE,PositiveIntegerField,null = True
+DBWHYEVIC,SmallIntegerField,null = True
+JQWELF,SmallIntegerField,null = True
+WMLARG,SmallIntegerField,null = True
+QSS,SmallIntegerField,null = True
+WNSCH,SmallIntegerField,null = True
+JREFR,SmallIntegerField,null = True
+JMICE,SmallIntegerField,null = True
+WHYMOVE,SmallIntegerField,null = True
+RENT,PositiveIntegerField,null = True
+ZMVGRP,SmallIntegerField,null = True
+JBSINK,SmallIntegerField,null = True
+KIDU18,SmallIntegerField,null = True
+JUBSEW,SmallIntegerField,null = True
+JVACAN,SmallIntegerField,null = True
+DBIN1REAS,SmallIntegerField,null = True
+BUYE2,SmallIntegerField,null = True
+JHHPQDIV,SmallIntegerField,null = True
+STEAM,SmallIntegerField,null = True
+JHALFB,SmallIntegerField,null = True
+HHSEX,SmallIntegerField,null = True
+JCOOK,SmallIntegerField,null = True
+JWHDSN,SmallIntegerField,null = True
+JBIGP,SmallIntegerField,null = True
+JWNFAMILR,SmallIntegerField,null = True
+HHSAL,PositiveIntegerField,null = True
+BATHS,SmallIntegerField,null = True
+JFBLOW,SmallIntegerField,null = True
+MOSAUG,SmallIntegerField,null = True
+DBIN1VOL,SmallIntegerField,null = True
+USEOIL,SmallIntegerField,null = True
+JLRENT,SmallIntegerField,null = True
+JWNSRV,SmallIntegerField,null = True
+VACVAC,SmallIntegerField,null = True
+DLINE1,SmallIntegerField,null = True
+JMFORE,SmallIntegerField,null = True
+DBOUTMOVE,SmallIntegerField,null = True
+JEROACH,SmallIntegerField,null = True
+JHHSPAN,SmallIntegerField,null = True
+JHHREL,SmallIntegerField,null = True
+REGION,PositiveSmallIntegerField,null = True
+WHQUL,SmallIntegerField,null = True
+JCFUEL,SmallIntegerField,null = True
+ALMV,SmallIntegerField,null = True
+JOWIRE,SmallIntegerField,null = True
+JOVEN,SmallIntegerField,null = True
+JELUMP,SmallIntegerField,null = True
+DINING,SmallIntegerField,null = True
+TPBPIP,SmallIntegerField,null = True
+WNFAMILR,SmallIntegerField,null = True
+RATS,SmallIntegerField,null = True
+OVEN,SmallIntegerField,null = True
+HELCN,SmallIntegerField,null = True
+JHHATVTY,SmallIntegerField,null = True
+JUSEOTHR,SmallIntegerField,null = True
+FPLWK,SmallIntegerField,null = True
+HELC,SmallIntegerField,null = True
+JFPLWK,SmallIntegerField,null = True
+JAPPLY,SmallIntegerField,null = True
+NONE,SmallIntegerField,null = True
+JIVING,SmallIntegerField,null = True
+L80,PositiveIntegerField,null = True
+SMSA,PositiveIntegerField,null = True
+JLPRIC,SmallIntegerField,null = True
+JBUYF2,SmallIntegerField,null = True
+HHPQALIM,SmallIntegerField,null = True
+PLEAK,SmallIntegerField,null = True
+JNTRAN,SmallIntegerField,null = True
+DBUTBILL,SmallIntegerField,null = True
+JEVROD,SmallIntegerField,null = True
+JHHMVG,SmallIntegerField,null = True
+JM12ROD,SmallIntegerField,null = True
+QFS1,SmallIntegerField,null = True
+BUYW2,SmallIntegerField,null = True
+ZSMHC,PositiveIntegerField,null = True
+JQRENT,SmallIntegerField,null = True
+PRENT,PositiveIntegerField,null = True
+NLNPR,SmallIntegerField,null = True
+JRSTOC,SmallIntegerField,null = True
+STOVE,SmallIntegerField,null = True
+JQSS,SmallIntegerField,null = True
+JIMSHR,SmallIntegerField,null = True
+JMCNT,SmallIntegerField,null = True
+JBUYO2,SmallIntegerField,null = True
+JPROJ,SmallIntegerField,null = True
+IFCOLD,SmallIntegerField,null = True
+NLUNK,SmallIntegerField,null = True
+BUYT2,SmallIntegerField,null = True
+TXRE,SmallIntegerField,null = True
+JHHAGE,SmallIntegerField,null = True
+PER,SmallIntegerField,null = True
+KITCH,SmallIntegerField,null = True
+MHOTFE,PositiveIntegerField,null = True
+SHARAT,SmallIntegerField,null = True
+UNITSF,PositiveIntegerField,null = True
+PRIN01,PositiveIntegerField,null = True
+EHOLER,SmallIntegerField,null = True
+IFTLT,SmallIntegerField,null = True
+EGOOD,SmallIntegerField,null = True
+QINT,SmallIntegerField,null = True
+HSEE,SmallIntegerField,null = True
+JBILLO,SmallIntegerField,null = True
+APPLY,SmallIntegerField,null = True
+METRO3,PositiveSmallIntegerField,null = True
+OAFUEL,SmallIntegerField,null = True
+PERSINT,PositiveSmallIntegerField,null = True
+LODG,PositiveIntegerField,null = True
+MARKT,SmallIntegerField,null = True
+JMOVAC,SmallIntegerField,null = True
+JQSELF,SmallIntegerField,null = True
+JRENEW,SmallIntegerField,null = True
+JOTHFN,SmallIntegerField,null = True
+RNTADJ,SmallIntegerField,null = True
+DBMORTFORC,SmallIntegerField,null = True
+PORCH,SmallIntegerField,null = True
+JROPSL,SmallIntegerField,null = True
+HHNATVTY,PositiveIntegerField,null = True
+JKITCH,SmallIntegerField,null = True
+TPBSOL,SmallIntegerField,null = True
+PLF,SmallIntegerField,null = True
+JBUYT2,SmallIntegerField,null = True
+JBUILT,SmallIntegerField,null = True
+TYPE,SmallIntegerField,null = True
+WMCHTN,SmallIntegerField,null = True
+CUSHOM,SmallIntegerField,null = True
+NONREL,SmallIntegerField,null = True
+REGMOR,SmallIntegerField,null = True
+JEDRMS,SmallIntegerField,null = True
+AIR,SmallIntegerField,null = True
+WASH,SmallIntegerField,null = True
+RENEW,SmallIntegerField,null = True
+IFOTHF,SmallIntegerField,null = True
+JRENT,SmallIntegerField,null = True
+JARSYS,SmallIntegerField,null = True
+NUMMOR,SmallIntegerField,null = True
+JHHNUSYR,SmallIntegerField,null = True
+BUILT,PositiveIntegerField,null = True
+JHHPQSELF,SmallIntegerField,null = True
+BUYE,SmallIntegerField,null = True
+BUYF,SmallIntegerField,null = True
+BUYG,SmallIntegerField,null = True
+VOTHER2,PositiveIntegerField,null = True
+JCARS,SmallIntegerField,null = True
+DISAS,SmallIntegerField,null = True
+BUYO,SmallIntegerField,null = True
+BUYI,SmallIntegerField,null = True
+BUYT,SmallIntegerField,null = True
+HFUEL,SmallIntegerField,null = True
+OWNLOT,SmallIntegerField,null = True
+HHMAR,SmallIntegerField,null = True
+JVOTHER,SmallIntegerField,null = True
+FRPL,SmallIntegerField,null = True
+DBEVICNOTE,SmallIntegerField,null = True
+JTRASH,SmallIntegerField,null = True
+DBINFORC,SmallIntegerField,null = True
+JUNIT2,SmallIntegerField,null = True
+WMONHH,SmallIntegerField,null = True
+JHHPQRENT,SmallIntegerField,null = True
+BSINK,SmallIntegerField,null = True
+BBLDG,SmallIntegerField,null = True
+JMGOVP,SmallIntegerField,null = True
+RATFREQ,SmallIntegerField,null = True
+JHOLES,SmallIntegerField,null = True
+USFCHG,SmallIntegerField,null = True
+JMCHTN,SmallIntegerField,null = True
+JMFAML,SmallIntegerField,null = True
+PWT,FloatField,null = True
+FMRA,PositiveIntegerField,null = True
+EBOARD,SmallIntegerField,null = True
+FMRB,PositiveIntegerField,null = True
+ACCESS,SmallIntegerField,null = True
+USEGAS,SmallIntegerField,null = True
+MOBILTYP,SmallIntegerField,null = True
+SINVV,SmallIntegerField,null = True
+EXCLUS,SmallIntegerField,null = True
+ECRUMB,SmallIntegerField,null = True
+JMOTHR,SmallIntegerField,null = True
+HOTH,SmallIntegerField,null = True
+DRY,SmallIntegerField,null = True
+HHPQSELF,SmallIntegerField,null = True
+HHPQRENT,SmallIntegerField,null = True
+JHYTOH,SmallIntegerField,null = True
+MOSJUN,SmallIntegerField,null = True
+MOSJUL,SmallIntegerField,null = True
+JRSTHO,SmallIntegerField,null = True
+JDENS,SmallIntegerField,null = True
+HHMVG,SmallIntegerField,null = True
+USELECT,SmallIntegerField,null = True
+SHARFR,SmallIntegerField,null = True
+JNHOME,SmallIntegerField,null = True
+REUAD,SmallIntegerField,null = True
+JMDISL,SmallIntegerField,null = True
+FLIN,SmallIntegerField,null = True
+JEWDIS,SmallIntegerField,null = True
+HHSPAN,SmallIntegerField,null = True
+JWHSIZ,SmallIntegerField,null = True
+JIFDRY,SmallIntegerField,null = True
+BUYF2,SmallIntegerField,null = True
+PORTH,SmallIntegerField,null = True
+HHPQINT,SmallIntegerField,null = True
+JHHITSHP,SmallIntegerField,null = True
+PLUMB,SmallIntegerField,null = True
+JVOTHER2,SmallIntegerField,null = True
+DBGRPNUM,SmallIntegerField,null = True
+NUMTLT,SmallIntegerField,null = True
+JWHFIN,SmallIntegerField,null = True
+SUBRNT,SmallIntegerField,null = True
+HOWH,SmallIntegerField,null = True
+JMOSALL,SmallIntegerField,null = True
+LIVING,SmallIntegerField,null = True
+DBOUT1LEN,SmallIntegerField,null = True
+HOWN,SmallIntegerField,null = True
+JCNTRL,SmallIntegerField,null = True
+JHHPQINT,SmallIntegerField,null = True
+CAMF,SmallIntegerField,null = True
+JPORCH,SmallIntegerField,null = True
+IFBLOW,SmallIntegerField,null = True
+JHHPQWELF,SmallIntegerField,null = True
+JRACKS,SmallIntegerField,null = True
+TREP,SmallIntegerField,null = True
+CONDO,SmallIntegerField,null = True
+VCHER,SmallIntegerField,null = True
+JCCESS,SmallIntegerField,null = True
+SUBFIX,SmallIntegerField,null = True
+WMCNDO,SmallIntegerField,null = True
+JWHEXT,SmallIntegerField,null = True
+HHCITSHP,SmallIntegerField,null = True
+HHLDKID,SmallIntegerField,null = True
+CPRICE,PositiveIntegerField,null = True
+NOTSUR,SmallIntegerField,null = True
+LOOKNS,SmallIntegerField,null = True
+JHHPQALIM,SmallIntegerField,null = True
+IPOV,PositiveIntegerField,null = True
+MOSDEC,SmallIntegerField,null = True
+FRSTOC,SmallIntegerField,null = True
+JEXCLU,SmallIntegerField,null = True
+AIRSYS,SmallIntegerField,null = True
+COKST,SmallIntegerField,null = True
+HCARE,SmallIntegerField,null = True
+L80A,PositiveIntegerField,null = True
+L80B,PositiveIntegerField,null = True
+SAMEHH,SmallIntegerField,null = True
+WMHOUS,SmallIntegerField,null = True
+HHPERRND,SmallIntegerField,null = True
+JWHAVL,SmallIntegerField,null = True
+DBIN1WHER,SmallIntegerField,null = True
+WTRHRL,SmallIntegerField,null = True
+JWATER,SmallIntegerField,null = True
+WHYCD3,SmallIntegerField,null = True
+WHYCD2,SmallIntegerField,null = True
+PUBSEW,SmallIntegerField,null = True
+WNSRV,SmallIntegerField,null = True
+JMG,SmallIntegerField,null = True
+WHYCD5,SmallIntegerField,null = True
+WHYCD4,SmallIntegerField,null = True
+JIFTLT,SmallIntegerField,null = True
+JMEVIC,SmallIntegerField,null = True
+IFSEW,SmallIntegerField,null = True
+HELUMN,SmallIntegerField,null = True
+JAUNDY,SmallIntegerField,null = True
+WNAMEN,SmallIntegerField,null = True
+JUMSEW,SmallIntegerField,null = True
+QSSI,SmallIntegerField,null = True
+HELUMP,SmallIntegerField,null = True
+HHPLINE,SmallIntegerField,null = True
+HHTEN,SmallIntegerField,null = True
+JDISH,SmallIntegerField,null = True
+XHRATE,SmallIntegerField,null = True
+MOVEDLY,SmallIntegerField,null = True
+FRSTHO,SmallIntegerField,null = True
+HHPWALK,SmallIntegerField,null = True
+NLNLIK,SmallIntegerField,null = True
+JBUYG2,SmallIntegerField,null = True
+JANPMT,SmallIntegerField,null = True
+ELDER,SmallIntegerField,null = True
+JEGMOR,SmallIntegerField,null = True
+JEQUIP,SmallIntegerField,null = True
+HHPQDIV,SmallIntegerField,null = True
+L30A,PositiveIntegerField,null = True
+TENURE,SmallIntegerField,null = True
+JHHSEX,SmallIntegerField,null = True
+JDIRAC,SmallIntegerField,null = True
+ZADULT,SmallIntegerField,null = True
+JBUYW2,SmallIntegerField,null = True
+APTCM,SmallIntegerField,null = True
+NLEAK2,SmallIntegerField,null = True
+JPRENT,SmallIntegerField,null = True
+JARAGE,SmallIntegerField,null = True
+JCONDO,SmallIntegerField,null = True
+NLEAK1,SmallIntegerField,null = True
+JBATHS,SmallIntegerField,null = True
+HHINUSYR,PositiveIntegerField,null = True
+CMSA,PositiveSmallIntegerField,null = True
+HDSB,SmallIntegerField,null = True
+HUHIS,SmallIntegerField,null = True
+USFCAM,IntegerField,null = True
+JWHOTH,SmallIntegerField,null = True
+JOPERM,SmallIntegerField,null = True
+JWNSAFETY,SmallIntegerField,null = True
+PILEAK,SmallIntegerField,null = True
+ROOMS,SmallIntegerField,null = True
+JQINT,SmallIntegerField,null = True
+HOLES,SmallIntegerField,null = True
+DBFORCWHR,SmallIntegerField,null = True
+JMJOBS,SmallIntegerField,null = True
+JMFEMP,SmallIntegerField,null = True
+QWKCMP,SmallIntegerField,null = True
+WMCLOS,SmallIntegerField,null = True
+ESLOPW,SmallIntegerField,null = True
+JELEV,SmallIntegerField,null = True
+JOILET,SmallIntegerField,null = True
+EBAR,SmallIntegerField,null = True
+WMCHEP,SmallIntegerField,null = True
+SOTHV,SmallIntegerField,null = True
+ZADEQ,SmallIntegerField,null = True
+WMGOVT,SmallIntegerField,null = True
+SHARPF,SmallIntegerField,null = True
+WMGOVP,SmallIntegerField,null = True
+DOWNPCT,SmallIntegerField,null = True
+JLOT,SmallIntegerField,null = True
+SEWDUS,SmallIntegerField,null = True
+NEWC,PositiveSmallIntegerField,null = True
+JUSEOIL,SmallIntegerField,null = True
+EVROD,SmallIntegerField,null = True
+RLEAK,SmallIntegerField,null = True
+DISH,SmallIntegerField,null = True
+RECRM,SmallIntegerField,null = True
+JASPIP,SmallIntegerField,null = True
+JOTPIP,SmallIntegerField,null = True
+WEIGHT,FloatField,null = True
+GARAGE,SmallIntegerField,null = True
+JPVALU,SmallIntegerField,null = True
+JDATE,SmallIntegerField,null = True
+WELL,SmallIntegerField,null = True
+GASPI2,SmallIntegerField,null = True
+JHHGRAD,SmallIntegerField,null = True
+HHPHEAR,SmallIntegerField,null = True
+LMED,PositiveIntegerField,null = True
+HHAGE,SmallIntegerField,null = True
+PVALUE,PositiveIntegerField,null = True
+STATUS,PositiveSmallIntegerField,null = True
+JASPI2,SmallIntegerField,null = True
+DISPL,SmallIntegerField,null = True
+NLHPPY,SmallIntegerField,null = True
+HHPQWELF,SmallIntegerField,null = True
+GASPIP,SmallIntegerField,null = True
+VALUE,PositiveIntegerField,null = True
+JAFUEL,SmallIntegerField,null = True
+JWHYRD,SmallIntegerField,null = True
+HHPSEE,SmallIntegerField,null = True
+JMQUAL,SmallIntegerField,null = True
+JMLARG,SmallIntegerField,null = True
+DBIN1WHY,SmallIntegerField,null = True
+NUMHS,SmallIntegerField,null = True
+WLEAK,SmallIntegerField,null = True
+HHRACE,SmallIntegerField,null = True
+IFDRY,SmallIntegerField,null = True
+JMCNDO,SmallIntegerField,null = True
+AMTX,PositiveIntegerField,null = True
+AMTW,PositiveIntegerField,null = True
+AMTT,PositiveIntegerField,null = True
+JXCLUS,SmallIntegerField,null = True
+JIFSEW,SmallIntegerField,null = True
+AMTO,PositiveIntegerField,null = True
+DRSHOP,SmallIntegerField,null = True
+AMTI,PositiveIntegerField,null = True
+JHHSAL,SmallIntegerField,null = True
+JSFCHG,SmallIntegerField,null = True
+AMTE,PositiveIntegerField,null = True
+OTLEAK,SmallIntegerField,null = True

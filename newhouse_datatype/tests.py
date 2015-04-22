@@ -7,7 +7,7 @@ class DataTypeFactoryTest(TestCase):
     def test_return_valid_class(self):
         """Do we set datatype"""
         cases = [{'PositiveSmallIntegerField': '0'},
-                 {'SmallIntegerFiled': '-2'},
+                 {'SmallIntegerField': '-2'},
                  {'PositiveIntegerField': '1000000'},
                  {'IntegerField': '-1000000'},
                  {'FloatField': '1.1'}
