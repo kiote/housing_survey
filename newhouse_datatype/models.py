@@ -59,25 +59,29 @@ class DataTypeFactory:
             self.__class__ = FloatField
             return None
 
-        if Field.type_dictionary['PositiveSmallIntegerField']['max'] < value < Field.type_dictionary['PositiveSmallIntegerField']['min']:
-            self.__class__ = SmallIntegerFiled
+        if abs(value) > Field.type_dictionary['PositiveSmallIntegerField']['max']: # not small
+            if value < 0: # not positive
+                self.__class__ = IntegerField
+            else: # not small, positive
+                self.__class__ = PositiveIntegerField
+        else: # small
+            if value < 0: #not positive
+                self.__class__ = SmallIntegerFiled
 
-        if Field.type_dictionary['SmallIntegerFiled']['max'] < value < Field.type_dictionary['SmallIntegerFiled']['min']:
-            self._class__ = PositiveIntegerField
-
-        if Field.type_dictionary['PositiveIntegerField']['max'] < value < Field.type_dictionary['PositiveIntegerField']['min']:
-            self.__class__ = IntegerField
 
 class NewhouseDatatype:
     file_path = 'data/non-git/puf2013/newhouse.csv'
+    # smaller file for testing
+    # file_path = 'data/sample/puf2013/newhouse.csv'
+    data_type_path = 'data/columns/newhouse.csv'
 
     def read_data_file(self):
         """Opens CSV-file with newhouse data and set the columns datatypes"""
+        headers_with_types = {}
+
         with open(self.file_path, 'rb') as csvfile:
             reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
             headers = reader.next()
-
-            headers_with_types = {}
 
             # lets assume first, that all datatypes is PositiveSmallIntegerField
             for column in headers:
@@ -86,12 +90,24 @@ class NewhouseDatatype:
             for row in reader:
                 for column in headers:
                     new_data_type = DataTypeFactory(row[column])
+                    # if new datatype is bigger than previous
+                    # for example, Integer > SmallInteger
+                    # Then we set column type to new data type
+                    if new_data_type > self.data_type_by_name(headers_with_types[column]):
+                        headers_with_types[column] = new_data_type.__class__.__name__
 
-                    if new_data_type > self.prev_data_type(headers_with_types[column]):
-                        headers_with_types[column] = new_data_type
+        # print headers_with_types
+        return headers_with_types
+
+    def write_types(self):
+        rows_to_write = self.read_data_file()
+        with open(self.data_type_path, 'wb') as typefile:
+            writer = csv.writer(typefile, delimiter = ',')
+            for k, v in rows_to_write.iteritems():
+                writer.writerow([k, v])
 
 
-    def prev_data_type(self, name):
+    def data_type_by_name(self, name):
         values = [PositiveSmallIntegerField,
                   SmallIntegerFiled,
                   PositiveIntegerField,
