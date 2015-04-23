@@ -44,8 +44,8 @@ class DecimalField(Field):
     pass
 
 class DataTypeFactory:
-    def __init__(self, value):
-        self.__class__ = PositiveSmallIntegerField
+    def __init__(self, value, prev_type = 'PositiveSmallIntegerField'):
+        self.__class__ = NewhouseDatatype().data_type_by_name(prev_type).__class__
 
         if value[0] == "'":
             value = value[1:-1]
@@ -63,17 +63,20 @@ class DataTypeFactory:
         if abs(value) > Field.type_dictionary['PositiveSmallIntegerField']['max']: # not small
             if value < 0: # not positive
                 self.__class__ = IntegerField
-            else: # not small, positive
+            elif prev_type[0:8] == 'Positive': # not small, positive and was positive before
                 self.__class__ = PositiveIntegerField
+            else: # not small, positive and wasn't positive before
+                self.__class__ = IntegerField
         else: # small
             if value < 0: #not positive
                 self.__class__ = SmallIntegerField
 
 
 class NewhouseDatatype:
-    file_path = 'data/non-git/puf2013/newhouse.csv'
-    # smaller file for testing
-    # file_path = 'data/sample/puf2013/newhouse.csv'
+    # read from
+    file_path = 'data/sample/puf2013/newhouse.csv'
+    
+    # write to
     data_type_path = 'data/columns/newhouse.csv'
 
     def read_data_file(self):
@@ -90,14 +93,15 @@ class NewhouseDatatype:
 
             for row in reader:
                 for column in headers:
-                    new_data_type = DataTypeFactory(row[column])
+                    prev_type = self.data_type_by_name(headers_with_types[column])
+                    new_data_type = DataTypeFactory(row[column], str(prev_type.__class__.__name__))
+                    
                     # if new datatype is bigger than previous
                     # for example, Integer > SmallInteger
                     # Then we set column type to new data type
-                    if new_data_type > self.data_type_by_name(headers_with_types[column]):
+                    if new_data_type > prev_type:
                         headers_with_types[column] = new_data_type.__class__.__name__
-
-        # print headers_with_types
+                    
         return headers_with_types
 
     def write_types(self):
@@ -118,7 +122,7 @@ class NewhouseDatatype:
                   PositiveIntegerField,
                   IntegerField,
                   DecimalField
-                ]
+                 ]
 
         options = dict(zip(Field.types, values))
 

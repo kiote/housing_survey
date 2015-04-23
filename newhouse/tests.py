@@ -32,8 +32,9 @@ class NewhouseTestCase(TestCase):
                     try:
                         attr = int(attr)
                         value = int(value)
+                        self.assertEqual(attr, value)
                     except ValueError:
                         attr = Decimal(attr)
                         value = Decimal(value)
 
-                    self.assertEqual(attr, value)
+                    
