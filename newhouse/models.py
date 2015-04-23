@@ -784,7 +784,6 @@ class Newhouse(models.Model):
 
                 with warnings.catch_warnings():
                     warnings.filterwarnings('error')
-                    print value 
                     nh.save()
                     
 

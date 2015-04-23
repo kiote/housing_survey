@@ -47,7 +47,7 @@ class NewhouseDatatypeTest(TestCase):
     def setUp(self):
         NewhouseDatatype.file_path = 'data/sample/puf2013/newhouse.csv'
 
-    def test_data_type_class_by_name(self):
-        self.assertEquals(NewhouseDatatype().data_type_class_by_name('PositiveSmallIntegerField').__class__\
+    def test_data_type_by_name(self):
+        self.assertEquals(NewhouseDatatype().data_type_by_name('PositiveSmallIntegerField').__class__\
                           .__name__, 'PositiveSmallIntegerField'
                          )
