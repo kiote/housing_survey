@@ -1,32 +1,39 @@
 from django.test import TestCase
 from newhouse.models import Newhouse
+from decimal import *
 
 import csv
 
 class NewhouseTestCase(TestCase):
     def setUp(self):
         Newhouse.file_path = 'data/sample/puf2013/newhouse.csv'
+        Newhouse().read_data_file()
+        self.newhouse = Newhouse.objects.get(control='100003130103')
 
     def test_set_valid_control_value(self):
         """Are we really save the data?"""
-        Newhouse().read_data_file()
-        data = Newhouse.objects.get(control='100003130103')
-        self.assertNotEqual(data, None)
+        
+        self.assertEqual(self.newhouse.control, 100003130103)
 
     def test_set_valid_field_values(self):
         """
         Are we save the data correctly?
         Assume we have only one entry in the file for testing
         """
-        Newhouse().read_data_file()
-        row_names = Newhouse().get_row_names()
-        newhouse = Newhouse.objects.get(control='100003130103')
-
         with open(Newhouse.file_path, 'rb') as csvfile:
-            reader = csv.reader(csvfile, delimiter=',', skipinitialspace=True)
-            next(reader, None)  # skip the headers
+            reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
             for row in reader:
-                for i, rowname in enumerate(row_names):
-                    attr = getattr(newhouse, rowname)
-                    value = row[i+1][1:-1] if row[i+1][0] == "'" else row[i+1]
-                    self.assertEqual(int(attr), int(value))
+                for rowname in row.keys():
+                    attr = getattr(self.newhouse, rowname.lower())
+                    value = row[rowname]
+                    if row[rowname][0] == "'":
+                        value = row[rowname][1:-1]
+
+                    try:
+                        attr = int(attr)
+                        value = int(value)
+                    except ValueError:
+                        attr = Decimal(attr)
+                        value = Decimal(value)
+
+                    self.assertEqual(attr, value)

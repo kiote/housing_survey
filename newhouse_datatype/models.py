@@ -1,11 +1,12 @@
 import csv
+from decimal import *
 
 class Field:
     types = ['PositiveSmallIntegerField',
              'SmallIntegerField',
              'PositiveIntegerField',
              'IntegerField',
-             'FloatField'
+             'DecimalField'
             ]
     values = [{'min': 0, 'max': 255},
               {'min': -255, 'max': 255},
@@ -39,7 +40,7 @@ class PositiveIntegerField(Field):
 class IntegerField(Field):
     pass
 
-class FloatField(Field):
+class DecimalField(Field):
     pass
 
 class DataTypeFactory:
@@ -55,8 +56,8 @@ class DataTypeFactory:
         try:
             value = int(value)
         except ValueError:
-            value = float(value)
-            self.__class__ = FloatField
+            value = Decimal(value)
+            self.__class__ = DecimalField
             return None
 
         if abs(value) > Field.type_dictionary['PositiveSmallIntegerField']['max']: # not small
@@ -104,7 +105,11 @@ class NewhouseDatatype:
         with open(self.data_type_path, 'wb') as typefile:
             writer = csv.writer(typefile, delimiter = ',')
             for k, v in rows_to_write.iteritems():
-                writer.writerow([k, v, 'null = True'])
+                params = 'null = True'
+                if v == 'DecimalField':
+                    params = 'max_digits = 20, decimal_places = 10, null = True'
+
+                writer.writerow([k, v, params])
 
 
     def data_type_by_name(self, name):
@@ -112,7 +117,7 @@ class NewhouseDatatype:
                   SmallIntegerField,
                   PositiveIntegerField,
                   IntegerField,
-                  FloatField
+                  DecimalField
                 ]
 
         options = dict(zip(Field.types, values))

@@ -10,7 +10,7 @@ class DataTypeFactoryTest(TestCase):
                  {'SmallIntegerField': '-2'},
                  {'PositiveIntegerField': '1000000'},
                  {'IntegerField': '-1000000'},
-                 {'FloatField': '1.1'}
+                 {'DecimalField': '1.1'}
                 ]
         for case in cases:
             factory = DataTypeFactory(case.values()[0])

@@ -70,7 +70,7 @@ class Newhouse(models.Model):
     dbmissmort = models.SmallIntegerField(db_column = 'DBMISSMORT', null = True)
     lanpmt = models.SmallIntegerField(db_column = 'LANPMT', null = True)
     tpark = models.SmallIntegerField(db_column = 'TPARK', null = True)
-    wgt90geo = models.FloatField(db_column = 'WGT90GEO', null = True)
+    wgt90geo = models.DecimalField(db_column = 'WGT90GEO', null = True, max_digits = 20, decimal_places = 10)
     trash = models.SmallIntegerField(db_column = 'TRASH', null = True)
     jwash = models.SmallIntegerField(db_column = 'JWASH', null = True)
     market = models.SmallIntegerField(db_column = 'MARKET', null = True)
@@ -557,7 +557,7 @@ class Newhouse(models.Model):
     usfchg = models.SmallIntegerField(db_column = 'USFCHG', null = True)
     jmchtn = models.SmallIntegerField(db_column = 'JMCHTN', null = True)
     jmfaml = models.SmallIntegerField(db_column = 'JMFAML', null = True)
-    pwt = models.FloatField(db_column = 'PWT', null = True)
+    pwt = models.DecimalField(db_column = 'PWT', null = True, max_digits = 20, decimal_places = 10)
     fmra = models.PositiveIntegerField(db_column = 'FMRA', null = True)
     eboard = models.SmallIntegerField(db_column = 'EBOARD', null = True)
     fmrb = models.PositiveIntegerField(db_column = 'FMRB', null = True)
@@ -720,7 +720,7 @@ class Newhouse(models.Model):
     recrm = models.SmallIntegerField(db_column = 'RECRM', null = True)
     jaspip = models.SmallIntegerField(db_column = 'JASPIP', null = True)
     jotpip = models.SmallIntegerField(db_column = 'JOTPIP', null = True)
-    weight = models.FloatField(db_column = 'WEIGHT', null = True)
+    weight = models.DecimalField(db_column = 'WEIGHT', null = True, max_digits = 20, decimal_places = 10)
     garage = models.SmallIntegerField(db_column = 'GARAGE', null = True)
     jpvalu = models.SmallIntegerField(db_column = 'JPVALU', null = True)
     jdate = models.SmallIntegerField(db_column = 'JDATE', null = True)
@@ -769,25 +769,26 @@ class Newhouse(models.Model):
     def read_data_file(self):
         """Opens CSV-file with newhouse data and read it to database"""
         with open(self.file_path, 'rb') as csvfile:
-            reader = csv.reader(csvfile, delimiter=',', skipinitialspace=True)
-            next(reader, None)  # skip the headers
+            reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
+
+            max_lvalue = 0
+
             for row in reader:
-                nh = Newhouse(control = int(row[0][1:-1]))
-                for i, name in enumerate(self.get_row_names()):
-                    value = row[i+1][1:-1] if row[i+1][0] == "'" else row[i+1]
-                    setattr(nh, name, value)
+                nh = Newhouse(control = int(row['CONTROL'][1:-1]))
+                for column in row.keys():
+                    value = row[column]
+                    if value[0] == "'":
+                        value = value[1:-1]
+
+                    if column == 'LVALUE':
+                        if value > max_lvalue:
+                            max_lvalue = value
+
+                    setattr(nh, column.lower(), value)
+
                 nh.save()
 
-    def get_row_names(self):
-        """
-        Returns the list of names for rows in newhouse,
-        this list are used to save the data into the database,
-        so we don't need to have each row name in saving-to-database code
-        """
-        with open(self.columns_file_path, 'rb') as csvcolumns:
-            reader = csv.reader(csvcolumns, delimiter = ',')
-            names = [row[0].lower() for row in reader]
-        return names
+            print max_lvalue
 
     def generate_columns(self):
         """
