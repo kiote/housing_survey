@@ -16,6 +16,16 @@ class DataTypeFactoryTest(TestCase):
             factory = DataTypeFactory(case.values()[0])
             self.assertEqual(factory.__class__.__name__, case.keys()[0])
 
+    def test_return_valid_class_for_prev(self):
+        """Do we set datatype if there is previous datatype"""
+        cases = [{'expect': 'SmallIntegerField', 'prev': 'PositiveSmallIntegerField', 'value': '-1'},
+                 {'expect': 'IntegerField', 'prev': 'SmallIntegerField', 'value': '-1000000'},
+                ]
+
+        for case in cases:
+            factory = DataTypeFactory(case['value'], case['prev'])
+            self.assertEqual(factory.__class__.__name__, case['expect'])
+
 class FieldTestCase(TestCase):
     """Does it compares"""
     def test_cmp_gt(self):
@@ -37,7 +47,7 @@ class NewhouseDatatypeTest(TestCase):
     def setUp(self):
         NewhouseDatatype.file_path = 'data/sample/puf2013/newhouse.csv'
 
-    def test_data_type_by_name(self):
-        self.assertEquals(NewhouseDatatype().data_type_by_name('PositiveSmallIntegerField').__class__\
+    def test_data_type_class_by_name(self):
+        self.assertEquals(NewhouseDatatype().data_type_class_by_name('PositiveSmallIntegerField').__class__\
                           .__name__, 'PositiveSmallIntegerField'
                          )

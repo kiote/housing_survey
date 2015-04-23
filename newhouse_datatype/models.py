@@ -85,14 +85,10 @@ class NewhouseDatatype:
 
         with open(self.file_path, 'rb') as csvfile:
             reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
-            headers = reader.next()
-
-            # lets assume first, that all datatypes is PositiveSmallIntegerField
-            for column in headers:
-                headers_with_types[column] = Field.types[0]
-
+            
             for row in reader:
-                for column in headers:
+                for column in row.keys():
+                    headers_with_types.setdefault(column, 'PositiveSmallIntegerField')
                     prev_type = self.data_type_by_name(headers_with_types[column])
                     new_data_type = DataTypeFactory(row[column], str(prev_type.__class__.__name__))
                     
