@@ -19,7 +19,7 @@ class DataTypeFactoryTest(TestCase):
     def test_return_valid_class_for_prev(self):
         """Do we set datatype if there is previous datatype"""
         cases = [{'expect': 'SmallIntegerField', 'prev': 'PositiveSmallIntegerField', 'value': '-1'},
-                 {'expect': 'IntegerField', 'prev': 'SmallIntegerField', 'value': '-1000000'},
+                 {'expect': 'IntegerField', 'prev': 'PositiveIntegerField', 'value': '-1'},
                 ]
 
         for case in cases:

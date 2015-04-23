@@ -27,6 +27,9 @@ class Field:
         else:
             return 1
 
+    def _is_positive(self, string):
+        return string[0:8] == 'Positive'    
+
 
 class PositiveSmallIntegerField(Field):
     pass
@@ -63,18 +66,25 @@ class DataTypeFactory:
         if abs(value) > Field.type_dictionary['PositiveSmallIntegerField']['max']: # not small
             if value < 0: # not positive
                 self.__class__ = IntegerField
-            elif prev_type[0:8] == 'Positive': # not small, positive and was positive before
+            elif self._is_positive(prev_type): # not small, positive and was positive before
                 self.__class__ = PositiveIntegerField
             else: # not small, positive and wasn't positive before
                 self.__class__ = IntegerField
         else: # small
-            if value < 0: #not positive
+            if (value < 0) and (prev_type == 'PositiveSmallIntegerField'): # not positive and was small before
                 self.__class__ = SmallIntegerField
+            elif (value < 0): # not positive and wasn't small before
+                self.__class__ = IntegerField
+
+        # if we still think it's positive when it's negative
+        if (value < 0) and self._is_positive(prev_type) and self._is_positive(self.__class__.__name__):
+            new_type = self.__class__.__name__[8:]
+            self.__class__ = NewhouseDatatype().data_type_by_name(new_type)
 
 
 class NewhouseDatatype:
     # read from
-    file_path = 'data/sample/puf2013/newhouse.csv'
+    file_path = 'data/non-git/puf2013/newhouse.csv'
     
     # write to
     data_type_path = 'data/columns/newhouse.csv'
