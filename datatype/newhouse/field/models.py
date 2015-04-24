@@ -26,7 +26,7 @@ class PositiveSmallIntegerField(Field):
     def next(self):
         if not(self.value in self.val_range):
             return SmallIntegerField(self.value).next()
-        return PositiveSmallIntegerField()
+        return PositiveSmallIntegerField(self.value)
 
 
 class SmallIntegerField(Field):
@@ -35,7 +35,7 @@ class SmallIntegerField(Field):
     def next(self):
         if not(self.value in self.val_range):
             return PositiveIntegerField(self.value).next()
-        return SmallIntegerField()
+        return SmallIntegerField(self.value)
 
 
 class PositiveIntegerField(Field):
@@ -44,7 +44,7 @@ class PositiveIntegerField(Field):
     def next(self):
         if not(self.value in self.val_range):
             return IntegerField(self.value).next()
-        return PositiveIntegerField()
+        return PositiveIntegerField(self.value)
 
 
 class IntegerField(Field):
@@ -53,12 +53,12 @@ class IntegerField(Field):
     def next(self):
         if not(self.value in self.val_range):
             return DecimalField(self.value).next()
-        return IntegerField()
+        return IntegerField(self.value)
 
 
 class DecimalField(Field):
     def next(self):
-        return DecimalField()
+        return DecimalField(self.value)
 
 
 class DataTypeFactory:
