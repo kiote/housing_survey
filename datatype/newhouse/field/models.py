@@ -2,17 +2,14 @@ from decimal import *
 
 
 def data_type_by_name(name):
-    values = [PositiveSmallIntegerField,
-              SmallIntegerField,
-              PositiveIntegerField,
-              IntegerField,
-              DecimalField
-              ]
+    values = {'PositiveSmallIntegerField': PositiveSmallIntegerField,
+              'SmallIntegerField': SmallIntegerField,
+              'PositiveIntegerField': PositiveIntegerField,
+              'IntegerField': IntegerField,
+              'DecimalField': DecimalField,
+              }
 
-    print [str(value) for value in values]
-    options = dict(zip([str(value) for value in values], values))
-
-    return options[name]()
+    return values[name](0)
 
 
 class Field(object):
