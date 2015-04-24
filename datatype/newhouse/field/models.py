@@ -34,8 +34,7 @@ class PositiveSmallIntegerField(Field):
     def next(self):
         if self.is_decimal():
             return DecimalField(self.value)
-        print "%s <= %s <= %s" % (self.val_min, self.value, self.val_max)
-        print self.val_min <= self.value <= self.val_max
+
         if not(self.in_range()):
             return SmallIntegerField(self.value).next()
 
@@ -91,7 +90,7 @@ class DataTypeFactory:
 
     def produce(self):
         if not self.prev_type:
-            self.prev_type = 'PositiveSmallIntegerField' if self.value > 0 else 'SmallIntegerField'
+            self.prev_type = 'PositiveSmallIntegerField' if self.value >= 0 else 'SmallIntegerField'
 
         data_type = data_type_by_name(self.prev_type)
         return data_type(self.value).next().__class__.name
