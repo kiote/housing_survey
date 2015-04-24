@@ -763,11 +763,7 @@ class Newhouse(models.Model):
     amte = models.IntegerField(db_column = 'AMTE', null = True)
     otleak = models.SmallIntegerField(db_column = 'OTLEAK', null = True)
 
-
-
     file_path = 'data/non-git/puf2013/newhouse.csv'
-    columns_file_path = 'data/columns/newhouse.csv'
-    columns_generated_file_path = 'data/columns/generated/newhouse.gen'
 
     def read_data_file(self):
         """Opens CSV-file with newhouse data and read it to database"""
@@ -775,7 +771,7 @@ class Newhouse(models.Model):
             reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
 
             for row in reader:
-                nh = Newhouse(control = int(row['CONTROL'][1:-1]))
+                nh = Newhouse(control=int(row['CONTROL'][1:-1]))
                 for column in row.keys():
                     value = row[column]
 
@@ -787,20 +783,3 @@ class Newhouse(models.Model):
                 with warnings.catch_warnings():
                     warnings.filterwarnings('error')
                     nh.save()
-                    
-
-    def generate_columns(self):
-        """
-        Read prepared CSV-file with column names and data types and generate
-        Python-like sataments, based on this data
-        """
-        with open(self.columns_file_path, 'rb') as csvcolumns:
-            reader = csv.reader(csvcolumns, delimiter = ',')
-            f = open(self.columns_generated_file_path, 'w')
-            for row in reader:
-                more_params = row[2] if row[2] == "" else ', ' + row[2]
-
-                prepared_string = "%s = models.%s(db_column = '%s'%s)\n" % \
-                    (row[0].lower(), row[1], row[0], more_params)
-                f.write(prepared_string)
-            f.close()
