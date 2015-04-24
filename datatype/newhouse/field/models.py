@@ -2,14 +2,8 @@ from decimal import *
 
 
 def data_type_by_name(name):
-    values = {'PositiveSmallIntegerField': PositiveSmallIntegerField,
-              'SmallIntegerField': SmallIntegerField,
-              'PositiveIntegerField': PositiveIntegerField,
-              'IntegerField': IntegerField,
-              'DecimalField': DecimalField,
-              }
-
-    return values[name](0)
+    klass = globals()[name]
+    return klass(0)
 
 
 class Field(object):
@@ -68,7 +62,7 @@ class DecimalField(Field):
 
 
 class DataTypeFactory:
-    def __init__(self, value, prev_type):
+    def __init__(self, value, prev_type=''):
         self.value = value
         self.prev_type = prev_type
         self._clear_value()
