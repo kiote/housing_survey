@@ -1,6 +1,9 @@
 from decimal import *
 
+
 def data_type_by_name(name):
+    while name.find('.') != -1:
+        name = name[name.find('.')+1:]
     klass = globals()[name]
     return klass
 
@@ -93,7 +96,7 @@ class DataTypeFactory:
             self.prev_type = 'PositiveSmallIntegerField' if self.value >= 0 else 'SmallIntegerField'
 
         data_type = data_type_by_name(self.prev_type)
-        return data_type(self.value).next().__class__.name
+        return data_type(self.value).next().name
 
     def _clear_value(self):
         if self.value[0] == "'":

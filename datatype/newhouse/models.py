@@ -30,11 +30,12 @@ class NewhouseDatatype:
         return headers_with_types
 
     def write_types(self):
+        """Prepare CSV-file with column names and types"""
         rows_to_write = self.read_data_file()
         with open(self.data_type_path, 'wb') as typefile:
             writer = csv.writer(typefile, delimiter=',')
             for k, v in rows_to_write.iteritems():
-                params = 'null= True'
+                params = 'null=True'
                 if v == 'DecimalField':
                     params = 'max_digits=20, decimal_places=10, null=True'
 
