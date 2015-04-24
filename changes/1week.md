@@ -35,7 +35,7 @@ SMSA	CharField	max_length=4
 over 700 records more
 ```
 
-and auto-generated models from this csv-file. So only manual stem I'll need then is to create this csv files for all models with "field name – field type – params" inside.
+and auto-generated models from this csv-file. So only manual step I'll need then is to create this csv files for all models with "field name – field type – params" inside.
 
 Foreign keys and indexes are still needs to be added manually, but this automatization should significantly improve the development speed.
 
