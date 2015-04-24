@@ -70,7 +70,7 @@ class DataTypeFactory:
         if not self.prev_type:
             self.prev_type = 'PositiveSmallIntegerField' if self.value > 0 else 'SmallIntegerField'
 
-        self.__class__ = data_type_by_name(self.prev_type)(self.value).next()
+        self.__class__ = data_type_by_name(self.prev_type)(self.value).next().__class__
 
     def _clear_value(self):
         if self.value[0] == "'":
