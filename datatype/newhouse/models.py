@@ -25,7 +25,7 @@ class NewhouseDatatype:
                     except KeyError:
                         prev_type = ''
 
-                    headers_with_types[column] = DataTypeFactory(row[column], prev_type)
+                    headers_with_types[column] = DataTypeFactory(row[column], prev_type).produce()
                     
         return headers_with_types
 

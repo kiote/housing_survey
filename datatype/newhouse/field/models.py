@@ -1,62 +1,84 @@
 from decimal import *
 
-
 def data_type_by_name(name):
     klass = globals()[name]
     return klass
 
 
-class Field(object):
+class Field:
+    val_min = 0
+    val_max = 0
+    name = ''
+
     def __init__(self, value):
         self.value = value
 
-    def __str__(self):
-        return type(self).__name__
-
     def _is_positive(self):
-        return str(self)[0:8] == 'Positive'
+        return self.name[0:8] == 'Positive'
 
     def next(self):
         raise NotImplementedError("Must be implemented!")
 
+    def in_range(self):
+        return self.val_min <= self.value <= self.val_max
+
+    def is_decimal(self):
+        return not(Decimal(self.value) % 1 == 0)
+
 
 class PositiveSmallIntegerField(Field):
-    val_range = range(0, 255)
+    name = 'PositiveSmallIntegerField'
+    val_min = 0
+    val_max = 255
 
     def next(self):
-        if not(self.value in self.val_range):
+        if self.is_decimal():
+            return DecimalField(self.value)
+        print "%s <= %s <= %s" % (self.val_min, self.value, self.val_max)
+        print self.val_min <= self.value <= self.val_max
+        if not(self.in_range()):
             return SmallIntegerField(self.value).next()
+
         return PositiveSmallIntegerField(self.value)
 
 
 class SmallIntegerField(Field):
-    val_range = range(-255, 255)
+    name = 'SmallIntegerField'
+    val_min = -255
+    val_max = 255
 
     def next(self):
-        if not(self.value in self.val_range):
+        if self.is_decimal():
+            return DecimalField(self.value)
+
+        if not(self.in_range()):
             return PositiveIntegerField(self.value).next()
+
         return SmallIntegerField(self.value)
 
 
 class PositiveIntegerField(Field):
-    val_range = range(0, 10000000)
+    name = 'PositiveIntegerField'
+    val_min = 0
+    val_max = 10000000
 
     def next(self):
-        if not(self.value in self.val_range):
+        if not(self.in_range()):
             return IntegerField(self.value).next()
+
         return PositiveIntegerField(self.value)
 
 
 class IntegerField(Field):
-    val_range = range(-10000000, 10000000)
+    name = 'IntegerField'
 
     def next(self):
-        if not(self.value in self.val_range):
-            return DecimalField(self.value).next()
         return IntegerField(self.value)
 
 
 class DecimalField(Field):
+    name = 'DecimalField'
+
     def next(self):
         return DecimalField(self.value)
 
@@ -67,10 +89,12 @@ class DataTypeFactory:
         self.prev_type = prev_type
         self._clear_value()
 
+    def produce(self):
         if not self.prev_type:
             self.prev_type = 'PositiveSmallIntegerField' if self.value > 0 else 'SmallIntegerField'
 
-        self.__class__ = data_type_by_name(self.prev_type)(self.value).next().__class__
+        data_type = data_type_by_name(self.prev_type)
+        return data_type(self.value).next().__class__.name
 
     def _clear_value(self):
         if self.value[0] == "'":
