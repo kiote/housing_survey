@@ -3,7 +3,7 @@ from decimal import *
 
 def data_type_by_name(name):
     klass = globals()[name]
-    return klass(0)
+    return klass
 
 
 class Field(object):
