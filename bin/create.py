@@ -2,6 +2,8 @@ from newhouse.models import Newhouse
 from datatype.newhouse.models import NewhouseDatatype
 
 NewhouseDatatype().write_types()
-Newhouse().generate_columns()
+NewhouseDatatype().generate_columns()
 # copy columns
+# makemigrations
+# migrate
 Newhouse().read_data_file()
