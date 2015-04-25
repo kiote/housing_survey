@@ -1,58 +1,16 @@
-import csv
-from field.models import *
+from datatype.abstract.models import AbstractDatatype
+from newhouse.models import Newhouse
 
-class NewhouseDatatype:
-    # read from
-    file_path = 'data/non-git/puf2013/newhouse.csv'
 
-    # generate columns to
-    columns_generated_file_path = 'data/columns/generated/newhouse.gen'
-    
-    # write to
-    data_type_path = 'data/columns/newhouse.csv'
+class NewhouseDatatype(AbstractDatatype):
+    def __init__(self, file_path='data/non-git/puf2013/newhouse.csv',
+                 columns_generated_file_path='data/columns/generated/newhouse.gen',
+                 data_type_path='data/columns/newhouse.csv'):
+        AbstractDatatype.__init__(self, file_path, columns_generated_file_path, data_type_path)
 
-    def read_data_file(self):
-        """Opens CSV-file with newhouse data and set the columns datatypes"""
-        headers_with_types = {}
-
-        with open(self.file_path, 'rb') as csvfile:
-            reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
-            
-            for row in reader:
-                for column in row.keys():
-                    try:
-                        prev_type = str(data_type_by_name(headers_with_types[column]))
-                    except KeyError:
-                        prev_type = ''
-
-                    headers_with_types[column] = DataTypeFactory(row[column], prev_type).produce()
-                    
-        return headers_with_types
-
-    def write_types(self):
-        """Prepare CSV-file with column names and types"""
-        rows_to_write = self.read_data_file()
-        with open(self.data_type_path, 'wb') as typefile:
-            writer = csv.writer(typefile, delimiter=',')
-            for k, v in rows_to_write.iteritems():
-                params = 'null=True'
-                if v == 'DecimalField':
-                    params = 'max_digits=20, decimal_places=10, null=True'
-
-                writer.writerow([k, v, params])
-
-    def generate_columns(self):
+    def save_csv(self):
         """
-        Read prepared CSV-file with column names and data types and generate
-        Python-like sataments, based on this data
+        Opens CSV-file with newhouse data and read it to database
+        Newhouse model should be already configured
         """
-        with open(self.data_type_path, 'rb') as csvcolumns:
-            reader = csv.reader(csvcolumns, delimiter=',')
-            f = open(self.columns_generated_file_path, 'w')
-            for row in reader:
-                more_params = row[2] if row[2] == "" else ', ' + row[2]
-
-                prepared_string = "%s=models.%s(db_column='%s'%s)\n" % \
-                    (row[0].lower(), row[1], row[0], more_params)
-                f.write(prepared_string)
-            f.close()
+        AbstractDatatype(self.file_path).fill_model_by_csv_data(Newhouse)

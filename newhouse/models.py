@@ -1,6 +1,4 @@
 from django.db import models
-import csv
-import warnings
 
 
 class Newhouse(models.Model):
@@ -763,25 +761,3 @@ class Newhouse(models.Model):
     jsfchg=models.SmallIntegerField(db_column='JSFCHG', null=True)
     amte=models.IntegerField(db_column='AMTE', null=True)
     otleak=models.SmallIntegerField(db_column='OTLEAK', null=True)
-
-
-    file_path = 'data/non-git/puf2013/newhouse.csv'
-
-    def read_data_file(self):
-        """Opens CSV-file with newhouse data and read it to database"""
-        with open(self.file_path, 'rb') as csvfile:
-            reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
-
-            for row in reader:
-                nh = Newhouse(control=int(row['CONTROL'][1:-1]))
-                for column in row.keys():
-                    value = row[column]
-
-                    if value[0] == "'":
-                        value = value[1:-1]
-
-                    setattr(nh, column.lower(), value)
-
-                with warnings.catch_warnings():
-                    warnings.filterwarnings('error')
-                    nh.save()
