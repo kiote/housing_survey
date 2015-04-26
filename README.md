@@ -52,7 +52,7 @@ Default login to admin interface is ```admin``` with password ```pass```
 
 #### Non-git files (/data/non-git)
 
-Original data files, see Import data section
+Original data files, see [Import data](https://github.com/kiote/housing_survey#import-data) section
 
 #### Sample files (/data/sample)
 
