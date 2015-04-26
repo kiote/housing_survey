@@ -53,7 +53,7 @@ class AbstractDatatype:
             for row in reader:
                 more_params = row[2] if row[2] == "" else ', ' + row[2]
 
-                prepared_string = "%s=models.%s(db_column='%s'%s)\n" % \
+                prepared_string = "%s = models.%s(db_column='%s'%s)\n" % \
                     (row[0].lower(), row[1], row[0], more_params)
                 f.write(prepared_string)
             f.close()

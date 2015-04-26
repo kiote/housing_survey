@@ -28,4 +28,4 @@ class AbstractDatatypeTestCase(TestCase):
 
         with open(self.generated, 'rb') as generated:
             line = generated.readline()
-            self.assertEqual(line, "cellar=models.PositiveSmallIntegerField(db_column='CELLAR', null=True)\n")
+            self.assertEqual(line, "cellar = models.PositiveSmallIntegerField(db_column='CELLAR', null=True)\n")
