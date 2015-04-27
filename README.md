@@ -6,19 +6,14 @@ This project imports data from American Housing Survey (AHS) to MySQL database.
 
 ## Import data
 
-to be able to import data, you should put data file into the
-
-```
-data/non-git
-```
-
-folder. For example, newhouse.csv should be putted into
-
-```
-data/non-git/puf2013/newhouse.csv
-```
-
-Since github can't hold such a big files, this manual step exists.
+Since github can't store big files, you should run downloader (under vagrant shell):
+ 
+ ```
+ cd /webapps/housing_survey
+ source bin/activate
+ cd housing-survey
+ python manage.py shell < bin/import.py
+ ```
 
 ## Project Structure
 
