@@ -1,0 +1,7 @@
+CONTROL,IntegerField,null=True
+RAD,IntegerField,null=True
+SMSA,PositiveIntegerField,null=True
+RAH,PositiveSmallIntegerField,null=True
+JRAD,SmallIntegerField,null=True
+RAS,PositiveSmallIntegerField,null=True
+JRAS,SmallIntegerField,null=True

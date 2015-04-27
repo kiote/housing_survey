@@ -1,5 +1,4 @@
 from django.db import models
-from newhouse.models import Newhouse
 
 
 class Ratiov(models.Model):

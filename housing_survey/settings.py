@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'newhouse',
     'ratiov',
+    'homimp'
 ]
 
 MIDDLEWARE_CLASSES = [
