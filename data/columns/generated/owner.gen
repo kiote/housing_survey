@@ -1,0 +1,4 @@
+control = models.IntegerField(db_column='CONTROL', null=True)
+smsa = models.PositiveIntegerField(db_column='SMSA', null=True)
+jwnher = models.SmallIntegerField(db_column='JWNHER', null=True)
+ownhere = models.SmallIntegerField(db_column='OWNHERE', null=True)

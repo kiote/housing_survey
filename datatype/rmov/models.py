@@ -1,11 +1,11 @@
 from datatype.abstract.models import AbstractDatatype
-from ratiov.models import Ratiov
+from rmov.models import Rmov
 
 
-class RatiovDatatype(AbstractDatatype):
+class RmovDatatype(AbstractDatatype):
     def save_csv(self):
         """
         Opens CSV-file with newhouse data and read it to database
         Newhouse model should be already configured
         """
-        AbstractDatatype('ratiov').fill_model_by_csv_data(Ratiov)
+        AbstractDatatype('rmov').fill_model_by_csv_data(Rmov)

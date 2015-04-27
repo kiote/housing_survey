@@ -4,12 +4,10 @@ from field.models import *
 
 
 class AbstractDatatype:
-    def __init__(self, file_path='path/to/csv/with_data.csv',
-                 columns_generated_file_path='path/to/generated/columns.gen',
-                 data_type_path='path/to/csv_with_types.csv'):
-        self.file_path = file_path
-        self.columns_generated_file_path = columns_generated_file_path
-        self.data_type_path = data_type_path
+    def __init__(self, base_name=''):
+        self.file_path = 'data/non-git/puf2013/' + base_name + '.csv'
+        self.columns_generated_file_path = 'data/columns/generated/' + base_name + '.gen'
+        self.data_type_path = 'data/columns/' + base_name + '.csv'
 
     def _generate_types(self):
         """Opens CSV-file with newhouse data and set the columns datatypes"""

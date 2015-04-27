@@ -39,7 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'newhouse',
     'ratiov',
-    'homimp'
+    'homimp',
+    'mortg',
+    'omov',
+    'owner',
+    'person',
+    'repwgt',
+    'rmov',
+    'topical'
 ]
 
 MIDDLEWARE_CLASSES = [

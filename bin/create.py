@@ -1,8 +1,8 @@
 from datatype.newhouse.models import NewhouseDatatype
 
-NewhouseDatatype().generate_columns()
+NewhouseDatatype('newhouse').generate_columns()
 # copy columns
 # add to settings
 # makemigrations
 # migrate
-NewhouseDatatype().save_csv()
+NewhouseDatatype('newhouse').save_csv()
