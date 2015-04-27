@@ -3,8 +3,7 @@ from newhouse.models import Newhouse
 
 
 class Ratiov(models.Model):
-    control = models.OneToOneField(Newhouse, primary_key=True)
-
+    control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
     rgroc = models.SmallIntegerField(db_column='RGROC', null=True)
     rmedi = models.SmallIntegerField(db_column='RMEDI', null=True)
     smsa = models.PositiveIntegerField(db_column='SMSA', null=True)
