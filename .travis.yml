@@ -7,10 +7,10 @@ services: mysql
 
 env:
   global:
+    - BUILD_ON_TRAVIS=true
     - DJANGO_SETTINGS_MODULE="housing_survey.settings"
     - PYTHONPATH="/home/travis/build/kiote/housing_survey"
     - PIP_USE_MIRRORS=true
-    - BUILD_ON_TRAVIS=true
   matrix:
     - DJANGO=1.7 DB=mysql
 
