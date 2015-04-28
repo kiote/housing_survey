@@ -20,7 +20,8 @@ install:
   - pip install -q -r requirements.txt
 
 before_script:
-  - mysql -e 'create database travis_ci_db;'
+  - mysql -e 'create database travis_ci_db;' -uroot
+  - mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'travis'@'localhost';" -uroot
   - python manage.py syncdb --noinput
 
 #command to run the test suite
