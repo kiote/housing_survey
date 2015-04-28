@@ -8,7 +8,7 @@ import csv
 
 class NewhouseTestCase(TestCase):
     def setUp(self):
-        NewhouseDatatype('data/sample/puf2013/newhouse.csv').save_csv()
+        NewhouseDatatype('newhouse', True).save_csv()
         self.newhouse = Newhouse.objects.get(control='100003130103')
 
     def test_set_valid_control_value(self):
