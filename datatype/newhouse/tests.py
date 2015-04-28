@@ -21,7 +21,7 @@ class NewhouseTestCase(TestCase):
         Are we save the data correctly?
         Assume we have only one entry in the file for testing
         """
-        with open(NewhouseDatatype('data/sample/puf2013/newhouse.csv').file_path, 'rb') as csvfile:
+        with open(NewhouseDatatype('newhouse', True).file_path, 'rb') as csvfile:
             reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
             for row in reader:
                 for rowname in row.keys():
