@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Repwgt(models.Model):
+    class Meta:
+        db_table = 'ahs_repwgt'
+
     control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
 
     splt2wgt58 = models.PositiveIntegerField(db_column='SPLT2WGT58', null=True)

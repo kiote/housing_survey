@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Person(models.Model):
+    class Meta:
+        db_table = 'ahs_person'
+
     control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
 
     pqint = models.SmallIntegerField(db_column='PQINT', null=True)

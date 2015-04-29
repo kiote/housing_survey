@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Homimp(models.Model):
+    class Meta:
+        db_table = 'ahs_homimp'
+
     control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
 
     rad = models.IntegerField(db_column='RAD', null=True)

@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Newhouse(models.Model):
+    class Meta:
+        db_table = 'ahs_newhouse'
+
     control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
 
     cellar=models.SmallIntegerField(db_column='CELLAR', null=True)

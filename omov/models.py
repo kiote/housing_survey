@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Omov(models.Model):
+    class Meta:
+        db_table = 'ahs_omov'
+
     control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
 
     smsa = models.PositiveIntegerField(db_column='SMSA', null=True)

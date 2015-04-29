@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Mortg(models.Model):
+    class Meta:
+        db_table = 'ahs_mortg'
+
     control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
 
     ptchyr3 = models.SmallIntegerField(db_column='PTCHYR3', null=True)

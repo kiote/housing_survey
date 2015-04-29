@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Rmov(models.Model):
+    class Meta:
+        db_table = 'ahs_rmov'
+
     control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
 
     jdbinreas = models.SmallIntegerField(db_column='JDBINREAS', null=True)

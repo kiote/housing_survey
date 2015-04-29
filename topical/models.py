@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Topical(models.Model):
+    class Meta:
+        db_table = 'ahs_topical'
+
     control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
 
     eage = models.SmallIntegerField(db_column='EAGE', null=True)
