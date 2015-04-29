@@ -44,7 +44,7 @@ class Person(models.Model):
     jpqsal = models.SmallIntegerField(db_column='JPQSAL', null=True)
     jpqint = models.SmallIntegerField(db_column='JPQINT', null=True)
     jpqothnr = models.SmallIntegerField(db_column='JPQOTHNR', null=True)
-    pline = models.PositiveSmallIntegerField(db_column='PLINE', null=True)
+    pline = models.PositiveSmallIntegerField(db_column='PLINE', null=True, db_index=True)
     jrace = models.SmallIntegerField(db_column='JRACE', null=True)
     jatvty = models.SmallIntegerField(db_column='JATVTY', null=True)
     jpqwkcmp = models.SmallIntegerField(db_column='JPQWKCMP', null=True)
