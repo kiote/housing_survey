@@ -4,6 +4,18 @@
 
 This project imports data from American Housing Survey (AHS) to MySQL database.
 
+# Installation
+
+## Requirements
+
+- [Ansible](http://docs.ansible.com/intro_installation.html)
+- [Vagrant](http://www.vagrantup.com/downloads.html)
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
+## Init script
+
+
+
 ## Import data
 
 Since github can't store big files, you should run downloader (under vagrant shell):
