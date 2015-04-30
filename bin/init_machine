@@ -19,7 +19,7 @@ def run_subprocess(process):
 sys_info = {'git': {'path': 'git',
                     'installed': True},
             'package': {'remote_path': 'https://www.dropbox.com/s/o7h7vezkx16kyiw/package.box?dl=1',
-                        'local_path': 'package.box'},
+                        'local_path': 'ansible-django-stack/package.box'},
             'vagrant': {'path': 'vagrant'},
             'ansible': {'path': 'ansible'}}
 
@@ -71,7 +71,7 @@ if error:
 # init vm
 #
 print '---> Add VM box...'
-run_subprocess('cd ansible-django-stack;'+sys_info['vagrant']['path'] + ' box add ahs_box ./' + sys_info['package']['local_path'])
+run_subprocess(sys_info['vagrant']['path'] + sys_info['package']['local_path'])
 
 print '---> Init VM box...'
 run_subprocess('cd ansible-django-stack;'+sys_info['vagrant']['path'] + ' init ahs_box --force')
