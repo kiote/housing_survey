@@ -46,7 +46,7 @@ vagrant ssh
 Now you can do whatever you want with mysql:
 
 ```
-mysql -uahs -p123456
+mysql -uahs -p12345
 ```
 
 ##
