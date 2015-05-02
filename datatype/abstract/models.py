@@ -46,7 +46,7 @@ class AbstractDatatype:
 
     def generate_columns(self):
         """
-        Read prepared CSV-file with column names and data types and generate
+        Read prepared CSV-file with column names and data types and then generate
         Python-like statements, based on this data
         """
         self._write_types()

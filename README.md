@@ -107,3 +107,12 @@ data/sample/puf2013/newhouse.csv
 ```
 
 contains small part of original AHS data, for unit-tests.
+
+### Datatype files (/datatype)
+
+This directory contains data-saving logic for each model. 
+Every class here has AbstractDatatype as a parent. 
+
+Abstract datatype class responsible to all csv-related operations:
+- reading csv files and setting type of column, depending of data inside of this column;
+- reading csv files and save it to model's fields.

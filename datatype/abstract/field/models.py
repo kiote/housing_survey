@@ -1,3 +1,14 @@
+"""
+This module provides main work on defining field's datatype.
+To define datatype it does:
+1) assume by default datatype = PositiveSmallInteger ("smallest" of possible datatypes);
+2) if we have some value, which is beyond the limits of current datatype, then we make current datatype
+    to equals "next" datatype, the order for next is:
+    PositiveSmallInteger -> SmallInteger -> PositiveInteger -> Integer -> Decimal
+
+Main class here is DataTypeFactory which trying to "produce" right type based on the value.
+Value is just one of the column values.
+"""
 from decimal import *
 
 

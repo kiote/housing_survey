@@ -21,7 +21,9 @@ sys_info = {'git': {'path': 'git',
             'package': {'remote_path': 'https://www.dropbox.com/s/o7h7vezkx16kyiw/package.box?dl=1',
                         'local_path': 'ansible-django-stack/package.box'},
             'vagrant': {'path': 'vagrant'},
-            'ansible': {'path': 'ansible'}}
+            'ansible': {'path': 'ansible'},
+            'repo': {'app': 'git@github.com:kiote/housing_survey.git',
+                     'vm': 'git@github.com:kiote/ansible-django-stack.git'}}
 
 
 #
@@ -36,10 +38,10 @@ if error:
 
 
 print '---> Cloning VM...'
-run_subprocess(sys_info['git']['path'] + " clone git@github.com:kiote/ansible-django-stack.git")
+run_subprocess(sys_info['git']['path'] + " clone " + sys_info['repo']['vm'])
 
 print '---> Cloning application...'
-run_subprocess(sys_info['git']['path'] + " clone git@github.com:kiote/housing_survey.git")
+run_subprocess(sys_info['git']['path'] + " clone " + sys_info['repo']['app'])
 
 
 #
