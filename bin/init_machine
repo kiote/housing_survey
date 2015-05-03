@@ -76,7 +76,7 @@ print '---> Add VM box...'
 run_subprocess(sys_info['vagrant']['path'] + sys_info['package']['local_path'])
 
 print '---> Init VM box...'
-run_subprocess('cd ansible-django-stack;'+sys_info['vagrant']['path'] + ' init ahs_box --force')
+run_subprocess('cd ansible-django-stack;'+sys_info['vagrant']['path'] + ' init --force ahs_box package.box')
 
 print '---> Running box...'
 run_subprocess('cd ansible-django-stack;'+sys_info['vagrant']['path'] + ' up')
