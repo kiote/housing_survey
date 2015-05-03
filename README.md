@@ -8,6 +8,7 @@ This project imports data from American Housing Survey (AHS) to MySQL database.
 
 ## Requirements
 
+- Git
 - Python - should be in your system already
 - [Ansible](http://docs.ansible.com/intro_installation.html)
 - [Vagrant](http://www.vagrantup.com/downloads.html)
