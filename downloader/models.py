@@ -1,5 +1,5 @@
 import urllib2
-import os
+import os, errno
 import zipfile
 
 
@@ -15,6 +15,13 @@ class Downloader:
         self.files = self.files
 
     def download(self):
+        try:
+            os.makedirs(self.ahs_2013_path)
+        except OSError as exc:
+            if exc.errno == errno.EEXIST and os.path.isdir(self.ahs_2013_path):
+                pass
+            else:
+                raise
         for file_info in self.files.itervalues():
             if not os.path.isfile(file_info['zip_file']):
                 response = urllib2.urlopen(file_info['remote'])
