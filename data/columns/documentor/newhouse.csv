@@ -1,96 +1,20 @@
-CELLAR,Unit has a basement
-JWHNHD,Edit flag for WHNHD
-OTHFN,Number of other finished rooms in unit
-NROWNR,Ownership shared w/ person not living here
-WMQUAL,Moved to obtain higher quality unit
-CFUEL,Fuel used most for cooking
-JHHPAR,Edit flag for HHPAR
-MAJR3,Polite/considerate of home (major repairs)
-MAJR2,Solves major problems quickly
-MAJR1,Starts major maintenance/repairs soon enough
-FLOT,Heating equipment vented to outside
-JILEAK,Edit flag for ILEAK
-WMNFIT,Moved because unit was condemned
-JFRENT,Edit flag for FRENT
-JFOTHF,Edit flag for FOTHF
-WNOTHR,Chose neighborhood for other reasons
-MOPERM,# months since occupied as permanent home
-NOINT,Noninterview reason
-JRATS,Edit flag for RATS
-EMISSW,Outside walls missing siding/bricks/etc
-OARSYS,Unit has another central a/c system
-JMCLOS,Edit flag for MCLOS
-EMISSR,Roof missing shingles/other roofing materials
-JQOTHER,Edit flag for QOTHER
-HHPQWKCMP,Householder received workers compensation or other disability payments
-HOTPIP,Unit has hot & cold running water
-ISTATUS,Interview status
-JRATFREQ,Edit flag for RATFREQ
-JMPRIV,Edit flag for MPRIV
-EXPOSE,Type B interior exposed to elements
-ILEAK,Any inside water leaks in last 12 months
-JELDUS,Edit flag for ELDUS
-DBOUT1WHY,Reason first out-mover group moved out of home
-JRSHOP,Edit flag for RSHOP
-PREOCC,Received unit as gift or purchased it
-USEOTHR,Household uses other fuels
-FLRENT,Frequency of land/site rent payment
-WHYCD1,Unit cold due to utility interruption
-JHFUEL,Edit flag for HFUEL
-MOSOCT,Unit is typically occupied in October
-SAMEGAS,Gas flat billed
-M12ROACH,Roaches seen in unit recently
-JOAFUE,Edit flag for OAFUE
-MOSALL,Unit is typically occupied year-round
-DFUEL,Fuel used by clothes dryer
-WATER,Source of water for unit
-JM12ROACH,Edit flag for M12ROACH
-WHFIN,Liked unit for financial reasons
-MCNT,Number of regular mortgages
-FRPLI,Fireplace has inserts
-WHYRD,Liked unit because of yard/trees/view
-FPINS,Fireplace has inserts
-MVCNT1,Number of people in mover group #1
-MVCNT2,Number of people in mover group #2
-MVCNT3,Number of people in mover group #3
-WNSAFETY,Liked unit because of safety
-BUYG2,Pay for gas separately
-JHSTAY,Edit flag for HSTAY
-JVALU,Edit flag for VALU
-EROACH,Evidence of roaches in unit
-HHPMEMRY,Householder has difficulty concentrating or remembering
-JDISPL,Edit flag for DISPL
-JFCOLD,Edit flag for FCOLD
-DBMISSMORT,Inability to pay mortgage
-LANPMT,Land rent included with mortgage payment
-TPARK,Number of mobile homes in group
-WGT90GEO,Final weight based on 1990 Census geography
-TRASH,Unit has working built-in trash compactor
-JWASH,Edit flag for WASH
-MARKET,Unit for rent only, sale only, or either
-JAMTI,Edit flag for AMTI
-JELLAR,Edit flag for ELLAR
-JAMTO,Edit flag for AMTO
-JAMTE,Edit flag for AMTE
-JAMTG,Edit flag for AMTG
-JAMTF,Edit flag for AMTF
-JHHPQSS,Edit flag for HHPQSS
-LAUNDY,Number of laundry/utility rooms in unit
-ELEV,Working passenger elevator
-HHSPOS,Line number of spouse of householder
-JHHMAR,Edit flag for HHMAR
-JAMTT,Edit flag for AMTT
-JAMTW,Edit flag for AMTW
-JTXRE,Edit flag for TXRE
-DIRAC,Number of offices having direct access
-JBILLT,Edit flag for BILLT
-JBILLW,Edit flag for BILLW
-WATERS,Water safe for drinking & cooking
-DBOUT1WHER,Where first out-mover group moved
-SNITEV,Number of nights owner spends at vacant/URE unit
-JUSPER,Edit flag for USPER
-JBILLE,Edit flag for BILLE
-JBILLG,Edit flag for BILLG
-JBILLF,Edit flag for BILLF
-COOK,Unit has working cookstove or range/oven
-M12ROD,Rodents seen in unit recently
+WATERD,Source of drinking water  Unit 
+JHOTFE,Edit flag for 
+MG,Any mortgages on this property  Housing Cost 
+LVALUE,Current value of land  Housing Cost 
+JMONHH,Edit flag for 
+HPMP,Heat pump - 
+NRPAYM,Person not living here help pay mortgage/util  Household Composition 
+HHGRAD,Education level of householder  Household Composition 
+JSEGAS,Edit flag for 
+HALFB,Number of half bathrooms in unit  Unit 
+MOSNOV,Unit is typically occupied in November Unit 
+OTHCLD,Unit cold for some other reason  Unit Quality 
+BILLO,Type of billing for fuel oil  Utilities 
+L50A,Very low income limit (minimum)  Income Limits 
+JNOTHR,Edit flag for 
+L50B,Very low income limit (maximum)  Income Limits 
+TLRMOV,Number of people moved into unit in last 2 years  Recent Movers 
+FLOORS,Number of stories in building  Unit 
+JURNER,Edit flag for 
+JMHOUS,Edit flag for 
