@@ -28,69 +28,69 @@ ISTATUS,Interview status
 JRATFREQ,Edit flag for RATFREQ
 JMPRIV,Edit flag for MPRIV
 EXPOSE,Type B interior exposed to elements
-ILEAK,Any inside water leaks in last 
-JELDUS,Edit flag for 
-DBOUT1WHY,Reason first out-mover group moved out of home Doubling Up 
-JRSHOP,Edit flag for 
-PREOCC,Received unit as gift or purchased it  Unit 
-USEOTHR,Household uses other fuels Utilities 
-FLRENT,Frequency of land/site rent payment  Housing Cost 
-WHYCD1,Unit cold due to utility interruption  Unit Quality 
-JHFUEL,Edit flag for 
-MOSOCT,Unit is typically occupied in October Unit 
-SAMEGAS,Gas flat billed Utilities 
-M12ROACH,Roaches seen in unit recently   Unit Quality 
-JOAFUE,Edit flag for 
-MOSALL,Unit is typically occupied year-round Unit 
-DFUEL,Fuel used by clothes dryer  Utilities 
-WATER,Source of water for unit  Unit 
-JM12ROACH,Edit flag for 
-WHFIN,Liked unit for financial reasons  Recent Movers 
-MCNT,Number of regular mortgages  Housing Cost 
-FRPLI,Fireplace has inserts  Unit 
-WHYRD,Liked unit because of yard/trees/view  Recent Movers 
-FPINS,Fireplace has inserts  Unit 
-MVCNT1,Number of people in mover group #1  Recent Movers 
-MVCNT2,Number of people in mover group #2  Recent Movers 
-MVCNT3,Number of people in mover group #3  Recent Movers 
-WNSAFETY,Liked unit because of safety Recent Movers 
-BUYG2,Pay for gas separately  Utilities 
-JHSTAY,Edit flag for 
-JVALU,Edit flag for 
-EROACH,Evidence of roaches in unit   Unit Quality 
-HHPMEMRY,Householder has difficulty concentrating or remembering Household Composition 
-JDISPL,Edit flag for 
-JFCOLD,Edit flag for 
-DBMISSMORT,Inability to pay mortgage Doubling Up 
-LANPMT,Land rent included with mortgage payment  Housing Cost 
-TPARK,Number of mobile homes in group  Mobile Homes  
-WGT90GEO,Final weight based on 
-TRASH,Unit has working built-in trash compactor  Unit 
-JWASH,Edit flag for 
-MARKET,"Unit for rent only, sale only, or either  Sample status, weights, interview status "
-JAMTI,Edit flag for 
-JELLAR,Edit flag for 
-JAMTO,Edit flag for 
-JAMTE,Edit flag for 
-JAMTG,Edit flag for 
-JAMTF,Edit flag for 
-JHHPQSS,Edit flag for 
-LAUNDY,Number of laundry/utility rooms in unit  Unit 
-ELEV,Working passenger elevator  Unit 
-HHSPOS,Line number of spouse of householder  Household Composition 
-JHHMAR,Edit flag for 
-JAMTT,Edit flag for 
-JAMTW,Edit flag for 
-JTXRE,Edit flag for 
-DIRAC,Number of offices having direct access  Unit 
-JBILLT,Edit flag for 
-JBILLW,Edit flag for 
-WATERS,Water safe for drinking & cooking  Unit Quality 
-DBOUT1WHER,Where first out-mover group moved Doubling Up 
-SNITEV,Number of nights owner spends at vacant/
-JUSPER,Edit flag for 
-JBILLE,Edit flag for 
-JBILLG,Edit flag for 
-JBILLF,Edit flag for 
-COOK,Unit has working cookstove or range/oven  Unit 
-M12ROD,Rodents seen in unit recently   Unit Quality 
+ILEAK,Any inside water leaks in last 12 months
+JELDUS,Edit flag for ELDUS
+DBOUT1WHY,Reason first out-mover group moved out of home
+JRSHOP,Edit flag for RSHOP
+PREOCC,Received unit as gift or purchased it
+USEOTHR,Household uses other fuels
+FLRENT,Frequency of land/site rent payment
+WHYCD1,Unit cold due to utility interruption
+JHFUEL,Edit flag for HFUEL
+MOSOCT,Unit is typically occupied in October
+SAMEGAS,Gas flat billed
+M12ROACH,Roaches seen in unit recently
+JOAFUE,Edit flag for OAFUE
+MOSALL,Unit is typically occupied year-round
+DFUEL,Fuel used by clothes dryer
+WATER,Source of water for unit
+JM12ROACH,Edit flag for M12ROACH
+WHFIN,Liked unit for financial reasons
+MCNT,Number of regular mortgages
+FRPLI,Fireplace has inserts
+WHYRD,Liked unit because of yard/trees/view
+FPINS,Fireplace has inserts
+MVCNT1,Number of people in mover group #1
+MVCNT2,Number of people in mover group #2
+MVCNT3,Number of people in mover group #3
+WNSAFETY,Liked unit because of safety
+BUYG2,Pay for gas separately
+JHSTAY,Edit flag for HSTAY
+JVALU,Edit flag for VALU
+EROACH,Evidence of roaches in unit
+HHPMEMRY,Householder has difficulty concentrating or remembering
+JDISPL,Edit flag for DISPL
+JFCOLD,Edit flag for FCOLD
+DBMISSMORT,Inability to pay mortgage
+LANPMT,Land rent included with mortgage payment
+TPARK,Number of mobile homes in group
+WGT90GEO,Final weight based on 1990 Census geography
+TRASH,Unit has working built-in trash compactor
+JWASH,Edit flag for WASH
+MARKET,Unit for rent only, sale only, or either
+JAMTI,Edit flag for AMTI
+JELLAR,Edit flag for ELLAR
+JAMTO,Edit flag for AMTO
+JAMTE,Edit flag for AMTE
+JAMTG,Edit flag for AMTG
+JAMTF,Edit flag for AMTF
+JHHPQSS,Edit flag for HHPQSS
+LAUNDY,Number of laundry/utility rooms in unit
+ELEV,Working passenger elevator
+HHSPOS,Line number of spouse of householder
+JHHMAR,Edit flag for HHMAR
+JAMTT,Edit flag for AMTT
+JAMTW,Edit flag for AMTW
+JTXRE,Edit flag for TXRE
+DIRAC,Number of offices having direct access
+JBILLT,Edit flag for BILLT
+JBILLW,Edit flag for BILLW
+WATERS,Water safe for drinking & cooking
+DBOUT1WHER,Where first out-mover group moved
+SNITEV,Number of nights owner spends at vacant/URE unit
+JUSPER,Edit flag for USPER
+JBILLE,Edit flag for BILLE
+JBILLG,Edit flag for BILLG
+JBILLF,Edit flag for BILLF
+COOK,Unit has working cookstove or range/oven
+M12ROD,Rodents seen in unit recently
