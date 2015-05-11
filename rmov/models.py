@@ -13,7 +13,7 @@ class Rmov(models.Model):
     jxunit = models.SmallIntegerField(db_column='JXUNIT', null=True)
     xcoop = models.SmallIntegerField(db_column='XCOOP', null=True)
     jxper = models.SmallIntegerField(db_column='JXPER', null=True)
-    smsa = models.PositiveIntegerField(db_column='SMSA', null=True)
+    smsa = models.PositiveIntegerField(db_column='SMSA', null=True, db_index=True)
     dbinreas = models.SmallIntegerField(db_column='DBINREAS', null=True)
     dbinwher = models.SmallIntegerField(db_column='DBINWHER', null=True)
     dbinvol = models.SmallIntegerField(db_column='DBINVOL', null=True)

@@ -4,6 +4,9 @@ from django.db import models
 class Person(models.Model):
     class Meta:
         db_table = 'ahs_person'
+        index_together = [
+            ['control', 'pline']
+        ]
 
     control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
 
@@ -80,7 +83,7 @@ class Person(models.Model):
     jpqdiv = models.SmallIntegerField(db_column='JPQDIV', null=True)
     jitshp = models.SmallIntegerField(db_column='JITSHP', null=True)
     jpqss = models.SmallIntegerField(db_column='JPQSS', null=True)
-    smsa = models.PositiveIntegerField(db_column='SMSA', null=True)
+    smsa = models.PositiveIntegerField(db_column='SMSA', null=True, db_index=True)
     jnusyr = models.SmallIntegerField(db_column='JNUSYR', null=True)
     person = models.PositiveSmallIntegerField(db_column='PERSON', null=True)
     jpqsalnr = models.SmallIntegerField(db_column='JPQSALNR', null=True)

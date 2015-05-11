@@ -42,7 +42,7 @@ class Topical(models.Model):
     cefspkrelg = models.SmallIntegerField(db_column='CEFSPKRELG', null=True)
     dpgenert = models.SmallIntegerField(db_column='DPGENERT', null=True)
     ptusshut = models.SmallIntegerField(db_column='PTUSSHUT', null=True)
-    smsa = models.PositiveIntegerField(db_column='SMSA', null=True)
+    smsa = models.PositiveIntegerField(db_column='SMSA', null=True, db_index=True)
     ptcostptr = models.IntegerField(db_column='PTCOSTPTR', null=True)
     cefdisrspct = models.SmallIntegerField(db_column='CEFDISRSPCT', null=True)
     cefspkprblm = models.SmallIntegerField(db_column='CEFSPKPRBLM', null=True)

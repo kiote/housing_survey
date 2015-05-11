@@ -210,7 +210,7 @@ class Mortg(models.Model):
     matbuy = models.SmallIntegerField(db_column='MATBUY', null=True)
     hybmyr2 = models.SmallIntegerField(db_column='HYBMYR2', null=True)
     hybmyr3 = models.SmallIntegerField(db_column='HYBMYR3', null=True)
-    smsa = models.PositiveIntegerField(db_column='SMSA', null=True)
+    smsa = models.PositiveIntegerField(db_column='SMSA', null=True, db_index=True)
     balamt = models.IntegerField(db_column='BALAMT', null=True)
     adjrtf2 = models.SmallIntegerField(db_column='ADJRTF2', null=True)
     junpbal = models.SmallIntegerField(db_column='JUNPBAL', null=True)

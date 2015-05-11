@@ -7,6 +7,6 @@ class Owner(models.Model):
 
     control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
 
-    smsa = models.PositiveIntegerField(db_column='SMSA', null=True)
+    smsa = models.PositiveIntegerField(db_column='SMSA', null=True, db_index=True)
     jwnher = models.SmallIntegerField(db_column='JWNHER', null=True)
     ownhere = models.SmallIntegerField(db_column='OWNHERE', null=True)
