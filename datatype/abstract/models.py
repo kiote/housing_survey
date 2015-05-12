@@ -5,9 +5,10 @@ from field.models import *
 
 class AbstractDatatype:
     def __init__(self, base_name='', sample=False):
-        self.file_path = 'data/non-git/puf2013/' + base_name + '.csv'
+        self.file_path = 'data/non-git/puf2013/metro/' + base_name + '.csv'
         self.columns_generated_file_path = 'data/columns/generated/' + base_name + '.gen'
         self.data_type_path = 'data/columns/' + base_name + '.csv'
+        self.base_name = base_name
         self.sample = sample
         if sample:
             self.file_path = 'data/sample/puf2013/' + base_name + '.csv'
@@ -66,19 +67,23 @@ class AbstractDatatype:
         Opens CSV-file with newhouse data and read it to database
         Newhouse model should be already configured
         """
-        with open(self.file_path, 'rb') as csvfile:
-            reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
+        for mtype in ['metro', 'national']:
+            self.file_path = 'data/non-git/puf2013/' + mtype + '/' + self.base_name + '.csv'
+            if self.sample:
+                self.file_path = 'data/sample/puf2013/' + self.base_name + '.csv'
+            with open(self.file_path, 'rb') as csvfile:
+                reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
 
-            for row in reader:
-                obj = model(control=int(row['CONTROL'][1:-1]))
-                for column in row.keys():
-                    value = row[column]
+                for row in reader:
+                    obj = model(control=int(row['CONTROL'][1:-1]))
+                    for column in row.keys():
+                        value = row[column]
 
-                    if value[0] == "'":
-                        value = value[1:-1]
+                        if value[0] == "'":
+                            value = value[1:-1]
 
-                    setattr(obj, column.lower(), value)
+                        setattr(obj, column.lower(), value)
 
-                with warnings.catch_warnings():
-                    warnings.filterwarnings('error')
-                    obj.save()
+                    with warnings.catch_warnings():
+                        warnings.filterwarnings('error')
+                        obj.save()
