@@ -76,8 +76,8 @@ class AbstractDatatype:
             with open(self.file_path, 'rb') as csvfile:
                 reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
 
-                insert = "INSERT INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name, rows=', '.join(reader.fieldnames))
                 for row in reader:
+                    insert = "INSERT INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name, rows=', '.join(row.keys()))
                     row_values = ', '.join([v[1:-1] if v[0] == "'" else v for v in row.values()])
                     values = "(%s)" % row_values
 
