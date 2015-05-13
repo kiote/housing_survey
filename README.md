@@ -4,4 +4,4 @@
 
 This project imports data from American Housing Survey (AHS) to MySQL database.
 
-For more detailed info please read wiki pages
+For more detailed info please read [wiki pages](https://github.com/kiote/housing_survey/wiki)
