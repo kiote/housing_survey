@@ -5,7 +5,7 @@ class Homimp(models.Model):
     class Meta:
         db_table = 'ahs_homimp'
 
-    control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
+    control = models.BigIntegerField(db_column='CONTROL', db_index=True, null=True)
 
     rad = models.IntegerField(db_column='RAD', null=True)
     smsa = models.PositiveIntegerField(db_column='SMSA', null=True, db_index=True)

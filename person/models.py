@@ -8,7 +8,7 @@ class Person(models.Model):
             ['control', 'pline']
         ]
 
-    control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
+    control = models.BigIntegerField(db_column='CONTROL', db_index=True, null=True)
 
     pqint = models.SmallIntegerField(db_column='PQINT', null=True)
     par = models.SmallIntegerField(db_column='PAR', null=True)

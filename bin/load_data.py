@@ -1,25 +1,24 @@
-from downloader.models import Downloader
 from django.db import connection
 
+import importlib
+
 # make sure we have all files we need
-print '---> Downloading and unpacking AHS files...'
-Downloader().download()
+# print '---> Downloading and unpacking AHS files...'
+# Downloader().download()
 
 
-# files = ['homimp', 'mortg', 'newhouse', 'omov', 'owner', 'person', 'ratiov', 'repwgt', 'rmow', 'topical']
 print '---> Removing previously collected data...'
-cursor = connection.cursor()
-cursor.execute('''TRUNCATE `ahs_omov`;
-               TRUNCATE `ahs_topical`;
-               TRUNCATE `ahs_mortg`;
-               TRUNCATE `ahs_ratiov`;
-               TRUNCATE `ahs_owner`;
-               TRUNCATE `ahs_homimp`;
-               TRUNCATE `ahs_person`;
-               TRUNCATE `auth_user`;
-               TRUNCATE `ahs_rmov`;
-               TRUNCATE `ahs_newhouse`;
-               TRUNCATE `ahs_repwgt`;''')
+files = ['homimp', 'mortg', 'newhouse', 'omov', 'owner', 'person', 'ratiov', 'repwgt', 'rmov', 'topical']
+truncate = "; ".join(["TRUNCATE `ahs_%s`;" % f for f in files])
+with connection.cursor() as c:
+    c.execute(truncate)
 
-from datatype.homimp.models import HomimpDatatype
-HomimpDatatype().save_csv()
+files = ['homimp']
+
+for _file in files:
+    module = importlib.import_module("datatype.%s.models" % _file)
+    klass = getattr(module, "%sDatatype" % _file.capitalize())
+    print "---> Save %s data (national)" % _file
+
+    klass().save_csv()
+    # db.close_connection()

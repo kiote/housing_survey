@@ -1,7 +1,7 @@
 import csv
 import warnings
 from field.models import *
-
+from django.db import connection
 
 class AbstractDatatype:
     def __init__(self, base_name='', sample=False):
@@ -67,23 +67,24 @@ class AbstractDatatype:
         Opens CSV-file with newhouse data and read it to database
         Newhouse model should be already configured
         """
-        for mtype in ['metro', 'national']:
+        # for mtype in ['metro', 'national']:
+        for mtype in ['national']:
             self.file_path = 'data/non-git/puf2013/' + mtype + '/' + self.base_name + '.csv'
             if self.sample:
                 self.file_path = 'data/sample/puf2013/' + self.base_name + '.csv'
+
             with open(self.file_path, 'rb') as csvfile:
                 reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
 
+                insert = "INSERT INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name, rows=', '.join(reader.fieldnames))
                 for row in reader:
-                    obj = model(control=int(row['CONTROL'][1:-1]))
-                    for column in row.keys():
-                        value = row[column]
+                    row_values = ', '.join([v[1:-1] if v[0] == "'" else v for v in row.values()])
+                    values = "(%s)" % row_values
 
-                        if value[0] == "'":
-                            value = value[1:-1]
-
-                        setattr(obj, column.lower(), value)
-
-                    with warnings.catch_warnings():
-                        warnings.filterwarnings('error')
-                        obj.save()
+                    with connection.cursor() as c:
+                        with warnings.catch_warnings():
+                            warnings.filterwarnings('error')
+                            try:
+                                c.execute(insert + values)
+                            except:
+                                print insert + values

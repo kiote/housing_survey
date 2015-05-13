@@ -7,17 +7,16 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('newhouse', '0001_squashed_0002_auto_20150424_1544'),
     ]
 
     operations = [
         migrations.CreateModel(
             name='Ratiov',
             fields=[
-                ('control', models.OneToOneField(primary_key=True, serialize=False, to='newhouse.Newhouse')),
+                ('control', models.BigIntegerField(unique=True, serialize=False, primary_key=True, db_column=b'CONTROL')),
                 ('rgroc', models.SmallIntegerField(null=True, db_column=b'RGROC')),
                 ('rmedi', models.SmallIntegerField(null=True, db_column=b'RMEDI')),
-                ('smsa', models.PositiveIntegerField(null=True, db_column=b'SMSA')),
+                ('smsa', models.PositiveIntegerField(null=True, db_column=b'SMSA', db_index=True)),
                 ('rcarp', models.SmallIntegerField(null=True, db_column=b'RCARP')),
                 ('rutil', models.SmallIntegerField(null=True, db_column=b'RUTIL')),
                 ('rcost', models.SmallIntegerField(null=True, db_column=b'RCOST')),
@@ -25,5 +24,8 @@ class Migration(migrations.Migration):
                 ('rkidc', models.SmallIntegerField(null=True, db_column=b'RKIDC')),
                 ('rothe', models.SmallIntegerField(null=True, db_column=b'ROTHE')),
             ],
+            options={
+                'db_table': 'ahs_ratiov',
+            },
         ),
     ]

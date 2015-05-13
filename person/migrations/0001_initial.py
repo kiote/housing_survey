@@ -13,7 +13,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Person',
             fields=[
-                ('control', models.BigIntegerField(unique=True, serialize=False, primary_key=True, db_column=b'CONTROL')),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('control', models.BigIntegerField(null=True, db_column=b'CONTROL', db_index=True)),
                 ('pqint', models.SmallIntegerField(null=True, db_column=b'PQINT')),
                 ('par', models.SmallIntegerField(null=True, db_column=b'PAR')),
                 ('movm', models.PositiveSmallIntegerField(null=True, db_column=b'MOVM')),
@@ -54,7 +55,7 @@ class Migration(migrations.Migration):
                 ('jpqsal', models.SmallIntegerField(null=True, db_column=b'JPQSAL')),
                 ('jpqint', models.SmallIntegerField(null=True, db_column=b'JPQINT')),
                 ('jpqothnr', models.SmallIntegerField(null=True, db_column=b'JPQOTHNR')),
-                ('pline', models.PositiveSmallIntegerField(null=True, db_column=b'PLINE')),
+                ('pline', models.PositiveSmallIntegerField(null=True, db_column=b'PLINE', db_index=True)),
                 ('jrace', models.SmallIntegerField(null=True, db_column=b'JRACE')),
                 ('jatvty', models.SmallIntegerField(null=True, db_column=b'JATVTY')),
                 ('jpqwkcmp', models.SmallIntegerField(null=True, db_column=b'JPQWKCMP')),
@@ -87,7 +88,7 @@ class Migration(migrations.Migration):
                 ('jpqdiv', models.SmallIntegerField(null=True, db_column=b'JPQDIV')),
                 ('jitshp', models.SmallIntegerField(null=True, db_column=b'JITSHP')),
                 ('jpqss', models.SmallIntegerField(null=True, db_column=b'JPQSS')),
-                ('smsa', models.PositiveIntegerField(null=True, db_column=b'SMSA')),
+                ('smsa', models.PositiveIntegerField(null=True, db_column=b'SMSA', db_index=True)),
                 ('jnusyr', models.SmallIntegerField(null=True, db_column=b'JNUSYR')),
                 ('person', models.PositiveSmallIntegerField(null=True, db_column=b'PERSON')),
                 ('jpqsalnr', models.SmallIntegerField(null=True, db_column=b'JPQSALNR')),
@@ -97,5 +98,12 @@ class Migration(migrations.Migration):
                 ('lodsta', models.SmallIntegerField(null=True, db_column=b'LODSTA')),
                 ('famtyp', models.PositiveSmallIntegerField(null=True, db_column=b'FAMTYP')),
             ],
+            options={
+                'db_table': 'ahs_person',
+            },
+        ),
+        migrations.AlterIndexTogether(
+            name='person',
+            index_together=set([('control', 'pline')]),
         ),
     ]
