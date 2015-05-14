@@ -5,7 +5,7 @@ from django.db import connection
 
 class AbstractDatatype:
     def __init__(self, base_name='', sample=False):
-        self.file_path = 'data/non-git/puf2013/metro/' + base_name + '.csv'
+        self.file_path = 'data/non-git/puf2013/national/' + base_name + '.csv'
         self.columns_generated_file_path = 'data/columns/generated/' + base_name + '.gen'
         self.data_type_path = 'data/columns/' + base_name + '.csv'
         self.base_name = base_name
@@ -80,11 +80,11 @@ class AbstractDatatype:
                     insert = "INSERT INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name, rows=', '.join(row.keys()))
                     row_values = ', '.join([v[1:-1] if v[0] == "'" else v for v in row.values()])
                     values = "(%s)" % row_values
-
+                    print "Trying:" + insert + values
                     with connection.cursor() as c:
                         with warnings.catch_warnings():
                             warnings.filterwarnings('error')
                             try:
                                 c.execute(insert + values)
                             except:
-                                print insert + values
+                                print "Error with:" + insert + values

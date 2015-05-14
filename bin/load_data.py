@@ -1,6 +1,7 @@
 import importlib
 
-files = ['homimp']
+# files = ['homimp', 'mortg', 'newhouse', 'omov', 'owner', 'person', 'ratiov', 'repwgt', 'rmov', 'topical']
+files = ['newhouse', 'omov', 'owner', 'person', 'ratiov', 'repwgt', 'rmov', 'topical']
 
 for _file in files:
     module = importlib.import_module("datatype.%s.models" % _file)
