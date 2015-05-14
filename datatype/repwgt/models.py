@@ -8,4 +8,4 @@ class RepwgtDatatype(AbstractDatatype):
         Opens CSV-file with newhouse data and read it to database
         Newhouse model should be already configured
         """
-        AbstractDatatype('repwgt').fill_model_by_csv_data(Repwgt)
+        AbstractDatatype('repwgt').fill_model_by_csv_data()

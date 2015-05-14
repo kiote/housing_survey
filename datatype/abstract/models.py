@@ -62,7 +62,7 @@ class AbstractDatatype:
                 f.write(prepared_string)
             f.close()
 
-    def fill_model_by_csv_data(self, model):
+    def fill_model_by_csv_data(self):
         """
         Opens CSV-file with newhouse data and read it to database
         Newhouse model should be already configured

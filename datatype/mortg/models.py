@@ -8,4 +8,4 @@ class MortgDatatype(AbstractDatatype):
         Opens CSV-file with newhouse data and read it to database
         Newhouse model should be already configured
         """
-        AbstractDatatype('mortg').fill_model_by_csv_data(Mortg)
+        AbstractDatatype('mortg').fill_model_by_csv_data()

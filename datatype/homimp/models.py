@@ -8,4 +8,4 @@ class HomimpDatatype(AbstractDatatype):
         Opens CSV-file with newhouse data and read it to database
         Newhouse model should be already configured
         """
-        AbstractDatatype('homimp').fill_model_by_csv_data(Homimp)
+        AbstractDatatype('homimp').fill_model_by_csv_data()

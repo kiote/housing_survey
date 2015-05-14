@@ -8,4 +8,4 @@ class TopicalDatatype(AbstractDatatype):
         Opens CSV-file with newhouse data and read it to database
         Newhouse model should be already configured
         """
-        AbstractDatatype('topical').fill_model_by_csv_data(Topical)
+        AbstractDatatype('topical').fill_model_by_csv_data()

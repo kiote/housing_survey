@@ -8,4 +8,4 @@ class NewhouseDatatype(AbstractDatatype):
         Opens CSV-file with newhouse data and read it to database
         Newhouse model should be already configured
         """
-        AbstractDatatype('newhouse', self.sample).fill_model_by_csv_data(Newhouse)
+        AbstractDatatype('newhouse', self.sample).fill_model_by_csv_data()
