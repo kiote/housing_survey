@@ -12,9 +12,10 @@ class Downloader:
     ahs_2013_national_name = 'AHS 2013 National PUF v1.1 CSV.zip'
     ahs_2013_national_path = ahs_2013_path + 'national/'
 
-    files = [{'remote': address + 'programs-surveys/ahs/2013/' + ahs_2013_metro_name,
-              'zip_file': ahs_2013_path + ahs_2013_metro_name,
-              'local_path': ahs_2013_metro_path},
+    files = [
+            # {'remote': address + 'programs-surveys/ahs/2013/' + ahs_2013_metro_name,
+            #   'zip_file': ahs_2013_path + ahs_2013_metro_name,
+            #   'local_path': ahs_2013_metro_path},
              {'remote': address + 'programs-surveys/ahs/2013/' + ahs_2013_national_name,
               'zip_file': ahs_2013_path + ahs_2013_national_name,
               'local_path': ahs_2013_national_path}]
@@ -24,10 +25,12 @@ class Downloader:
 
         for file_info in self.files:
             if not os.path.isfile(file_info['zip_file']):
+                print '---> Downloading %s' % file_info['remote']
                 response = urllib2.urlopen(file_info['remote'])
                 result = response.read()
                 with open(file_info['zip_file'], 'wb') as result_file:
                     result_file.write(result)
+            print '---> Extracting archive %s' % file_info['zip_file']
             with zipfile.ZipFile(file_info['zip_file']) as zf:
                 zf.extractall(file_info['local_path'])
 
