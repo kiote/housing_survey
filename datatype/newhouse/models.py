@@ -1,5 +1,4 @@
 from datatype.abstract.models import AbstractDatatype
-from newhouse.models import Newhouse
 
 
 class NewhouseDatatype(AbstractDatatype):

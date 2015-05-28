@@ -1,5 +1,4 @@
 from datatype.abstract.models import AbstractDatatype
-from rmov.models import Rmov
 
 
 class RmovDatatype(AbstractDatatype):
@@ -8,4 +7,4 @@ class RmovDatatype(AbstractDatatype):
         Opens CSV-file with newhouse data and read it to database
         Newhouse model should be already configured
         """
-        AbstractDatatype('rmov').fill_model_by_csv_data()
+        AbstractDatatype('rmov', self.sample).fill_model_by_csv_data()

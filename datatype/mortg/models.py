@@ -1,5 +1,4 @@
 from datatype.abstract.models import AbstractDatatype
-from mortg.models import Mortg
 
 
 class MortgDatatype(AbstractDatatype):
@@ -8,4 +7,4 @@ class MortgDatatype(AbstractDatatype):
         Opens CSV-file with newhouse data and read it to database
         Newhouse model should be already configured
         """
-        AbstractDatatype('mortg').fill_model_by_csv_data()
+        AbstractDatatype('mortg', self.sample).fill_model_by_csv_data()
