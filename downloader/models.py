@@ -9,7 +9,7 @@ class Downloader:
 
     ahs_2013_metro_name = 'AHS_2013_Metropolitan_PUF_v1.0_CSV.zip'
     ahs_2013_metro_path = ahs_2013_path + 'metro/'
-    ahs_2013_national_name = 'AHS 2013 National PUF v1.1 CSV.zip'
+    ahs_2013_national_name = urllib2.quote('AHS 2013 National PUF v1.1 CSV.zip')
     ahs_2013_national_path = ahs_2013_path + 'national/'
 
     files = [

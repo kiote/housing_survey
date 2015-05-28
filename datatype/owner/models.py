@@ -8,4 +8,4 @@ class OwnerDatatype(AbstractDatatype):
         Opens CSV-file with newhouse data and read it to database
         Newhouse model should be already configured
         """
-        AbstractDatatype('owner').fill_model_by_csv_data(Owner)
+        AbstractDatatype('owner').fill_model_by_csv_data()
