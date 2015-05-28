@@ -1,7 +1,6 @@
 CONTROL,IntegerField,null=True
 RGROC,SmallIntegerField,null=True
 RMEDI,SmallIntegerField,null=True
-SMSA,PositiveIntegerField,null=True
 RCARP,SmallIntegerField,null=True
 RUTIL,SmallIntegerField,null=True
 RCOST,SmallIntegerField,null=True

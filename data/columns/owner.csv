@@ -1,4 +1,3 @@
 CONTROL,IntegerField,null=True
-SMSA,PositiveIntegerField,null=True
 JWNHER,SmallIntegerField,null=True
 OWNHERE,SmallIntegerField,null=True

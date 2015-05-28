@@ -1,5 +1,4 @@
 CONTROL,IntegerField,null=True
-SMSA,PositiveIntegerField,null=True
 DBOUTREAS,SmallIntegerField,null=True
 DBOUTLEN,SmallIntegerField,null=True
 DBGRPCNT,PositiveSmallIntegerField,null=True

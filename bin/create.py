@@ -12,4 +12,4 @@ NewhouseDatatype('newhouse').generate_columns()
 # add new app to the settings file
 # run makemigrations
 # run migrate
-NewhouseDatatype().save_national_csv()
+NewhouseDatatype().save_csv()
