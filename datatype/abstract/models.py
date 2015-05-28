@@ -76,13 +76,16 @@ class AbstractDatatype:
 
             with open(self.file_path, 'rb') as csvfile:
                 reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
+                printed = False
 
                 for row in reader:
                     insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
                                                                                            rows=', '.join(row.keys()))
                     row_values = ', '.join([v[1:-1] if v[0] == "'" else v for v in row.values()])
                     values = "(%s)" % row_values
-                    print "Trying:" + insert + values
+                    if not printed:
+                        print "Trying: " + insert + values
+                        printed = True
                     with connection.cursor() as c:
                         with warnings.catch_warnings():
                             warnings.filterwarnings('error')
