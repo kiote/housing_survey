@@ -15,4 +15,4 @@ Y2011_PATH = PREFIX + '2011/'
 Y2011_CSV_PATH = Y2011_PATH + SUFFIX
 
 def data_path(year):
-    return PREFIX + year + '/' + SUFFIX
+    return "%s%d/%s" % (PREFIX, year, SUFFIX)
