@@ -1,5 +1,6 @@
 import csv
 import warnings
+import downloader.local
 
 from django.db import connection
 
@@ -8,8 +9,8 @@ class Datasaver:
     """
     The base class to save CSV-files to database
     """
-    def __init__(self, base_name='', sample=False):
-        self.file_path = 'data/non-git/puf2013/national/' + base_name + '.csv'
+    def __init__(self, year=2013, base_name='', sample=False):
+        self.file_path = downloader.local.data_path(year) + base_name + '.csv'
         self.columns_generated_file_path = 'data/columns/generated/' + base_name + '.gen'
         self.data_type_path = 'data/columns/' + base_name + '.csv'
         self.base_name = base_name
