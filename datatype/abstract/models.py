@@ -68,28 +68,27 @@ class AbstractDatatype:
         Opens CSV-file with newhouse data and read it to database
         Newhouse model should be already configured
         """
-        # for mtype in ['metro', 'national']:
-        for mtype in ['national']:
-            self.file_path = 'data/non-git/puf2013/' + mtype + '/' + self.base_name + '.csv'
-            if self.sample:
-                self.file_path = 'data/sample/puf2013/' + self.base_name + '.csv'
+        mtype = 'national'
+        self.file_path = 'data/non-git/puf2013/' + mtype + '/' + self.base_name + '.csv'
+        if self.sample:
+            self.file_path = 'data/sample/puf2013/' + self.base_name + '.csv'
 
-            with open(self.file_path, 'rb') as csvfile:
-                reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
-                printed = False
+        with open(self.file_path, 'rb') as csvfile:
+            reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
+            printed = False
 
-                for row in reader:
-                    insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
-                                                                                           rows=', '.join(row.keys()))
-                    row_values = ', '.join([v[1:-1] if v[0] == "'" else v for v in row.values()])
-                    values = "(%s)" % row_values
-                    if not printed:
-                        print "Trying: " + insert + values
-                        printed = True
-                    with connection.cursor() as c:
-                        with warnings.catch_warnings():
-                            warnings.filterwarnings('error')
-                            # try:
-                            c.execute(insert + values)
-                            # except:
-                            #     print "Error with:" + insert + values
+            for row in reader:
+                insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
+                                                                                       rows=', '.join(row.keys()))
+                row_values = ', '.join([v[1:-1] if v[0] == "'" else v for v in row.values()])
+                values = "(%s)" % row_values
+                if not printed:
+                    print "Trying: " + insert + values
+                    printed = True
+                with connection.cursor() as c:
+                    with warnings.catch_warnings():
+                        warnings.filterwarnings('error')
+                        # try:
+                        c.execute(insert + values)
+                        # except:
+                        #     print "Error with:" + insert + values
