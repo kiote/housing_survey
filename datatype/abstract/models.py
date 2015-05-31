@@ -78,9 +78,11 @@ class AbstractDatatype:
             printed = False
 
             for row in reader:
+                rows_with_year = ', '.join(row.keys()) + ', ADD_YEAR'
                 insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
-                                                                                       rows=', '.join(row.keys()))
+                                                                                       rows=rows_with_year)
                 row_values = ', '.join([v[1:-1] if v[0] == "'" else v for v in row.values()])
+                row_values += ", 2013"
                 values = "(%s)" % row_values
                 if not printed:
                     print "Trying: " + insert + values
