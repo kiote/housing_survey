@@ -1,27 +1,22 @@
 import urllib2
 import os, errno
 import zipfile
+import remote
+import local
 
-
+"""
+Downloads remote CSV-files from census.gov and uncompress them
+"""
 class Downloader:
-    address = 'http://www2.census.gov/'
-    ahs_2013_path = 'data/non-git/puf2013/'
-
-    ahs_2013_metro_name = 'AHS_2013_Metropolitan_PUF_v1.0_CSV.zip'
-    ahs_2013_metro_path = ahs_2013_path + 'metro/'
-    ahs_2013_national_name = urllib2.quote('AHS 2013 National PUF v1.1 CSV.zip')
-    ahs_2013_national_path = ahs_2013_path + 'national/'
-
-    files = [
-            # {'remote': address + 'programs-surveys/ahs/2013/' + ahs_2013_metro_name,
-            #   'zip_file': ahs_2013_path + ahs_2013_metro_name,
-            #   'local_path': ahs_2013_metro_path},
-             {'remote': address + 'programs-surveys/ahs/2013/' + ahs_2013_national_name,
-              'zip_file': ahs_2013_path + ahs_2013_national_name,
-              'local_path': ahs_2013_national_path}]
+    files = [{'remote': remote.Y2013_FULL_PATH,
+              'zip_file': local.Y2013_PATH + remote.Y2013['file_name'],
+              'local_path': local.Y2013_NATIONAL_PATH},
+             {'remote': remote.Y2011_FULL_PATH,
+              'zip_file': local.Y2011_PATH + remote.Y2011['file_name'],
+              'local_path': local.Y2011_NATIONAL_AND_METRO_PATH}]
 
     def download(self):
-        self.makedirs()
+        self._makedirs()
 
         for file_info in self.files:
             if not os.path.isfile(file_info['zip_file']):
@@ -34,8 +29,9 @@ class Downloader:
             with zipfile.ZipFile(file_info['zip_file']) as zf:
                 zf.extractall(file_info['local_path'])
 
-    def makedirs(self):
-        for mdir in [self.ahs_2013_metro_path, self.ahs_2013_national_path]:
+    @staticmethod
+    def _makedirs():
+        for mdir in [local.Y2013_NATIONAL_PATH, local.Y2011_NATIONAL_AND_METRO_PATH]:
             try:
                 os.makedirs(mdir)
             except OSError as exc:
