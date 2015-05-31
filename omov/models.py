@@ -14,3 +14,4 @@ class Omov(models.Model):
     dbugroup = models.PositiveSmallIntegerField(db_column='DBUGROUP', null=True)
     dboutwhy = models.SmallIntegerField(db_column='DBOUTWHY', null=True)
     dboutwher = models.SmallIntegerField(db_column='DBOUTWHER', null=True)
+    add_year = models.PositiveSmallIntegerField(db_column='ADD_YEAR', default=2013, db_index=True)

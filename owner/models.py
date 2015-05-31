@@ -9,3 +9,4 @@ class Owner(models.Model):
 
     jwnher = models.SmallIntegerField(db_column='JWNHER', null=True)
     ownhere = models.SmallIntegerField(db_column='OWNHERE', null=True)
+    add_year = models.PositiveSmallIntegerField(db_column='ADD_YEAR', default=2013, db_index=True)

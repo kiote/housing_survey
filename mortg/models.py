@@ -357,4 +357,5 @@ class Mortg(models.Model):
     canvar = models.SmallIntegerField(db_column='CANVAR', null=True)
     amtm = models.IntegerField(db_column='AMTM', null=True)
     gtcash = models.SmallIntegerField(db_column='GTCASH', null=True)
+    add_year = models.PositiveSmallIntegerField(db_column='ADD_YEAR', default=2013, db_index=True)
 

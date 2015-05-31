@@ -120,3 +120,4 @@ class Topical(models.Model):
     ptuscrsh = models.SmallIntegerField(db_column='PTUSCRSH', null=True)
     friends = models.SmallIntegerField(db_column='FRIENDS', null=True)
     nhdbldmu = models.SmallIntegerField(db_column='NHDBLDMU', null=True)
+    add_year = models.PositiveSmallIntegerField(db_column='ADD_YEAR', default=2013, db_index=True)

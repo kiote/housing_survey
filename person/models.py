@@ -91,4 +91,4 @@ class Person(models.Model):
     jpqwelf = models.SmallIntegerField(db_column='JPQWELF', null=True)
     lodsta = models.SmallIntegerField(db_column='LODSTA', null=True)
     famtyp = models.PositiveSmallIntegerField(db_column='FAMTYP', null=True)
-
+    add_year = models.PositiveSmallIntegerField(db_column='ADD_YEAR', default=2013, db_index=True)
