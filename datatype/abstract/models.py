@@ -4,6 +4,14 @@ from field.models import *
 from django.db import connection
 
 class AbstractDatatype:
+    """
+    The base class to work with CSV-files
+
+    it makes some csv-parsing to determine datatypes for columns,
+    also it saves data to database
+
+    Prebably should be refactored to separate this two aims of this class
+    """
     def __init__(self, base_name='', sample=False):
         self.file_path = 'data/non-git/puf2013/national/' + base_name + '.csv'
         self.columns_generated_file_path = 'data/columns/generated/' + base_name + '.gen'
@@ -16,7 +24,7 @@ class AbstractDatatype:
             self.data_type_path = 'data/sample/puf2013/' + base_name + 'with_types.csv'
 
     def _generate_types(self):
-        """Opens CSV-file with newhouse data and set the columns datatypes"""
+        """Opens CSV-file with the data and sets columns datatypes"""
         headers_with_types = {}
 
         with open(self.file_path, 'rb') as csvfile:
