@@ -13,4 +13,4 @@ AbstractDatatype('newhouse').generate_columns()
 # add new app to the settings file
 # run makemigrations
 # run migrate
-Datasaver(2013, 'newhouse').save_csv()
+Datasaver(2013, 'newhouse').fill_model_by_csv_data()
