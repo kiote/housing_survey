@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from datatype.abstract.models import DataTypeFactory
+from datatype.abstract.field.types import DataTypeFactory
 
 
 class DataTypeFactoryTest(TestCase):

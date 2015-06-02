@@ -1,5 +1,5 @@
 import csv
-from field.models import *
+from datatype.abstract.field.types import *
 
 class AbstractDatatype:
     """
