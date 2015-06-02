@@ -1,5 +1,7 @@
 import csv
-from datatype.abstract.field.types import *
+from datatype.field.models import data_type_by_name
+from datatype.field.models import DataTypeFactory
+
 
 class AbstractDatatype:
     """

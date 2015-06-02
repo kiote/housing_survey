@@ -1,5 +1,5 @@
 from django.test import TestCase
-from datatype.abstract.datatype.models import AbstractDatatype
+from datatype.determiner.models import AbstractDatatype
 
 
 class AbstractDatatypeTestCase(TestCase):

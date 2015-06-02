@@ -1,9 +1,9 @@
-from django.test import TestCase
-from datatype.abstract.datasaver.datasaver import Datasaver
-from newhouse.models import Newhouse
 from decimal import *
-
 import csv
+
+from django.test import TestCase
+from datatype.saver.models import Datasaver
+from newhouse.models import Newhouse
 
 
 class AbstractDatasaverTestCase(TestCase):

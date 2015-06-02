@@ -5,11 +5,12 @@ This is the example of a model generation.
 
  Manual steps are commented, but they are required
 """
-from datatype.newhouse.models import NewhouseDatatype
+from datatype.determiner.models import AbstractDatatype
+from datatype.saver.models import Datasaver
 
-NewhouseDatatype('newhouse').generate_columns()
+AbstractDatatype('newhouse').generate_columns()
 # copy columns to the model file
 # add new app to the settings file
 # run makemigrations
 # run migrate
-NewhouseDatatype().save_csv()
+Datasaver(2013, 'newhouse').save_csv()
