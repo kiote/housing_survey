@@ -63,6 +63,6 @@ class AbstractDatatype:
 
                 prepared_string = "%s = models.%s(db_column='%s'%s)\n" % \
                     (row[0].lower(), row[1], row[0], more_params)
-                print 'Writing: ' + prepared_string
+                # print 'Writing: ' + prepared_string
                 f.write(prepared_string)
             f.close()
