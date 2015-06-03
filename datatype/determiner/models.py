@@ -1,4 +1,5 @@
 import csv
+import downloader.local
 from datatype.field.models import data_type_by_name
 from datatype.field.models import DataTypeFactory
 
@@ -10,8 +11,8 @@ class AbstractDatatype:
     it makes some csv-parsing to determine datatypes for columns,
     and sets database column-type depending on CSV column values
     """
-    def __init__(self, base_name='', sample=False):
-        self.file_path = 'data/non-git/puf2013/national/' + base_name + '.csv'
+    def __init__(self, year=2013, base_name='', sample=False):
+        self.file_path = downloader.local.data_path(year) + base_name + '.csv'
         self.columns_generated_file_path = 'data/columns/generated/' + base_name + '.gen'
         self.data_type_path = 'data/columns/' + base_name + '.csv'
         self.base_name = base_name
