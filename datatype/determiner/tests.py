@@ -5,7 +5,7 @@ from datatype.determiner.models import AbstractDatatype
 class AbstractDatatypeTestCase(TestCase):
     def setUp(self):
         self.generated = 'data/sample/puf2013/newhouse.gen'
-        self.ad = AbstractDatatype('newhouse', True)
+        self.ad = AbstractDatatype(2013, 'newhouse', True)
 
     def test_generate_right_number_of_columns(self):
         """
