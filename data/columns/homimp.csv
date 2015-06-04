@@ -1,5 +1,6 @@
 CONTROL,IntegerField,null=True
 RAD,PositiveIntegerField,null=True
+RAHK,SmallIntegerField,null=True
 RAH,PositiveSmallIntegerField,null=True
 JRAD,SmallIntegerField,null=True
 RAS,PositiveSmallIntegerField,null=True
