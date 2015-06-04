@@ -1,484 +1,162 @@
-SPLT2WGT58,PositiveIntegerField,null=True
-SPLT2WGT59,PositiveIntegerField,null=True
-REPWGT0,PositiveIntegerField,null=True
-REPWGT1,PositiveIntegerField,null=True
-REPWGT2,PositiveIntegerField,null=True
-REPWGT3,PositiveIntegerField,null=True
-REPWGT4,PositiveIntegerField,null=True
-REPWGT5,PositiveIntegerField,null=True
-REPWGT6,PositiveIntegerField,null=True
-REPWGT7,PositiveIntegerField,null=True
-REPWGT8,PositiveIntegerField,null=True
-REPWGT9,PositiveIntegerField,null=True
-REPWGT92,PositiveIntegerField,null=True
-REPWGT93,PositiveIntegerField,null=True
-REPWGT90,PositiveIntegerField,null=True
-REPWGT91,PositiveIntegerField,null=True
-REPWGT96,PositiveIntegerField,null=True
-REPWGT97,PositiveIntegerField,null=True
-REPWGT94,PositiveIntegerField,null=True
-REPWGT95,PositiveIntegerField,null=True
-REPWGT98,PositiveIntegerField,null=True
-REPWGT99,PositiveIntegerField,null=True
-SPLT1WGT120,PositiveIntegerField,null=True
-SPLT1WGT121,PositiveIntegerField,null=True
-REPWGT149,PositiveIntegerField,null=True
-REPWGT148,PositiveIntegerField,null=True
-SPLT1WGT124,PositiveIntegerField,null=True
-SPLT1WGT125,PositiveIntegerField,null=True
-SPLT1WGT126,PositiveIntegerField,null=True
-SPLT1WGT127,PositiveIntegerField,null=True
-REPWGT143,PositiveIntegerField,null=True
-REPWGT142,PositiveIntegerField,null=True
-REPWGT141,PositiveIntegerField,null=True
-REPWGT140,PositiveIntegerField,null=True
-REPWGT147,PositiveIntegerField,null=True
-REPWGT146,PositiveIntegerField,null=True
-REPWGT145,PositiveIntegerField,null=True
-REPWGT144,PositiveIntegerField,null=True
-SPLT1WGT39,PositiveIntegerField,null=True
-SPLT1WGT38,PositiveIntegerField,null=True
-SPLT1WGT33,PositiveIntegerField,null=True
-SPLT1WGT32,PositiveIntegerField,null=True
-SPLT1WGT31,PositiveIntegerField,null=True
-SPLT1WGT30,PositiveIntegerField,null=True
-SPLT1WGT37,PositiveIntegerField,null=True
-SPLT1WGT36,PositiveIntegerField,null=True
-SPLT1WGT35,PositiveIntegerField,null=True
-SPLT1WGT34,PositiveIntegerField,null=True
-SPLT1WGT119,PositiveIntegerField,null=True
-REPWGT151,PositiveIntegerField,null=True
-SPLT2WGT72,PositiveIntegerField,null=True
-SPLT2WGT73,PositiveIntegerField,null=True
-SPLT2WGT70,PositiveIntegerField,null=True
-SPLT2WGT71,PositiveIntegerField,null=True
-SPLT2WGT76,PositiveIntegerField,null=True
-SPLT2WGT77,PositiveIntegerField,null=True
-SPLT2WGT74,PositiveIntegerField,null=True
-SPLT2WGT75,PositiveIntegerField,null=True
-SPLT2WGT78,PositiveIntegerField,null=True
-SPLT2WGT79,PositiveIntegerField,null=True
-SPLT1WGT100,PositiveIntegerField,null=True
-SPLT1WGT101,PositiveIntegerField,null=True
-SPLT1WGT106,PositiveIntegerField,null=True
-SPLT1WGT107,PositiveIntegerField,null=True
-REPWGT78,PositiveIntegerField,null=True
-REPWGT79,PositiveIntegerField,null=True
-SPLT2WGT4,PositiveIntegerField,null=True
-SPLT2WGT5,PositiveIntegerField,null=True
-SPLT2WGT2,PositiveIntegerField,null=True
-SPLT2WGT3,PositiveIntegerField,null=True
-SPLT2WGT0,PositiveIntegerField,null=True
-SPLT2WGT1,PositiveIntegerField,null=True
-REPWGT70,PositiveIntegerField,null=True
-REPWGT71,PositiveIntegerField,null=True
-REPWGT72,PositiveIntegerField,null=True
-REPWGT73,PositiveIntegerField,null=True
-REPWGT74,PositiveIntegerField,null=True
-REPWGT75,PositiveIntegerField,null=True
-REPWGT76,PositiveIntegerField,null=True
-SPLT2WGT9,PositiveIntegerField,null=True
-REPWGT27,PositiveIntegerField,null=True
-REPWGT26,PositiveIntegerField,null=True
-REPWGT25,PositiveIntegerField,null=True
-REPWGT24,PositiveIntegerField,null=True
-REPWGT23,PositiveIntegerField,null=True
-REPWGT22,PositiveIntegerField,null=True
-REPWGT21,PositiveIntegerField,null=True
-REPWGT20,PositiveIntegerField,null=True
-SPLT2WGT105,PositiveIntegerField,null=True
-SPLT2WGT104,PositiveIntegerField,null=True
-SPLT2WGT107,PositiveIntegerField,null=True
-SPLT2WGT106,PositiveIntegerField,null=True
-SPLT2WGT101,PositiveIntegerField,null=True
-SPLT2WGT100,PositiveIntegerField,null=True
-SPLT2WGT103,PositiveIntegerField,null=True
-SPLT2WGT102,PositiveIntegerField,null=True
-SPLT2WGT109,PositiveIntegerField,null=True
-SPLT2WGT108,PositiveIntegerField,null=True
-SPLT1WGT77,PositiveIntegerField,null=True
-SPLT1WGT76,PositiveIntegerField,null=True
-SPLT1WGT75,PositiveIntegerField,null=True
-SPLT1WGT74,PositiveIntegerField,null=True
-SPLT1WGT73,PositiveIntegerField,null=True
-SPLT1WGT72,PositiveIntegerField,null=True
-SPLT1WGT71,PositiveIntegerField,null=True
-SPLT1WGT70,PositiveIntegerField,null=True
-SPLT1WGT79,PositiveIntegerField,null=True
-SPLT1WGT78,PositiveIntegerField,null=True
-SPLT2WGT38,PositiveIntegerField,null=True
-SPLT2WGT39,PositiveIntegerField,null=True
-SPLT2WGT36,PositiveIntegerField,null=True
-SPLT2WGT37,PositiveIntegerField,null=True
-SPLT2WGT34,PositiveIntegerField,null=True
-SPLT2WGT35,PositiveIntegerField,null=True
-SPLT2WGT32,PositiveIntegerField,null=True
-SPLT2WGT33,PositiveIntegerField,null=True
-SPLT2WGT30,PositiveIntegerField,null=True
-SPLT2WGT31,PositiveIntegerField,null=True
-REPWGT110,PositiveIntegerField,null=True
-REPWGT111,PositiveIntegerField,null=True
-REPWGT112,PositiveIntegerField,null=True
-REPWGT113,PositiveIntegerField,null=True
-REPWGT114,PositiveIntegerField,null=True
-REPWGT115,PositiveIntegerField,null=True
-REPWGT116,PositiveIntegerField,null=True
-REPWGT117,PositiveIntegerField,null=True
-REPWGT118,PositiveIntegerField,null=True
-REPWGT119,PositiveIntegerField,null=True
-REPWGT34,PositiveIntegerField,null=True
-REPWGT35,PositiveIntegerField,null=True
-REPWGT36,PositiveIntegerField,null=True
-REPWGT37,PositiveIntegerField,null=True
-REPWGT30,PositiveIntegerField,null=True
-REPWGT31,PositiveIntegerField,null=True
-REPWGT32,PositiveIntegerField,null=True
-REPWGT33,PositiveIntegerField,null=True
-REPWGT38,PositiveIntegerField,null=True
-REPWGT39,PositiveIntegerField,null=True
-SPLT1WGT99,PositiveIntegerField,null=True
-SPLT1WGT98,PositiveIntegerField,null=True
-SPLT1WGT91,PositiveIntegerField,null=True
-SPLT1WGT90,PositiveIntegerField,null=True
-SPLT1WGT93,PositiveIntegerField,null=True
-SPLT1WGT92,PositiveIntegerField,null=True
-SPLT1WGT95,PositiveIntegerField,null=True
-SPLT1WGT94,PositiveIntegerField,null=True
-SPLT1WGT97,PositiveIntegerField,null=True
-SPLT1WGT96,PositiveIntegerField,null=True
-SPLT2WGT141,PositiveIntegerField,null=True
-SPLT2WGT140,PositiveIntegerField,null=True
-SPLT2WGT143,PositiveIntegerField,null=True
-SPLT2WGT142,PositiveIntegerField,null=True
-SPLT2WGT145,PositiveIntegerField,null=True
-SPLT2WGT144,PositiveIntegerField,null=True
-SPLT2WGT147,PositiveIntegerField,null=True
-SPLT2WGT146,PositiveIntegerField,null=True
-SPLT2WGT149,PositiveIntegerField,null=True
-SPLT2WGT148,PositiveIntegerField,null=True
-SPLT2WGT61,PositiveIntegerField,null=True
-SPLT2WGT60,PositiveIntegerField,null=True
-REPWGT85,PositiveIntegerField,null=True
-REPWGT84,PositiveIntegerField,null=True
-REPWGT87,PositiveIntegerField,null=True
-REPWGT86,PositiveIntegerField,null=True
-REPWGT81,PositiveIntegerField,null=True
-REPWGT80,PositiveIntegerField,null=True
-REPWGT83,PositiveIntegerField,null=True
-REPWGT82,PositiveIntegerField,null=True
-REPWGT89,PositiveIntegerField,null=True
-REPWGT88,PositiveIntegerField,null=True
-SPLT1WGT115,PositiveIntegerField,null=True
-SPLT1WGT114,PositiveIntegerField,null=True
-SPLT1WGT117,PositiveIntegerField,null=True
-SPLT1WGT116,PositiveIntegerField,null=True
-REPWGT158,PositiveIntegerField,null=True
-REPWGT159,PositiveIntegerField,null=True
-SPLT1WGT113,PositiveIntegerField,null=True
-SPLT1WGT112,PositiveIntegerField,null=True
-REPWGT154,PositiveIntegerField,null=True
-REPWGT155,PositiveIntegerField,null=True
-REPWGT156,PositiveIntegerField,null=True
-REPWGT157,PositiveIntegerField,null=True
-REPWGT150,PositiveIntegerField,null=True
-SPLT1WGT118,PositiveIntegerField,null=True
-REPWGT152,PositiveIntegerField,null=True
-REPWGT153,PositiveIntegerField,null=True
-SPLT1WGT48,PositiveIntegerField,null=True
-SPLT1WGT49,PositiveIntegerField,null=True
-SPLT1WGT46,PositiveIntegerField,null=True
-SPLT1WGT47,PositiveIntegerField,null=True
-SPLT1WGT44,PositiveIntegerField,null=True
-SPLT1WGT45,PositiveIntegerField,null=True
-SPLT1WGT42,PositiveIntegerField,null=True
-SPLT1WGT43,PositiveIntegerField,null=True
-SPLT1WGT40,PositiveIntegerField,null=True
-SPLT1WGT41,PositiveIntegerField,null=True
-SPLT1WGT122,PositiveIntegerField,null=True
-REPWGT129,PositiveIntegerField,null=True
-REPWGT128,PositiveIntegerField,null=True
-SPLT2WGT63,PositiveIntegerField,null=True
-SPLT2WGT62,PositiveIntegerField,null=True
-SPLT2WGT65,PositiveIntegerField,null=True
-SPLT2WGT64,PositiveIntegerField,null=True
-SPLT2WGT67,PositiveIntegerField,null=True
-SPLT2WGT66,PositiveIntegerField,null=True
-REPWGT121,PositiveIntegerField,null=True
-SPLT2WGT68,PositiveIntegerField,null=True
-REPWGT123,PositiveIntegerField,null=True
-REPWGT122,PositiveIntegerField,null=True
-REPWGT125,PositiveIntegerField,null=True
-REPWGT124,PositiveIntegerField,null=True
-REPWGT127,PositiveIntegerField,null=True
-REPWGT126,PositiveIntegerField,null=True
-SPLT1WGT128,PositiveIntegerField,null=True
-REPWGT69,PositiveIntegerField,null=True
-REPWGT68,PositiveIntegerField,null=True
-SPLT1WGT129,PositiveIntegerField,null=True
-REPWGT63,PositiveIntegerField,null=True
-REPWGT62,PositiveIntegerField,null=True
-REPWGT61,PositiveIntegerField,null=True
-REPWGT60,PositiveIntegerField,null=True
-REPWGT67,PositiveIntegerField,null=True
-REPWGT66,PositiveIntegerField,null=True
-REPWGT65,PositiveIntegerField,null=True
-REPWGT64,PositiveIntegerField,null=True
-REPWGT120,PositiveIntegerField,null=True
-SPLT1WGT111,PositiveIntegerField,null=True
-SPLT1WGT110,PositiveIntegerField,null=True
-SPLT2WGT118,PositiveIntegerField,null=True
-SPLT2WGT119,PositiveIntegerField,null=True
-SPLT2WGT112,PositiveIntegerField,null=True
-SPLT2WGT113,PositiveIntegerField,null=True
-SPLT2WGT110,PositiveIntegerField,null=True
-SPLT2WGT111,PositiveIntegerField,null=True
-SPLT2WGT116,PositiveIntegerField,null=True
-SPLT2WGT117,PositiveIntegerField,null=True
-SPLT2WGT114,PositiveIntegerField,null=True
-SPLT2WGT115,PositiveIntegerField,null=True
-SPLT2WGT69,PositiveIntegerField,null=True
-SPLT1WGT160,PositiveIntegerField,null=True
-SPLT2WGT29,PositiveIntegerField,null=True
-SPLT2WGT28,PositiveIntegerField,null=True
-SPLT2WGT25,PositiveIntegerField,null=True
-SPLT2WGT24,PositiveIntegerField,null=True
-SPLT2WGT27,PositiveIntegerField,null=True
-SPLT2WGT26,PositiveIntegerField,null=True
-SPLT2WGT21,PositiveIntegerField,null=True
-SPLT2WGT20,PositiveIntegerField,null=True
-SPLT2WGT23,PositiveIntegerField,null=True
-SPLT2WGT22,PositiveIntegerField,null=True
-REPWGT160,PositiveIntegerField,null=True
-SPLT1WGT11,PositiveIntegerField,null=True
-SPLT1WGT10,PositiveIntegerField,null=True
-SPLT1WGT13,PositiveIntegerField,null=True
-SPLT1WGT12,PositiveIntegerField,null=True
-SPLT1WGT15,PositiveIntegerField,null=True
-SPLT1WGT14,PositiveIntegerField,null=True
-SPLT1WGT17,PositiveIntegerField,null=True
-SPLT1WGT16,PositiveIntegerField,null=True
-SPLT1WGT19,PositiveIntegerField,null=True
-SPLT1WGT18,PositiveIntegerField,null=True
-SPLT1WGT151,PositiveIntegerField,null=True
-SPLT1WGT150,PositiveIntegerField,null=True
-SPLT1WGT153,PositiveIntegerField,null=True
-SPLT1WGT152,PositiveIntegerField,null=True
-SPLT1WGT155,PositiveIntegerField,null=True
-SPLT1WGT154,PositiveIntegerField,null=True
-SPLT1WGT157,PositiveIntegerField,null=True
-SPLT1WGT156,PositiveIntegerField,null=True
-SPLT1WGT159,PositiveIntegerField,null=True
-SPLT1WGT158,PositiveIntegerField,null=True
-REPWGT29,PositiveIntegerField,null=True
-REPWGT28,PositiveIntegerField,null=True
-SPLT2WGT98,PositiveIntegerField,null=True
-SPLT2WGT99,PositiveIntegerField,null=True
-SPLT2WGT90,PositiveIntegerField,null=True
-SPLT2WGT91,PositiveIntegerField,null=True
-SPLT2WGT92,PositiveIntegerField,null=True
-SPLT2WGT93,PositiveIntegerField,null=True
-SPLT2WGT94,PositiveIntegerField,null=True
-SPLT2WGT95,PositiveIntegerField,null=True
-SPLT2WGT96,PositiveIntegerField,null=True
-SPLT2WGT97,PositiveIntegerField,null=True
-SPLT2WGT156,PositiveIntegerField,null=True
-SPLT2WGT157,PositiveIntegerField,null=True
-SPLT2WGT154,PositiveIntegerField,null=True
-SPLT2WGT155,PositiveIntegerField,null=True
-SPLT2WGT152,PositiveIntegerField,null=True
-SPLT2WGT153,PositiveIntegerField,null=True
-SPLT2WGT150,PositiveIntegerField,null=True
-SPLT2WGT151,PositiveIntegerField,null=True
-SPLT2WGT158,PositiveIntegerField,null=True
-SPLT2WGT159,PositiveIntegerField,null=True
-SPLT2WGT123,PositiveIntegerField,null=True
-SPLT2WGT122,PositiveIntegerField,null=True
-SPLT2WGT121,PositiveIntegerField,null=True
-SPLT2WGT120,PositiveIntegerField,null=True
-SPLT2WGT127,PositiveIntegerField,null=True
-SPLT2WGT126,PositiveIntegerField,null=True
-SPLT2WGT125,PositiveIntegerField,null=True
-SPLT2WGT124,PositiveIntegerField,null=True
-SPLT2WGT129,PositiveIntegerField,null=True
-SPLT2WGT128,PositiveIntegerField,null=True
-SPLT1WGT59,PositiveIntegerField,null=True
-SPLT1WGT58,PositiveIntegerField,null=True
-SPLT1WGT55,PositiveIntegerField,null=True
-SPLT1WGT54,PositiveIntegerField,null=True
-SPLT1WGT57,PositiveIntegerField,null=True
-SPLT1WGT56,PositiveIntegerField,null=True
-SPLT1WGT51,PositiveIntegerField,null=True
-SPLT1WGT50,PositiveIntegerField,null=True
-SPLT1WGT53,PositiveIntegerField,null=True
-SPLT1WGT52,PositiveIntegerField,null=True
-SPLT1WGT1,PositiveIntegerField,null=True
-SPLT1WGT0,PositiveIntegerField,null=True
-SPLT1WGT3,PositiveIntegerField,null=True
-SPLT1WGT2,PositiveIntegerField,null=True
-SPLT1WGT5,PositiveIntegerField,null=True
-SPLT1WGT4,PositiveIntegerField,null=True
-SPLT1WGT7,PositiveIntegerField,null=True
-SPLT1WGT6,PositiveIntegerField,null=True
-SPLT1WGT9,PositiveIntegerField,null=True
-SPLT1WGT8,PositiveIntegerField,null=True
-SPLT2WGT54,PositiveIntegerField,null=True
-SPLT2WGT55,PositiveIntegerField,null=True
-REPWGT138,PositiveIntegerField,null=True
-REPWGT139,PositiveIntegerField,null=True
-SPLT2WGT50,PositiveIntegerField,null=True
-SPLT2WGT51,PositiveIntegerField,null=True
-SPLT2WGT52,PositiveIntegerField,null=True
-SPLT2WGT53,PositiveIntegerField,null=True
-REPWGT132,PositiveIntegerField,null=True
-REPWGT133,PositiveIntegerField,null=True
-REPWGT130,PositiveIntegerField,null=True
-REPWGT131,PositiveIntegerField,null=True
-REPWGT136,PositiveIntegerField,null=True
-REPWGT137,PositiveIntegerField,null=True
-REPWGT134,PositiveIntegerField,null=True
-REPWGT135,PositiveIntegerField,null=True
-SPLT1WGT108,PositiveIntegerField,null=True
-SPLT1WGT109,PositiveIntegerField,null=True
-REPWGT58,PositiveIntegerField,null=True
-REPWGT59,PositiveIntegerField,null=True
-REPWGT56,PositiveIntegerField,null=True
-REPWGT57,PositiveIntegerField,null=True
-REPWGT54,PositiveIntegerField,null=True
-REPWGT55,PositiveIntegerField,null=True
-REPWGT52,PositiveIntegerField,null=True
-REPWGT53,PositiveIntegerField,null=True
-SPLT1WGT104,PositiveIntegerField,null=True
-SPLT1WGT105,PositiveIntegerField,null=True
-SPLT2WGT10,PositiveIntegerField,null=True
-SPLT1WGT132,PositiveIntegerField,null=True
-SPLT2WGT12,PositiveIntegerField,null=True
-SPLT1WGT130,PositiveIntegerField,null=True
-SPLT1WGT137,PositiveIntegerField,null=True
-SPLT1WGT136,PositiveIntegerField,null=True
-CONTROL,IntegerField,null=True
-SPLT2WGT6,PositiveIntegerField,null=True
-SPLT1WGT123,PositiveIntegerField,null=True
-SPLT2WGT16,PositiveIntegerField,null=True
-SPLT2WGT7,PositiveIntegerField,null=True
-SPLT2WGT17,PositiveIntegerField,null=True
-REPWGT50,PositiveIntegerField,null=True
-REPWGT51,PositiveIntegerField,null=True
-SPLT2WGT160,PositiveIntegerField,null=True
-SPLT2WGT8,PositiveIntegerField,null=True
-REPWGT77,PositiveIntegerField,null=True
-SPLT1WGT133,PositiveIntegerField,null=True
-SPLT2WGT11,PositiveIntegerField,null=True
-SPLT1WGT131,PositiveIntegerField,null=True
-SPLT2WGT13,PositiveIntegerField,null=True
-SPLT2WGT14,PositiveIntegerField,null=True
-SPLT2WGT15,PositiveIntegerField,null=True
-SPLT1WGT135,PositiveIntegerField,null=True
-SPLT1WGT134,PositiveIntegerField,null=True
-SPLT2WGT18,PositiveIntegerField,null=True
-SPLT2WGT19,PositiveIntegerField,null=True
-SPLT1WGT139,PositiveIntegerField,null=True
-SPLT1WGT138,PositiveIntegerField,null=True
-SPLT1WGT26,PositiveIntegerField,null=True
-REPWGT19,PositiveIntegerField,null=True
-SPLT1WGT24,PositiveIntegerField,null=True
-SPLT1WGT25,PositiveIntegerField,null=True
-REPWGT18,PositiveIntegerField,null=True
-SPLT1WGT27,PositiveIntegerField,null=True
-SPLT1WGT20,PositiveIntegerField,null=True
-SPLT1WGT21,PositiveIntegerField,null=True
-SPLT1WGT22,PositiveIntegerField,null=True
-SPLT1WGT23,PositiveIntegerField,null=True
-REPWGT12,PositiveIntegerField,null=True
-REPWGT13,PositiveIntegerField,null=True
-REPWGT10,PositiveIntegerField,null=True
-REPWGT11,PositiveIntegerField,null=True
-REPWGT16,PositiveIntegerField,null=True
-REPWGT17,PositiveIntegerField,null=True
-REPWGT14,PositiveIntegerField,null=True
-REPWGT15,PositiveIntegerField,null=True
-SPLT1WGT146,PositiveIntegerField,null=True
-SPLT1WGT147,PositiveIntegerField,null=True
-SPLT1WGT144,PositiveIntegerField,null=True
-SPLT1WGT145,PositiveIntegerField,null=True
-SPLT1WGT142,PositiveIntegerField,null=True
-SPLT1WGT143,PositiveIntegerField,null=True
-SPLT1WGT140,PositiveIntegerField,null=True
-SPLT1WGT141,PositiveIntegerField,null=True
-SPLT1WGT148,PositiveIntegerField,null=True
-SPLT1WGT149,PositiveIntegerField,null=True
-SPLT1WGT102,PositiveIntegerField,null=True
-SPLT1WGT28,PositiveIntegerField,null=True
-SPLT1WGT29,PositiveIntegerField,null=True
-SPLT2WGT89,PositiveIntegerField,null=True
-SPLT2WGT88,PositiveIntegerField,null=True
-SPLT2WGT87,PositiveIntegerField,null=True
-SPLT2WGT86,PositiveIntegerField,null=True
-SPLT2WGT85,PositiveIntegerField,null=True
-SPLT2WGT84,PositiveIntegerField,null=True
-SPLT2WGT83,PositiveIntegerField,null=True
-SPLT2WGT82,PositiveIntegerField,null=True
-SPLT2WGT81,PositiveIntegerField,null=True
-SPLT1WGT103,PositiveIntegerField,null=True
-SPLT1WGT89,PositiveIntegerField,null=True
-SPLT2WGT130,PositiveIntegerField,null=True
-SPLT2WGT131,PositiveIntegerField,null=True
-SPLT2WGT132,PositiveIntegerField,null=True
-SPLT2WGT133,PositiveIntegerField,null=True
-SPLT2WGT134,PositiveIntegerField,null=True
-SPLT2WGT135,PositiveIntegerField,null=True
-SPLT2WGT136,PositiveIntegerField,null=True
-SPLT2WGT137,PositiveIntegerField,null=True
-SPLT2WGT138,PositiveIntegerField,null=True
-SPLT2WGT139,PositiveIntegerField,null=True
-SPLT1WGT60,PositiveIntegerField,null=True
-SPLT1WGT61,PositiveIntegerField,null=True
-SPLT1WGT62,PositiveIntegerField,null=True
-SPLT1WGT63,PositiveIntegerField,null=True
-SPLT1WGT64,PositiveIntegerField,null=True
-SPLT1WGT65,PositiveIntegerField,null=True
-SPLT1WGT66,PositiveIntegerField,null=True
-SPLT1WGT67,PositiveIntegerField,null=True
-SPLT1WGT68,PositiveIntegerField,null=True
-SPLT1WGT69,PositiveIntegerField,null=True
-SPLT2WGT49,PositiveIntegerField,null=True
-SPLT2WGT48,PositiveIntegerField,null=True
-SPLT2WGT43,PositiveIntegerField,null=True
-SPLT2WGT42,PositiveIntegerField,null=True
-SPLT2WGT41,PositiveIntegerField,null=True
-SPLT2WGT40,PositiveIntegerField,null=True
-SPLT2WGT47,PositiveIntegerField,null=True
-SPLT2WGT46,PositiveIntegerField,null=True
-SPLT2WGT45,PositiveIntegerField,null=True
-SPLT2WGT44,PositiveIntegerField,null=True
-REPWGT109,PositiveIntegerField,null=True
-REPWGT108,PositiveIntegerField,null=True
-REPWGT107,PositiveIntegerField,null=True
-REPWGT106,PositiveIntegerField,null=True
-REPWGT105,PositiveIntegerField,null=True
-REPWGT104,PositiveIntegerField,null=True
-REPWGT103,PositiveIntegerField,null=True
-REPWGT102,PositiveIntegerField,null=True
-REPWGT101,PositiveIntegerField,null=True
-REPWGT100,PositiveIntegerField,null=True
-REPWGT41,PositiveIntegerField,null=True
-REPWGT40,PositiveIntegerField,null=True
-REPWGT43,PositiveIntegerField,null=True
-REPWGT42,PositiveIntegerField,null=True
-REPWGT45,PositiveIntegerField,null=True
-REPWGT44,PositiveIntegerField,null=True
-REPWGT47,PositiveIntegerField,null=True
-REPWGT46,PositiveIntegerField,null=True
-REPWGT49,PositiveIntegerField,null=True
-REPWGT48,PositiveIntegerField,null=True
-SPLT2WGT80,PositiveIntegerField,null=True
-SPLT2WGT56,PositiveIntegerField,null=True
-SPLT1WGT88,PositiveIntegerField,null=True
-SPLT2WGT57,PositiveIntegerField,null=True
-SPLT1WGT82,PositiveIntegerField,null=True
-SPLT1WGT83,PositiveIntegerField,null=True
-SPLT1WGT80,PositiveIntegerField,null=True
-SPLT1WGT81,PositiveIntegerField,null=True
-SPLT1WGT86,PositiveIntegerField,null=True
-SPLT1WGT87,PositiveIntegerField,null=True
-SPLT1WGT84,PositiveIntegerField,null=True
-SPLT1WGT85,PositiveIntegerField,null=True
+repwgt85,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt84,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt87,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt86,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt81,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt80,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt109,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt108,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt107,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt106,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt105,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt104,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt89,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt88,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt101,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt100,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt110,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt111,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt112,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt113,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt114,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt115,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt116,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt117,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt118,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt119,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt78,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt79,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt70,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt71,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt72,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt73,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt74,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt75,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt76,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt77,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt83,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt82,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt160,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt103,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt102,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt69,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt68,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt63,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt62,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt61,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt60,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt67,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt66,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt65,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt64,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt0,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt1,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt2,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt3,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt4,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt5,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt6,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt7,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt8,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt9,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt90,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt91,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt58,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt59,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt56,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt57,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt54,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt55,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt52,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt53,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt50,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt51,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt149,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt148,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt143,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt142,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt141,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt140,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt147,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt146,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt145,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt144,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt98,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt99,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt41,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt40,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt43,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt42,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt45,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt44,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt47,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt46,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt49,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt48,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt158,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt159,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt154,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt155,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt156,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt157,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt150,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt151,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt152,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt153,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt34,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt35,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt36,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt37,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt30,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt31,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt32,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt33,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt38,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt39,DecimalField,"max_digits=20, decimal_places=10, null=True"
+control,IntegerField,null=True
+repwgt129,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt128,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt121,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt120,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt123,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt122,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt125,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt124,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt127,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt126,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt27,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt26,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt25,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt24,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt23,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt22,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt21,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt20,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt29,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt28,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt92,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt93,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt138,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt139,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt96,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt97,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt94,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt95,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt132,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt133,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt130,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt131,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt136,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt137,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt134,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt135,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt18,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt19,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt12,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt13,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt10,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt11,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt16,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt17,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt14,DecimalField,"max_digits=20, decimal_places=10, null=True"
+repwgt15,DecimalField,"max_digits=20, decimal_places=10, null=True"

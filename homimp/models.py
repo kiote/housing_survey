@@ -13,3 +13,4 @@ class Homimp(models.Model):
     ras = models.PositiveSmallIntegerField(db_column='RAS', null=True)
     jras = models.SmallIntegerField(db_column='JRAS', null=True)
     add_year = models.PositiveSmallIntegerField(db_column='ADD_YEAR', default=2013, db_index=True)
+    rahk = models.SmallIntegerField(db_column='RAHK', null=True)
