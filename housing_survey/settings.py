@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'person',
     'repwgt',
     'rmov',
-    'topical'
+    'topical',
+    'datatype'
 ]
 
 MIDDLEWARE_CLASSES = [

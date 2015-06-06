@@ -6,7 +6,7 @@ This is the example of a model generation.
  Manual steps are commented, but they are required
 """
 from datatype.determiner.models import AbstractDatatype
-from datatype.saver.models import Datasaver
+from datatype.saver import Datasaver
 
 AbstractDatatype('newhouse').generate_columns()
 # copy columns to the model file

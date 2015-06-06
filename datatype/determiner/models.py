@@ -1,7 +1,9 @@
 import csv
+
 import downloader.local
 from datatype.field.models import data_type_by_name
 from datatype.field.models import DataTypeFactory
+from datatype.models import Datatype
 
 
 class AbstractDatatype:
@@ -10,6 +12,8 @@ class AbstractDatatype:
 
     it makes some csv-parsing to determine datatypes for columns,
     and sets database column-type depending on CSV column values
+
+    save determined values to table ahs_service_datatype
     """
     def __init__(self, year=2013, base_name='', sample=False):
         self.file_path = downloader.local.data_path(year) + base_name + '.csv'
@@ -23,7 +27,7 @@ class AbstractDatatype:
             self.data_type_path = 'data/sample/puf2013/' + base_name + 'with_types.csv'
 
     def _generate_types(self):
-        """Opens CSV-file with the data and sets columns datatypes"""
+        """Opens original CSV-file with the data and sets columns datatypes"""
         headers_with_types = {}
 
         with open(self.file_path, 'rb') as csvfile:
@@ -41,31 +45,31 @@ class AbstractDatatype:
         return headers_with_types
 
     def _write_types(self):
-        """Prepare CSV-file with column names and types"""
+        """save data with column names and types"""
         rows_to_write = self._generate_types()
-        with open(self.data_type_path, 'wb') as typefile:
-            writer = csv.writer(typefile, delimiter=',')
-            for k, v in rows_to_write.iteritems():
-                params = 'null=True'
-                if v == 'DecimalField':
-                    params = 'max_digits=20, decimal_places=10, null=True'
+        table_name = self.base_name
+        for name, value in rows_to_write.iteritems():
+            params = 'null=True'
+            if value == 'DecimalField':
+                params = 'max_digits=20, decimal_places=10, null=True'
 
-                writer.writerow([k, v, params])
+            Datatype.objects.get_or_create(table_name=table_name,
+                                           field_name=name,
+                                           field_type=value,
+                                           extra_params=params)
 
     def generate_columns(self):
         """
-        Read prepared CSV-file with column names and data types and then generate
+        Read saved to table data with column names and data types and then generate
         Python-like statements, based on this data
         """
         self._write_types()
-        with open(self.data_type_path, 'rb') as csvcolumns:
-            reader = csv.reader(csvcolumns, delimiter=',')
-            f = open(self.columns_generated_file_path, 'w')
-            for row in reader:
-                more_params = row[2] if row[2] == "" else ', ' + row[2]
-
+        table_name = self.base_name
+        fields = Datatype.objects.filter(table_name=table_name)
+        with open(self.columns_generated_file_path, 'w') as f:
+            for field in fields:
+                more_params = field.extra_params if field.extra_params == "" else ', ' + field.extra_params
                 prepared_string = "%s = models.%s(db_column='%s'%s)\n" % \
-                    (row[0].lower(), row[1], row[0], more_params)
-                # print 'Writing: ' + prepared_string
+                    (field.field_name.lower(), field.field_type, field.field_name, more_params)
                 f.write(prepared_string)
-            f.close()
+

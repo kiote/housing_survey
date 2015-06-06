@@ -6,7 +6,7 @@ truncate = "; ".join(["TRUNCATE `ahs_%s`" % f for f in files])
 with connection.cursor() as c:
     c.execute(truncate + ';')
 
-from datatype.saver.models import Datasaver
+from datatype.saver import Datasaver
 
 years = [2013, 2011]
 
