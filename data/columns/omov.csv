@@ -1,8 +1,0 @@
-CONTROL,IntegerField,null=True
-DBOUTREAS,SmallIntegerField,null=True
-DBOUTLEN,SmallIntegerField,null=True
-DBGRPCNT,PositiveSmallIntegerField,null=True
-DBOUTVOL,SmallIntegerField,null=True
-DBUGROUP,PositiveSmallIntegerField,null=True
-DBOUTWHY,SmallIntegerField,null=True
-DBOUTWHER,SmallIntegerField,null=True
