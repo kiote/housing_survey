@@ -6,11 +6,16 @@ This is the example of a model generation.
  Manual steps are commented, but they are required
 """
 from datatype.determiner.models import AbstractDatatype
-from datatype.saver import Datasaver
 
-AbstractDatatype('newhouse').generate_columns()
+files = ['homimp', 'mortg', 'newhouse', 'omov', 'owner', 'person', 'ratiov', 'repwgt', 'rmov', 'topical']
+years = [2013, 2011]
+
+for year in years:
+    for base_name in files:
+        print "%d: %s" % (year, base_name)
+        AbstractDatatype(year, base_name).generate_columns()
 # copy columns to the model file
 # add new app to the settings file
 # run makemigrations
 # run migrate
-Datasaver(2013, 'newhouse').fill_model_by_csv_data()
+# run load_data.py
