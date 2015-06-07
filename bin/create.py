@@ -4,7 +4,18 @@ This is the example of a model generation.
  with manage.py startapp
 
  Manual steps are commented, but they are required
+
+ To run this you should first run in command line:
+
+    export PYTHONPATH="/webapps/housing_survey/:$PYTHONPATH"
+
+  And then just run it with python bin/create.py
 """
+import os
+import django
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "housing_survey.settings")
+django.setup()
+
 from datatype.determiner.models import AbstractDatatype
 
 files = ['homimp', 'mortg', 'newhouse', 'omov', 'owner', 'person', 'ratiov', 'repwgt', 'rmov', 'topical']
