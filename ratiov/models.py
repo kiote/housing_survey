@@ -14,4 +14,5 @@ class Ratiov(models.Model):
     rclot = models.SmallIntegerField(db_column='RCLOT', null=True)
     rkidc = models.SmallIntegerField(db_column='RKIDC', null=True)
     rothe = models.SmallIntegerField(db_column='ROTHE', null=True)
-    add_year = models.PositiveSmallIntegerField(db_column='ADD_YEAR', default=2013, db_index=True)
+    export_year_2013 = models.BooleanField(default=False)
+    export_year_2011 = models.BooleanField(default=False)

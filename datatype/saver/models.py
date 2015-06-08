@@ -19,6 +19,12 @@ class Datasaver:
         if sample:
             self.file_path = 'data/sample/puf2013/' + base_name + '.csv'
 
+    def _which_year(self):
+        if self.year == 2013:
+            return 1, 0
+        elif self.year == 2011:
+            return 0, 1
+
     def fill_model_by_csv_data(self):
         """
         Opens CSV-file and read it to database
@@ -32,11 +38,11 @@ class Datasaver:
             printed = False
 
             for row in reader:
-                rows_with_year = ', '.join(row.keys()) + ', ADD_YEAR'
+                rows_with_year = ', '.join(row.keys()) + ', export_year_2013, export_year_2011'
                 insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
                                                                                        rows=rows_with_year)
                 row_values = ', '.join([v[1:-1] if v[0] == "'" else v for v in row.values()])
-                row_values += ", %d" % self.year
+                row_values += ", %d, %d" % self._which_year()
                 values = "(%s)" % row_values
                 if not printed:
                     print "Trying: " + insert + values

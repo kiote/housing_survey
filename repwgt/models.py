@@ -490,4 +490,5 @@ class Repwgt(models.Model):
     splt1wgt87 = models.PositiveIntegerField(db_column='SPLT1WGT87', null=True)
     splt1wgt84 = models.PositiveIntegerField(db_column='SPLT1WGT84', null=True)
     splt1wgt85 = models.PositiveIntegerField(db_column='SPLT1WGT85', null=True)
-    add_year = models.PositiveSmallIntegerField(db_column='ADD_YEAR', default=2013, db_index=True)
+    export_year_2013 = models.BooleanField(default=False)
+    export_year_2011 = models.BooleanField(default=False)

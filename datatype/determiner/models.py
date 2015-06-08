@@ -21,6 +21,7 @@ class AbstractDatatype:
         self.data_type_path = 'data/columns/' + base_name + '.csv'
         self.base_name = base_name
         self.sample = sample
+        self.year = year
         if sample:
             self.file_path = 'data/sample/puf2013/' + base_name + '.csv'
             self.columns_generated_file_path = 'data/sample/puf2013/' + base_name + '.gen'
@@ -56,7 +57,9 @@ class AbstractDatatype:
             Datatype.objects.get_or_create(table_name=table_name,
                                            field_name=name,
                                            field_type=value,
-                                           extra_params=params)
+                                           extra_params=params,
+                                           export_year_2013=(lambda y: 1 if y == 2013 else 0)(self.year),
+                                           export_year_2011=(lambda y: 1 if y == 2011 else 0)(self.year))
 
     def generate_columns(self):
         """

@@ -29,4 +29,5 @@ class Rmov(models.Model):
     jovgrp = models.SmallIntegerField(db_column='JOVGRP', null=True)
     xten = models.SmallIntegerField(db_column='XTEN', null=True)
     jdbinvol = models.SmallIntegerField(db_column='JDBINVOL', null=True)
-    add_year = models.PositiveSmallIntegerField(db_column='ADD_YEAR', default=2013, db_index=True)
+    export_year_2013 = models.BooleanField(default=False)
+    export_year_2011 = models.BooleanField(default=False)

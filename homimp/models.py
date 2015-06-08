@@ -12,5 +12,7 @@ class Homimp(models.Model):
     jrad = models.SmallIntegerField(db_column='JRAD', null=True)
     ras = models.PositiveSmallIntegerField(db_column='RAS', null=True)
     jras = models.SmallIntegerField(db_column='JRAS', null=True)
-    add_year = models.PositiveSmallIntegerField(db_column='ADD_YEAR', default=2013, db_index=True)
     rahk = models.SmallIntegerField(db_column='RAHK', null=True)
+    export_year_2013 = models.BooleanField(default=False)
+    export_year_2011 = models.BooleanField(default=False)
+
