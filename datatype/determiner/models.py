@@ -19,9 +19,7 @@ class AbstractDatatype:
         self.file_path = downloader.local.data_path(year) + base_name + '.csv'
         self.columns_generated_file_path = 'data/columns/generated/' + base_name + '.gen'
         self.data_type_path = 'data/columns/' + base_name + '.csv'
-        self.base_name = base_name
-        self.sample = sample
-        self.year = year
+        self.base_name, self.sample, self.year = base_name, sample, year
         if sample:
             self.file_path = 'data/sample/puf2013/' + base_name + '.csv'
             self.columns_generated_file_path = 'data/sample/puf2013/' + base_name + '.gen'
