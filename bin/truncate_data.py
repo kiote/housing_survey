@@ -1,3 +1,5 @@
+import django_init
+
 from django.db import connection
 
 files = ['homimp', 'mortg', 'newhouse', 'omov', 'owner', 'person', 'ratiov', 'repwgt', 'rmov', 'topical']

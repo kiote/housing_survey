@@ -58,5 +58,5 @@ class Downloader:
             for mfile in os.listdir(local.FULL_PATH + '/' + mdir):
                 os.chdir(local.FULL_PATH + '/' + mdir)
                 os.rename(mfile, mfile.lower())
-                if mfile.startswith("t"):
+                if mfile.startswith("t") and mfile != 'topical.csv':
                     os.rename(mfile, mfile[1:])
