@@ -21,9 +21,8 @@ class AbstractDatatype:
         self.data_type_path = 'data/columns/' + base_name + '.csv'
         self.base_name, self.sample, self.year = base_name, sample, year
         if sample:
-            self.file_path = 'data/sample/puf2013/' + base_name + '.csv'
-            self.columns_generated_file_path = 'data/sample/puf2013/' + base_name + '.gen'
-            self.data_type_path = 'data/sample/puf2013/' + base_name + 'with_types.csv'
+            self.file_path = 'data/sample/puf2013/newhouse.csv'
+            self.columns_generated_file_path = 'data/sample/puf2013/newhouse.gen'
 
     def _generate_types(self):
         """Opens original CSV-file with the data and sets columns datatypes"""
