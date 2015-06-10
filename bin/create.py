@@ -1,4 +1,6 @@
 """
+ This script will generate files with Python-syntax to generate models.
+
  Manual steps are commented, but they are required
 
  To run this you should first run in command line:

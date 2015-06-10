@@ -2,8 +2,10 @@ import django_init
 
 from django.db import connection
 
-files = ['homimp', 'mortg', 'newhouse', 'omov', 'owner', 'person', 'ratiov', 'repwgt', 'rmov', 'topical']
-truncate = "; ".join(["TRUNCATE `ahs_%s`" % f for f in files])
+files = ['ahs_homimp', 'ahs_mortg', 'ahs_newhouse', 'ahs_omov',
+         'ahs_owner', 'ahs_person', 'ahs_ratiov', 'ahs_repwgt',
+         'ahs_rmov', 'ahs_topical', 'ahs_service_datatype']
+truncate = "; ".join(["TRUNCATE `%s`" % f for f in files])
 
 with connection.cursor() as c:
     c.execute(truncate + ';')

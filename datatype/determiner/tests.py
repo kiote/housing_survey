@@ -35,7 +35,7 @@ class AbstractDatatypeTestCase(TestCase):
 
     def test_saves_year(self):
         """
-        Check it it saves right year
+        Check if it saves right year
         """
         obj = Datatype.objects.filter(field_name='CONTROL')
         self.assertEqual(obj[0].export_year_2013, True)
