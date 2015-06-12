@@ -51,12 +51,18 @@ class AbstractDatatype:
             if value == 'DecimalField':
                 params = 'max_digits=20, decimal_places=10, null=True'
 
-            Datatype.objects.get_or_create(table_name=table_name,
-                                           field_name=name,
-                                           field_type=value,
-                                           extra_params=params,
-                                           export_year_2013=(lambda y: 1 if y == 2013 else 0)(self.year),
-                                           export_year_2011=(lambda y: 1 if y == 2011 else 0)(self.year))
+            if self.year == 2013:
+                Datatype.objects.update_or_create(table_name=table_name,
+                                                  field_name=name,
+                                                  field_type=value,
+                                                  extra_params=params,
+                                                  export_year_2013=1)
+            elif self.year == 2011:
+                Datatype.objects.update_or_create(table_name=table_name,
+                                                  field_name=name,
+                                                  field_type=value,
+                                                  extra_params=params,
+                                                  export_year_2011=1)
 
     def generate_columns(self):
         """
