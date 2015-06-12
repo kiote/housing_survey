@@ -7,13 +7,15 @@ class Omov(models.Model):
 
     control = models.BigIntegerField(db_column='CONTROL', null=True, db_index=True)
 
-    dboutreas = models.SmallIntegerField(db_column='DBOUTREAS', null=True)
-    dboutlen = models.SmallIntegerField(db_column='DBOUTLEN', null=True)
     dbgrpcnt = models.PositiveSmallIntegerField(db_column='DBGRPCNT', null=True)
+    dboutlen = models.SmallIntegerField(db_column='DBOUTLEN', null=True)
+    dboutreas = models.SmallIntegerField(db_column='DBOUTREAS', null=True)
     dboutvol = models.SmallIntegerField(db_column='DBOUTVOL', null=True)
-    dbugroup = models.PositiveSmallIntegerField(db_column='DBUGROUP', null=True)
-    dboutwhy = models.SmallIntegerField(db_column='DBOUTWHY', null=True)
     dboutwher = models.SmallIntegerField(db_column='DBOUTWHER', null=True)
-    export_year_2013 = models.BooleanField(default=False)
-    export_year_2011 = models.BooleanField(default=False)
+    dboutwhy = models.SmallIntegerField(db_column='DBOUTWHY', null=True)
+    dbugroup = models.PositiveSmallIntegerField(db_column='DBUGROUP', null=True)
 
+    field_in_2013 = models.BooleanField(default=False)
+    field_in_2011 = models.BooleanField(default=False)
+
+    export_year = models.PositiveSmallIntegerField(null=True)

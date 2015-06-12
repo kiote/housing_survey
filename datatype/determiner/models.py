@@ -54,9 +54,9 @@ class AbstractDatatype:
             obj, created = Datatype.objects.get_or_create(table_name=table_name,
                                                           field_name=name)
             setattr(obj, "export_year_%d" % self.year, 1)
-            obj.extra_params = params
-            if self._need_to_change_datatype(obj, value):
+            if created or self._need_to_change_datatype(obj, value):
                 obj.field_type = value
+                obj.extra_params = params
 
             obj.save()
 
