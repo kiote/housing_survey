@@ -51,18 +51,21 @@ class AbstractDatatype:
             if value == 'DecimalField':
                 params = 'max_digits=20, decimal_places=10, null=True'
 
-            if self.year == 2013:
-                Datatype.objects.update_or_create(table_name=table_name,
-                                                  field_name=name,
-                                                  field_type=value,
-                                                  extra_params=params,
-                                                  export_year_2013=1)
-            elif self.year == 2011:
-                Datatype.objects.update_or_create(table_name=table_name,
-                                                  field_name=name,
-                                                  field_type=value,
-                                                  extra_params=params,
-                                                  export_year_2011=1)
+            obj = Datatype.objects.get_or_create(table_name=table_name,
+                                                 field_name=name,
+                                                 extra_params=params)
+            setattr(obj, "export_year_%d" % self.year, 1)
+            if self._need_to_change_datatype(obj, value):
+                obj.field_type = value
+
+            obj.save()
+
+    @staticmethod
+    def _need_to_change_datatype(dt_object, dt_new):
+        if (dt_object.field_type == '') or (data_type_by_name(dt_object.field_type) < data_type_by_name(dt_new)):
+            return True
+        else:
+            return False
 
     def generate_columns(self):
         """
