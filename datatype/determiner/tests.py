@@ -18,14 +18,6 @@ class AbstractDatatypeTestCase(TestCase):
             lines = generated.readlines()
             self.assertEqual(len(lines), 758)
 
-    def test_generate_right_column(self):
-        """
-        Check if we've generated first line with right text
-        """
-        with open(self.generated, 'rb') as generated:
-            line = generated.readline()
-            self.assertEqual(line, "cellar = models.PositiveSmallIntegerField(db_column='CELLAR', null=True)\n")
-
     def test_saves_columns(self):
         """
         Check if it saves right column count

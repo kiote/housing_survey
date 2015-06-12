@@ -4,6 +4,7 @@ from django.db import models
 class Datatype(models.Model):
     class Meta:
         db_table = 'ahs_service_datatype'
+        unique_together = ('table_name', 'field_name')
 
     table_name = models.CharField(max_length=120)
     field_name = models.CharField(max_length=120)
