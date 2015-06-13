@@ -42,7 +42,7 @@ class Datasaver:
                 insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
                                                                                        rows=rows_with_year)
                 row_values = ', '.join([v[1:-1] if v[0] == "'" else v for v in row.values()])
-                values_tuple = self._which_year() + self.year
+                values_tuple = self._which_year() + (self.year,)
                 row_values += ", %d, %d, %d" % values_tuple
                 values = "(%s)" % row_values
                 if not printed:
