@@ -51,7 +51,8 @@ class Datasaver:
                 with connection.cursor() as c:
                     with warnings.catch_warnings():
                         warnings.filterwarnings('error')
-                        # try:
-                        c.execute(insert + values)
-                        # except:
-                        #     print "Error with:" + insert + values
+                        try:
+                            c.execute(insert + values)
+                        except:
+                            pass
+                            #print "Error with:" + insert + values

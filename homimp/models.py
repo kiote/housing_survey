@@ -10,7 +10,7 @@ class Homimp(models.Model):
     jras = models.SmallIntegerField(db_column='JRAS', null=True)
     rad = models.PositiveIntegerField(db_column='RAD', null=True)
     rah = models.PositiveSmallIntegerField(db_column='RAH', null=True)
-    rahk = models.SmallIntegerField(db_column='RAHK', null=True)
+    rahk = models.SmallIntegerField(db_column='RAHK', null=True, default=None)
     ras = models.PositiveSmallIntegerField(db_column='RAS', null=True)
 
     field_in_2013 = models.BooleanField(default=False)
