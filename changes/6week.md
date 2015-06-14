@@ -4,7 +4,9 @@ This week was about automatizing of the next year adding process.
 As the result:
 
   – now we have all "metadata" (information about tables and field types) stored in MySQL table (before it was stored in a file);
+  
   – this metadata table stores information about year of appearing of a current field, so we can always know is this field common for severel years, or not;
+  
   – field - type generation was re-thinked, so now it successfully works with several years.  
 
 ### Problems
