@@ -1,21 +1,17 @@
 ## 6 week progress
 
-Fixed some data-import bugs in import scripts.
-Simplify scripts a bit to be able to import next (2011) year and started to import it.
+This week was about automatizing of the next year adding process.
+As the result:
 
-Same tables for different years have different fields 
-(some fields are missing and some has been added), I was trying to handle it manually
-(and for models homimp and mortg) added some fields from 2011 year.
+  – now we have all "metadata" (information about tables and field types) stored in MySQL table (before it was stored in a file);
+  – this metadata table stores information about year of appearing of a current field, so we can always know is this field common for severel years, or not;
+  – field - type generation was re-thinked, so now it successfully works with several years.  
 
-But this manual changes takes a lot of time, so I'd better automatize it for other models.
-The idea is:
+### Problems
 
-– after field generation check model.gen file;
-– if it has this field (generated substring) already, do nothing;
-– if it has no such string yet, add it.
-
-For now model.gen files generated from 0 every time.
-
+As one of the files are quite big (newhouse of 2011), it's processing takes too much resources and need to be fixed (now "saving data" process is killing by OS for eating too much resources)
+ 
 ## 7 week plan
 
-Will be here later
+Fix big files saving problem.
+Give the result to test (so you can have in your local database both 2013 and 2011 year to experiment with) 
