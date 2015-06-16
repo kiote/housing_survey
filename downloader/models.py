@@ -30,6 +30,7 @@ class Downloader:
                 zf.extractall(file_info['local_path'])
 
         self._rename_files()
+        self._chunk_files()
 
     @staticmethod
     def _makedirs():
@@ -60,3 +61,10 @@ class Downloader:
                 os.rename(mfile, mfile.lower())
                 if mfile.startswith("t") and mfile != 'topical.csv':
                     os.rename(mfile, mfile[1:])
+
+    @staticmethod
+    def _chunk_files():
+        """
+        Sometimes files are too big, so it's more comfortable to work with them when they are chunked
+        """
+        pass

@@ -25,34 +25,42 @@ class Datasaver:
         elif self.year == 2011:
             return 0, 1
 
-    def fill_model_by_csv_data(self):
-        """
-        Opens CSV-file and read it to database
-        Use raw-insert to database (not creating any models) to make the insert-precess faster
-        """
+    def _data_iterator(self):
         if self.sample:
             self.file_path = 'data/sample/puf2013/' + self.base_name + '.csv'
 
         with open(self.file_path, 'rb') as csvfile:
             reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
-            printed = False
 
             for row in reader:
-                rows_with_year = ', '.join(row.keys()) + ', field_in_2013, field_in_2011, export_year'
-                insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
-                                                                                       rows=rows_with_year)
-                row_values = ', '.join([v[1:-1] if v[0] == "'" else v for v in row.values()])
-                values_tuple = self._which_year() + (self.year,)
-                row_values += ", %d, %d, %d" % values_tuple
-                values = "(%s)" % row_values
-                if not printed:
-                    print "Trying: " + insert + values
-                    printed = True
-                with connection.cursor() as c:
-                    with warnings.catch_warnings():
-                        warnings.filterwarnings('error')
-                        try:
-                            c.execute(insert + values)
-                        except:
-                            pass
-                            #print "Error with:" + insert + values
+                yield row
+
+    def fill_model_by_csv_data(self):
+        """
+        Opens CSV-file and read it to database
+        Use raw-insert to database (not creating any models) to make the insert-precess faster
+        """
+        printed = False
+        count = 0
+
+        for row in self._data_iterator():
+            count += 1
+            print "inserting %d row" % count
+            rows_with_year = ', '.join(row.keys()) + ', field_in_2013, field_in_2011, export_year'
+            insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
+                                                                                   rows=rows_with_year)
+            row_values = ', '.join([v[1:-1] if v[0] == "'" else v for v in row.values()])
+            values_tuple = self._which_year() + (self.year,)
+            row_values += ", %d, %d, %d" % values_tuple
+            values = "(%s)" % row_values
+            if not printed:
+                print "Trying: " + insert + values
+                printed = True
+            with connection.cursor() as c:
+                with warnings.catch_warnings():
+                    warnings.filterwarnings('error')
+                    try:
+                        c.execute(insert + values)
+                    except:
+                        pass
+                        #print "Error with:" + insert + values
