@@ -4,7 +4,10 @@ from django.db import models
 class Newhouse(models.Model):
     class Meta:
         db_table = 'ahs_newhouse'
-
+        index_together = [
+            ['control', 'export_year'],
+            ['field_in_2013', 'field_in_2011']
+        ]
     control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
 
     access = models.SmallIntegerField(db_column='ACCESS', null=True)
@@ -99,7 +102,7 @@ class Newhouse(models.Model):
     clift = models.SmallIntegerField(db_column='CLIFT', null=True)
     climb = models.SmallIntegerField(db_column='CLIMB', null=True)
     clpeva = models.IntegerField(db_column='CLPEVA', null=True)
-    cmsa = models.PositiveSmallIntegerField(db_column='CMSA', null=True)
+    cmsa = models.PositiveSmallIntegerField(db_column='CMSA', null=True, db_index=True)
     cobatt = models.SmallIntegerField(db_column='COBATT', null=True)
     cokst = models.SmallIntegerField(db_column='COKST', null=True)
     condo = models.SmallIntegerField(db_column='CONDO', null=True)
@@ -146,7 +149,7 @@ class Newhouse(models.Model):
     disas = models.SmallIntegerField(db_column='DISAS', null=True)
     dish = models.SmallIntegerField(db_column='DISH', null=True)
     displ = models.SmallIntegerField(db_column='DISPL', null=True)
-    division = models.PositiveSmallIntegerField(db_column='DIVISION', null=True)
+    division = models.PositiveSmallIntegerField(db_column='DIVISION', null=True, db_index=True)
     dline1 = models.SmallIntegerField(db_column='DLINE1', null=True)
     downpct = models.SmallIntegerField(db_column='DOWNPCT', null=True)
     drshop = models.SmallIntegerField(db_column='DRSHOP', null=True)
@@ -671,7 +674,7 @@ class Newhouse(models.Model):
     markt = models.SmallIntegerField(db_column='MARKT', null=True)
     mcnt = models.SmallIntegerField(db_column='MCNT', null=True)
     metro = models.SmallIntegerField(db_column='METRO', null=True)
-    metro3 = models.PositiveSmallIntegerField(db_column='METRO3', null=True)
+    metro3 = models.PositiveSmallIntegerField(db_column='METRO3', null=True, db_index=True)
     mg = models.SmallIntegerField(db_column='MG', null=True)
     mhotfe = models.IntegerField(db_column='MHOTFE', null=True)
     mhsetq = models.SmallIntegerField(db_column='MHSETQ', null=True)
@@ -793,7 +796,7 @@ class Newhouse(models.Model):
     rcntrl = models.SmallIntegerField(db_column='RCNTRL', null=True)
     recrm = models.SmallIntegerField(db_column='RECRM', null=True)
     refr = models.SmallIntegerField(db_column='REFR', null=True)
-    region = models.PositiveSmallIntegerField(db_column='REGION', null=True)
+    region = models.PositiveSmallIntegerField(db_column='REGION', null=True, db_index=True)
     regmor = models.SmallIntegerField(db_column='REGMOR', null=True)
     renew = models.SmallIntegerField(db_column='RENEW', null=True)
     rent = models.IntegerField(db_column='RENT', null=True)
@@ -968,5 +971,5 @@ class Newhouse(models.Model):
     field_in_2013 = models.BooleanField(default=False)
     field_in_2011 = models.BooleanField(default=False)
 
-    export_year = models.PositiveSmallIntegerField(null=True)
+    export_year = models.PositiveSmallIntegerField(null=True, db_index=True)
 

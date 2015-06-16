@@ -4,6 +4,10 @@ from django.db import models
 class Omov(models.Model):
     class Meta:
         db_table = 'ahs_omov'
+        index_together = [
+            ['control', 'export_year'],
+            ['field_in_2013', 'field_in_2011']
+        ]
 
     control = models.BigIntegerField(db_column='CONTROL', null=True, db_index=True)
 
@@ -18,4 +22,4 @@ class Omov(models.Model):
     field_in_2013 = models.BooleanField(default=False)
     field_in_2011 = models.BooleanField(default=False)
 
-    export_year = models.PositiveSmallIntegerField(null=True)
+    export_year = models.PositiveSmallIntegerField(null=True, db_index=True)

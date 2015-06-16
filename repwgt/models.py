@@ -4,6 +4,10 @@ from django.db import models
 class Repwgt(models.Model):
     class Meta:
         db_table = 'ahs_repwgt'
+        index_together = [
+            ['control', 'export_year'],
+            ['field_in_2013', 'field_in_2011']
+        ]
 
     control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
 
@@ -491,8 +495,7 @@ class Repwgt(models.Model):
     splt2wgt98 = models.PositiveIntegerField(db_column='SPLT2WGT98', null=True)
     splt2wgt99 = models.PositiveIntegerField(db_column='SPLT2WGT99', null=True)
 
-
     field_in_2013 = models.BooleanField(default=False)
     field_in_2011 = models.BooleanField(default=False)
 
-    export_year = models.PositiveSmallIntegerField(null=True)
+    export_year = models.PositiveSmallIntegerField(null=True, db_index=True)
