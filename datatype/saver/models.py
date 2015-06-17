@@ -84,9 +84,10 @@ class Datasaver:
                     warnings.filterwarnings('error')
                     try:
                         c.execute(insert + values)
-                    except:
-                        pass
-                        #print "Error with:" + insert + values
+                    except Exception as e:
+                        print e
+                        print "Error with:" + insert + values
+                        return 0
 
     def check(self):
         """

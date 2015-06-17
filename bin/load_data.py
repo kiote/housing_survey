@@ -9,4 +9,7 @@ years = [2013, 2011]
 
 for year in years:
     for base_name in files:
-        Datasaver(year, base_name).fill_model_by_csv_data()
+        try:
+            Datasaver(year, base_name).fill_model_by_csv_data()
+        except IOError:
+            pass
