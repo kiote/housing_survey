@@ -19,6 +19,7 @@ class Downloader:
         self._makedirs()
 
         for file_info in self.files:
+            print '---> Checking %s to exist locally' % file_info['zip_file']
             if not os.path.isfile(file_info['zip_file']):
                 print '---> Downloading %s' % file_info['remote']
                 response = urllib2.urlopen(file_info['remote'])
@@ -47,6 +48,13 @@ class Downloader:
                     raise
 
     @staticmethod
+    def _file_iterator():
+        for mdir in [local.Y2013_CSV_PATH, local.Y2011_CSV_PATH]:
+            for mfile in os.listdir(local.FULL_PATH + '/' + mdir):
+                os.chdir(local.FULL_PATH + '/' + mdir)
+                yield mfile
+
+    @staticmethod
     def _rename_files():
         """
         AHS give us CSV-files with different name for different years,
@@ -54,17 +62,20 @@ class Downloader:
 
         So we just make names to follow the same pattern here
         """
-        for mdir in [local.Y2013_CSV_PATH, local.Y2011_CSV_PATH]:
-            # lowercase all file names inside this dir and removes "t" in the beginning of the name
-            for mfile in os.listdir(local.FULL_PATH + '/' + mdir):
-                os.chdir(local.FULL_PATH + '/' + mdir)
+        for mfile in Downloader._file_iterator():
+                print '---> Renaming %s to %s' % (mfile, mfile.lower())
                 os.rename(mfile, mfile.lower())
                 if mfile.startswith("t") and mfile != 'topical.csv':
-                    os.rename(mfile, mfile[1:])
+                    print '---> Renaming %s to %s' % (mfile, mfile[1:].lower())
+                    os.rename(mfile, mfile[1:].lower())
 
     @staticmethod
     def _chunk_files():
         """
         Sometimes files are too big, so it's more comfortable to work with them when they are chunked
         """
-        pass
+        for mfile in Downloader._file_iterator():
+            if os.path.getsize(mfile) > 100000000:
+                print '---> Chunking big file %s' % mfile
+                os.system('split -l 50000 %s %s-segment-' % (mfile, mfile))
+
