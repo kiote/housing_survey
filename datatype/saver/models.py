@@ -45,9 +45,6 @@ class Datasaver:
         """
         Iterating through data files and return iterator (row)
         """
-        if self.sample:
-            self.file_path = 'data/sample/puf2013/' + self.base_name + '.csv'
-
         files = self._get_file_and_chunks()
 
         for mfile in files:
@@ -87,3 +84,24 @@ class Datasaver:
                     except:
                         pass
                         #print "Error with:" + insert + values
+
+    def check(self):
+        """
+        Count lines in csv-files and in corresponding tables
+        """
+        print "---> Testing %s" % self.base_name
+        count_query = "SELECT COUNT(*) from ahs_{table_name} where export_year={year};".format(table_name=self.base_name,
+                                                                                               year=self.year)
+        try:
+            count_file = int(os.popen("wc -l %s" % self.file_path).read().split(" ")[0]) - 1  # 1 for header
+        except ValueError:
+            count_file = 0
+        with connection.cursor() as c:
+            c.execute(count_query)
+            count_db = int(c.fetchone()[0])
+
+        if count_db == count_file:
+            print "---> OK"
+        else:
+            print "---> ERROR (%d in db and %d in file)" % (count_db, count_file)
+
