@@ -30,7 +30,7 @@ class Datasaver:
         """
         We could have chunked files, so here we trying to get "main" file and chunks
         """
-        chunks = [self.file_path]
+        chunks = []
 
         for i in range(20):
             chunk = self.file_path + '-segment-a' + chr(ord('a') + i)
@@ -38,6 +38,9 @@ class Datasaver:
                 chunks.append(chunk)
             else:
                 break
+
+        if not len(chunks):
+            chunks = [self.file_path]
 
         return chunks
 
