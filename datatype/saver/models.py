@@ -1,3 +1,4 @@
+import os
 import csv
 import warnings
 import downloader.local
@@ -25,15 +26,37 @@ class Datasaver:
         elif self.year == 2011:
             return 0, 1
 
+    def _get_file_and_chunks(self):
+        """
+        We could have chunked files, so here we trying to get "main" file and chunks
+        """
+        chunks = [self.file_path]
+
+        for i in range(20):
+            chunk = self.file_path + '-segment-a' + chr(ord('a') + 1)
+            if os.path.exists(chunk):
+                chunks.append(chunk)
+            else:
+                break
+
+        return chunks
+
     def _data_iterator(self):
+        """
+        Iterating through data files and return iterator (row)
+        """
         if self.sample:
             self.file_path = 'data/sample/puf2013/' + self.base_name + '.csv'
 
-        with open(self.file_path, 'rb') as csvfile:
-            reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
+        files = self._get_file_and_chunks()
 
-            for row in reader:
-                yield row
+        for mfile in files:
+            print '---> Processing file %s' % mfile
+            with open(mfile, 'rb') as csvfile:
+                reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
+
+                for row in reader:
+                    yield row
 
     def fill_model_by_csv_data(self):
         """
@@ -45,7 +68,7 @@ class Datasaver:
 
         for row in self._data_iterator():
             count += 1
-            print "inserting %d row" % count
+            # print "inserting %d row" % count
             rows_with_year = ', '.join(row.keys()) + ', field_in_2013, field_in_2011, export_year'
             insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
                                                                                    rows=rows_with_year)
