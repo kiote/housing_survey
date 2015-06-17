@@ -33,7 +33,7 @@ class Datasaver:
         chunks = [self.file_path]
 
         for i in range(20):
-            chunk = self.file_path + '-segment-a' + chr(ord('a') + 1)
+            chunk = self.file_path + '-segment-a' + chr(ord('a') + i)
             if os.path.exists(chunk):
                 chunks.append(chunk)
             else:
@@ -77,7 +77,7 @@ class Datasaver:
             row_values += ", %d, %d, %d" % values_tuple
             values = "(%s)" % row_values
             if not printed:
-                print "Trying: " + insert + values
+                print "Sample: " + insert + values
                 printed = True
             with connection.cursor() as c:
                 with warnings.catch_warnings():
