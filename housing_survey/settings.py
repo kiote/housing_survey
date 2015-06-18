@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'repwgt',
     'rmov',
     'topical',
-    'datatype'
+    'datatype',
+    'test_without_migrations'
 ]
 
 MIDDLEWARE_CLASSES = [
