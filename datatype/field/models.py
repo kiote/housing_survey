@@ -18,6 +18,10 @@ def data_type_by_name(name):
     klass = globals()[name]
     return klass
 
+def default_value_by_name(name):
+    klass = globals()[name]
+    return str(klass.default())
+
 
 class Field:
     val_min = 0
@@ -54,6 +58,10 @@ class PositiveSmallIntegerField(Field):
 
         return PositiveSmallIntegerField(self.value)
 
+    @staticmethod
+    def default():
+        return 0
+
 
 class SmallIntegerField(Field):
     name = 'SmallIntegerField'
@@ -69,6 +77,10 @@ class SmallIntegerField(Field):
 
         return SmallIntegerField(self.value)
 
+    @staticmethod
+    def default():
+        return -255
+
 
 class PositiveIntegerField(Field):
     name = 'PositiveIntegerField'
@@ -81,6 +93,10 @@ class PositiveIntegerField(Field):
 
         return PositiveIntegerField(self.value)
 
+    @staticmethod
+    def default():
+        return 0
+
 
 class IntegerField(Field):
     name = 'IntegerField'
@@ -88,12 +104,20 @@ class IntegerField(Field):
     def next(self):
         return IntegerField(self.value)
 
+    @staticmethod
+    def default():
+        return -255
+
 
 class DecimalField(Field):
     name = 'DecimalField'
 
     def next(self):
         return DecimalField(self.value)
+
+    @staticmethod
+    def default():
+        return -255
 
 
 class DataTypeFactory:

@@ -12,4 +12,5 @@ for year in years:
         try:
             Datasaver(year, base_name).fill_model_by_csv_data()
         except IOError:
+            print 'File with name %s not found for year %d' % (base_name, year)
             pass

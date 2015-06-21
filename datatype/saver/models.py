@@ -4,7 +4,8 @@ import warnings
 import downloader.local
 
 from django.db import connection
-
+from datatype.models import Datatype
+from datatype.field.models import default_value_by_name
 
 class Datasaver:
     """
@@ -22,9 +23,9 @@ class Datasaver:
 
     def _which_year(self):
         if self.year == 2013:
-            return 1, 0
+            return ['1', '0']
         elif self.year == 2011:
-            return 0, 1
+            return ['0', '1']
 
     def _get_file_and_chunks(self):
         """
@@ -58,10 +59,44 @@ class Datasaver:
                 for row in reader:
                     yield row
 
+    def _get_rows_list(self):
+        """
+        get rows list from service table, to prepare insert-query
+        """
+        return [row.field_name for row in Datatype.objects.filter(table_name=self.base_name)]
+
+    def _get_values_list(self, row):
+        """
+        get values list, to prepare insert-query
+        first for all values set defaults
+        then, if row has explict values,
+        change defaults to current values
+        """
+        types = [datatype.field_type for datatype in Datatype.objects.filter(table_name=self.base_name)]
+        defaults = [default_value_by_name(dtype) for dtype in types]
+        row_names = self._get_rows_list()
+
+        i = 0
+        for row_name in row_names:
+            try:
+                defaults[i] = row[row_name][1:-1] if row[row_name][0] == "'" else row[row_name]
+            except KeyError:
+                # means we need default value here
+                pass
+            i += 1
+
+        return defaults
+
     def fill_model_by_csv_data(self):
         """
         Opens CSV-file and read it to database
         Use raw-insert to database (not creating any models) to make the insert-precess faster
+        1. For given table we need to have fields-list (select from service table)
+        2. This list also have fields types
+        3. We need a list with defaults for types
+        4. for each field we set default value
+        5. if value found in a "row", then set this value instead of default
+        6. create insert statement
         """
         printed = False
         count = 0
@@ -69,25 +104,23 @@ class Datasaver:
         for row in self._data_iterator():
             count += 1
             # print "inserting %d row" % count
-            rows_with_year = ', '.join(row.keys()) + ', field_in_2013, field_in_2011, export_year'
+            rows_list = self._get_rows_list() + ['field_in_2013', 'field_in_2011', 'export_year']
             insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
-                                                                                   rows=rows_with_year)
-            row_values = ', '.join([v[1:-1] if v[0] == "'" else v for v in row.values()])
-            values_tuple = self._which_year() + (self.year,)
-            row_values += ", %d, %d, %d" % values_tuple
-            values = "(%s)" % row_values
+                                                                                   rows=', '.join(rows_list))
+            row_values = self._get_values_list(row) + self._which_year() + [str(self.year)]
+            values = "(%s)" % ', '.join(row_values)
             if not printed:
                 print "Sample: " + insert + values
                 printed = True
             with connection.cursor() as c:
-                with warnings.catch_warnings():
-                    warnings.filterwarnings('error')
-                    try:
-                        c.execute(insert + values)
-                    except Exception as e:
-                        print e
-                        print "Error with:" + insert + values
-                        return 0
+                # with warnings.catch_warnings():
+                #     warnings.filterwarnings('error')
+                #     try:
+                c.execute(insert + values)
+                    # except Exception as e:
+                    #     print e
+                    #     print "Error with:" + insert + values
+                    #     return 0
 
     def check(self):
         """

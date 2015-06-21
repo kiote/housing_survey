@@ -75,7 +75,7 @@ class Downloader:
         Sometimes files are too big, so it's more comfortable to work with them when they are chunked
         """
         for mfile in Downloader._file_iterator():
-            if os.path.getsize(mfile) > 100000000:
+            if os.path.getsize(mfile) > 300000000:
                 print '---> Chunking big file %s' % mfile
-                os.system('split -l 50000 %s %s-segment-' % (mfile, mfile))
+                os.system('split -l 30000 %s %s-segment-' % (mfile, mfile))
 
