@@ -1,6 +1,7 @@
 import os
 import csv
 import warnings
+import sys
 import downloader.local
 
 from django.db import connection
@@ -98,20 +99,13 @@ class Datasaver:
         5. if value found in a "row", then set this value instead of default
         6. create insert statement
         """
-        printed = False
-        count = 0
-
         for row in self._data_iterator():
-            count += 1
-            # print "inserting %d row" % count
             rows_list = self._get_rows_list() + ['field_in_2013', 'field_in_2011', 'export_year']
             insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
                                                                                    rows=', '.join(rows_list))
             row_values = self._get_values_list(row) + self._which_year() + [str(self.year)]
             values = "(%s)" % ', '.join(row_values)
-            if not printed:
-                print "Sample: " + insert + values
-                printed = True
+            sys.stdout.write('.')
             with connection.cursor() as c:
                 # with warnings.catch_warnings():
                 #     warnings.filterwarnings('error')
