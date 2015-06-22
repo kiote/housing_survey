@@ -14,9 +14,18 @@ class Migration(migrations.Migration):
             name='Owner',
             fields=[
                 ('control', models.BigIntegerField(unique=True, serialize=False, primary_key=True, db_column=b'CONTROL')),
-                ('smsa', models.PositiveIntegerField(null=True, db_column=b'SMSA')),
                 ('jwnher', models.SmallIntegerField(null=True, db_column=b'JWNHER')),
                 ('ownhere', models.SmallIntegerField(null=True, db_column=b'OWNHERE')),
+                ('field_in_2013', models.BooleanField(default=False)),
+                ('field_in_2011', models.BooleanField(default=False)),
+                ('export_year', models.PositiveSmallIntegerField(null=True, db_index=True)),
             ],
+            options={
+                'db_table': 'ahs_owner',
+            },
+        ),
+        migrations.AlterIndexTogether(
+            name='owner',
+            index_together=set([('control', 'export_year'), ('field_in_2013', 'field_in_2011')]),
         ),
     ]
