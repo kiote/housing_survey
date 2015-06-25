@@ -107,14 +107,13 @@ class Datasaver:
             values = "(%s)" % ', '.join(row_values)
             sys.stdout.write('.')
             with connection.cursor() as c:
-                # with warnings.catch_warnings():
-                #     warnings.filterwarnings('error')
-                #     try:
-                c.execute(insert + values)
-                    # except Exception as e:
-                    #     print e
-                    #     print "Error with:" + insert + values
-                    #     return 0
+                with warnings.catch_warnings():
+                    warnings.filterwarnings('error')
+                    try:
+                        c.execute(insert + values)
+                    except Exception as e:
+                        print e
+                        print "Error with:" + insert + values
 
     def check(self):
         """

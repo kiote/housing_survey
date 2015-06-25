@@ -9,7 +9,7 @@ class Rmov(models.Model):
             ['field_in_2013', 'field_in_2011']
         ]
 
-    control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
+    control = models.BigIntegerField(db_column='CONTROL', db_index=True)
 
     dbinreas = models.SmallIntegerField(db_column='DBINREAS', null=True)
     dbinvol = models.SmallIntegerField(db_column='DBINVOL', null=True)
