@@ -60,11 +60,14 @@ class Datasaver:
                 for row in reader:
                     yield row
 
-    def _get_rows_list(self):
+    def _get_row_names(self):
         """
         get rows list from service table, to prepare insert-query
         """
         return [row.field_name for row in Datatype.objects.filter(table_name=self.base_name)]
+
+    def _get_row_types(self):
+        return [datatype.field_type for datatype in Datatype.objects.filter(table_name=self.base_name)]
 
     def _get_values_list(self, row):
         """
@@ -73,12 +76,14 @@ class Datasaver:
         then, if row has explict values,
         change defaults to current values
         """
-        types = [datatype.field_type for datatype in Datatype.objects.filter(table_name=self.base_name)]
+        types = self._get_row_types()
+        row_names = self._get_row_names()
+
         defaults = [default_value_by_name(dtype) for dtype in types]
-        row_names = self._get_rows_list()
 
         i = 0
         for row_name in row_names:
+            row_name = row_name.lower()
             try:
                 defaults[i] = row[row_name][1:-1] if row[row_name][0] == "'" else row[row_name]
             except KeyError:
@@ -100,7 +105,7 @@ class Datasaver:
         6. create insert statement
         """
         for row in self._data_iterator():
-            rows_list = self._get_rows_list() + ['field_in_2013', 'field_in_2011', 'export_year']
+            rows_list = self._get_row_names() + ['field_in_2013', 'field_in_2011', 'export_year']
             insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
                                                                                    rows=', '.join(rows_list))
             row_values = self._get_values_list(row) + self._which_year() + [str(self.year)]
@@ -119,7 +124,7 @@ class Datasaver:
         """
         Count lines in csv-files and in corresponding tables
         """
-        print "---> Testing %s" % self.base_name
+        print "---> Testing count of %s(%d)" % (self.base_name, self.year)
         count_query = "SELECT COUNT(*) from ahs_{table_name} where export_year={year};".format(table_name=self.base_name,
                                                                                                year=self.year)
         try:
