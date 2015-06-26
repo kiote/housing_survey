@@ -18,7 +18,6 @@ years = [2013, 2011]
 
 for year in years:
     for base_name in files:
-        print "%d: %s" % (year, base_name)
         try:
             Datasaver(year, base_name).check()
         except IOError:
