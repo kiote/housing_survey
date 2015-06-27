@@ -13,7 +13,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Ratiov',
             fields=[
-                ('control', models.BigIntegerField(unique=True, serialize=False, primary_key=True, db_column=b'CONTROL')),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('control', models.BigIntegerField(db_column=b'CONTROL')),
                 ('rcarp', models.SmallIntegerField(null=True, db_column=b'RCARP')),
                 ('rclot', models.SmallIntegerField(null=True, db_column=b'RCLOT')),
                 ('rcost', models.SmallIntegerField(null=True, db_column=b'RCOST')),
@@ -29,6 +30,10 @@ class Migration(migrations.Migration):
             options={
                 'db_table': 'ahs_ratiov',
             },
+        ),
+        migrations.AlterUniqueTogether(
+            name='ratiov',
+            unique_together=set([('control', 'export_year')]),
         ),
         migrations.AlterIndexTogether(
             name='ratiov',

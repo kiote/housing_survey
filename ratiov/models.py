@@ -8,8 +8,9 @@ class Ratiov(models.Model):
             ['control', 'export_year'],
             ['field_in_2013', 'field_in_2011']
         ]
+        unique_together = ('control', 'export_year')
 
-    control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
+    control = models.BigIntegerField(db_column='CONTROL')
 
     rcarp = models.SmallIntegerField(db_column='RCARP', null=True)
     rclot = models.SmallIntegerField(db_column='RCLOT', null=True)
