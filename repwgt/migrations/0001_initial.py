@@ -13,7 +13,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Repwgt',
             fields=[
-                ('control', models.BigIntegerField(unique=True, serialize=False, primary_key=True, db_column=b'CONTROL')),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('control', models.BigIntegerField(db_column=b'CONTROL')),
                 ('repwgt0', models.DecimalField(null=True, decimal_places=10, max_digits=20, db_column=b'REPWGT0')),
                 ('repwgt1', models.DecimalField(null=True, decimal_places=10, max_digits=20, db_column=b'REPWGT1')),
                 ('repwgt10', models.DecimalField(null=True, decimal_places=10, max_digits=20, db_column=b'REPWGT10')),

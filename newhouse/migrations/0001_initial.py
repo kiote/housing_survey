@@ -13,7 +13,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Newhouse',
             fields=[
-                ('control', models.BigIntegerField(unique=True, serialize=False, primary_key=True, db_column=b'CONTROL')),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('control', models.BigIntegerField(db_column=b'CONTROL')),
                 ('access', models.SmallIntegerField(null=True, db_column=b'ACCESS')),
                 ('afuel', models.SmallIntegerField(null=True, db_column=b'AFUEL')),
                 ('afur', models.SmallIntegerField(null=True, db_column=b'AFUR')),
@@ -978,6 +979,10 @@ class Migration(migrations.Migration):
             options={
                 'db_table': 'ahs_newhouse',
             },
+        ),
+        migrations.AlterUniqueTogether(
+            name='newhouse',
+            unique_together=set([('control', 'export_year')]),
         ),
         migrations.AlterIndexTogether(
             name='newhouse',

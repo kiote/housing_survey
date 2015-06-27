@@ -8,8 +8,9 @@ class Repwgt(models.Model):
             ['control', 'export_year'],
             ['field_in_2013', 'field_in_2011']
         ]
+        # unique_together = ('control', 'export_year')
 
-    control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
+    control = models.BigIntegerField(db_column='CONTROL')
 
     repwgt0 = models.DecimalField(db_column='REPWGT0', max_digits=20, decimal_places=10, null=True)
     repwgt1 = models.DecimalField(db_column='REPWGT1', max_digits=20, decimal_places=10, null=True)

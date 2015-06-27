@@ -8,7 +8,9 @@ class Newhouse(models.Model):
             ['control', 'export_year'],
             ['field_in_2013', 'field_in_2011']
         ]
-    control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
+        unique_together = ('control', 'export_year')
+        
+    control = models.BigIntegerField(db_column='CONTROL')
 
     access = models.SmallIntegerField(db_column='ACCESS', null=True)
     afuel = models.SmallIntegerField(db_column='AFUEL', null=True)
@@ -972,4 +974,3 @@ class Newhouse(models.Model):
     field_in_2011 = models.BooleanField(default=False)
 
     export_year = models.PositiveSmallIntegerField(null=True, db_index=True)
-
