@@ -83,7 +83,6 @@ class Datasaver:
 
         i = 0
         for row_name in row_names:
-            row_name = row_name.lower()
             try:
                 defaults[i] = row[row_name][1:-1] if row[row_name][0] == "'" else row[row_name]
             except KeyError:
@@ -118,7 +117,7 @@ class Datasaver:
                         c.execute(insert + values)
                     except Exception as e:
                         print e
-                        print "Error with:" + insert + values
+                        # print "Error with:" + insert + values
 
     def check(self):
         """
@@ -139,4 +138,3 @@ class Datasaver:
             print "---> OK"
         else:
             print "---> ERROR (%d in db and %d in file)" % (count_db, count_file)
-
