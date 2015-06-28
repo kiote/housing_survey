@@ -1,3 +1,4 @@
+"""Main module to save data to database."""
 import os
 import csv
 import warnings
@@ -14,6 +15,7 @@ class Datasaver:
     """The base class to save CSV-files to database."""
 
     def __init__(self, year=2013, base_name='', sample=False):
+        """Some pre-initialization."""
         if base_name == '':
             raise 'Base name should be provided'
         self.file_path = downloader.local.data_path(year) + base_name + '.csv'
@@ -72,7 +74,7 @@ class Datasaver:
         return [datatype.field_type for datatype in
                 Datatype.objects.filter(table_name=self.base_name)]
 
-    def _unquoted_value(value):
+    def _unquoted_value(self, value):
         return value[1:-1] if value[0] == "'" else value
 
     def _get_values_list(self, row):
@@ -116,9 +118,12 @@ class Datasaver:
         for row in self._data_iterator():
             extra_fields = ['field_in_2013', 'field_in_2011', 'export_year']
             rows_list = self._get_row_names() + extra_fields
-            insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
-                                                                                   rows=', '.join(rows_list))
-            row_values = self._get_values_list(row) + self._which_year() + [str(self.year)]
+            insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES "
+            insert = insert.format(table_name=self.base_name,
+                                   rows=', '.join(rows_list))
+            row_values = self._get_values_list(row)
+            row_values += self._which_year()
+            row_values += [str(self.year)]
             values = "(%s)" % ', '.join(row_values)
             sys.stdout.write('.')
             with connection.cursor() as c:
@@ -133,10 +138,13 @@ class Datasaver:
     def check(self):
         """Count lines in csv-files and in corresponding tables."""
         print "---> Testing count of %s(%d)" % (self.base_name, self.year)
-        count_query = "SELECT COUNT(*) from ahs_{table_name} where export_year={year};".format(table_name=self.base_name,
-                                                                                               year=self.year)
+        count_query = ("SELECT COUNT(*) from ahs_{table_name} "
+                       "where export_year={year};")
+        count_query = count_query.format(table_name=self.base_name,
+                                         year=self.year)
         try:
-            count_file = int(os.popen("wc -l %s" % self.file_path).read().split(" ")[0]) - 1  # 1 for header
+            count_file = os.popen("wc -l %s" % self.file_path).read()
+            count_file = int(count_file.split(" ")[0]) - 1  # 1 for header
         except ValueError:
             count_file = 0
         with connection.cursor() as c:
@@ -146,4 +154,5 @@ class Datasaver:
         if count_db == count_file:
             print "---> OK"
         else:
-            print "---> ERROR (%d in db and %d in file)" % (count_db, count_file)
+            print "---> ERROR (%d in db and %d in file)" % (count_db,
+                                                            count_file)
