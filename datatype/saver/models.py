@@ -101,7 +101,8 @@ class Datasaver:
             i += 1
 
         key_values = dict(zip(row_names, defaults))
-
+        # sorten list of fields for debug
+        # key_values = {'NEWC': key_values['NEWC'], 'CONTROL': key_values['CONTROL']}
         return key_values
 
     def fill_model_by_csv_data(self):
