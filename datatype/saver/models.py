@@ -77,13 +77,14 @@ class Datasaver:
     def _unquoted_value(self, value):
         return value[1:-1] if value[0] == "'" else value
 
-    def _get_values_list(self, row):
+    def _get_assigned(self, row):
         """
-        Get values list, to prepare insert-query.
+        For given row readed from file gives dictionary.
 
-        First for all values set defaults.
-        Then, if row has explict values,
-        change defaults to current values
+        This dictionary contains row values and default values.
+        Return dictionary initialized either
+        with default values for given datatype
+        or with values readed from file.
         """
         types = self._get_row_types()
         row_names = self._get_row_names()
@@ -99,38 +100,37 @@ class Datasaver:
                 pass
             i += 1
 
-        return defaults
+        key_values = dict(zip(row_names, defaults))
+
+        return key_values
 
     def fill_model_by_csv_data(self):
         """
         Open CSV-file and read it to database.
 
         Use raw-insert to database (not creating any models)
-        to make the insert-precess faster
-        1. For given table we need to have fields-list
-        (select from service table)
-        2. This list also have fields types
-        3. We need a list with defaults for types
-        4. for each field we set default value
-        5. if value found in a "row", then set this value instead of default
-        6. create insert statement
+        to make the insert-precess faster.
         """
         for row in self._data_iterator():
+            key_values = self._get_assigned(row)
             extra_fields = ['field_in_2013', 'field_in_2011', 'export_year']
-            rows_list = self._get_row_names() + extra_fields
+            rows_list = key_values.keys() + extra_fields
             insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES "
             insert = insert.format(table_name=self.base_name,
                                    rows=', '.join(rows_list))
-            row_values = self._get_values_list(row)
-            row_values += self._which_year()
-            row_values += [str(self.year)]
-            values = "(%s)" % ', '.join(row_values)
-            sys.stdout.write('.')
+            rows_value = key_values.values()
+            rows_value += self._which_year()
+            rows_value += [str(self.year)]
+            values = "(%s)" % ', '.join(rows_value)
+
+            # debug result dict to be inserted
+            # print dict(zip(rows_list, rows_value))['NEWC']
             with connection.cursor() as c:
                 with warnings.catch_warnings():
                     warnings.filterwarnings('error')
                     try:
                         c.execute(insert + values)
+                        sys.stdout.write('.')
                     except Exception as e:
                         print e
                         # print "Error with:" + insert + values
