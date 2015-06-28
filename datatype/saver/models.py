@@ -8,10 +8,11 @@ from django.db import connection
 from datatype.models import Datatype
 from datatype.field.models import default_value_by_name
 
+
 class Datasaver:
-    """
-    The base class to save CSV-files to database
-    """
+
+    """The base class to save CSV-files to database."""
+
     def __init__(self, year=2013, base_name='', sample=False):
         if base_name == '':
             raise 'Base name should be provided'
@@ -30,7 +31,10 @@ class Datasaver:
 
     def _get_file_and_chunks(self):
         """
-        We could have chunked files, so here we trying to get "main" file and chunks
+        Work with chunked files.
+
+        If files are too big we have them chunked.
+        Here we trying to get "main" file and chunks.
         """
         chunks = []
 
@@ -47,33 +51,36 @@ class Datasaver:
         return chunks
 
     def _data_iterator(self):
-        """
-        Iterating through data files and return iterator (row)
-        """
+        """Iterating through data files and return iterator (row)."""
         files = self._get_file_and_chunks()
 
         for mfile in files:
             print '---> Processing file %s' % mfile
             with open(mfile, 'rb') as csvfile:
-                reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
+                reader = csv.DictReader(csvfile, delimiter=',',
+                                        skipinitialspace=True)
 
                 for row in reader:
                     yield row
 
     def _get_row_names(self):
-        """
-        get rows list from service table, to prepare insert-query
-        """
-        return [row.field_name for row in Datatype.objects.filter(table_name=self.base_name)]
+        """Get rows list from service table, to prepare insert-query."""
+        return [row.field_name for row in
+                Datatype.objects.filter(table_name=self.base_name)]
 
     def _get_row_types(self):
-        return [datatype.field_type for datatype in Datatype.objects.filter(table_name=self.base_name)]
+        return [datatype.field_type for datatype in
+                Datatype.objects.filter(table_name=self.base_name)]
+
+    def _unquoted_value(value):
+        return value[1:-1] if value[0] == "'" else value
 
     def _get_values_list(self, row):
         """
-        get values list, to prepare insert-query
-        first for all values set defaults
-        then, if row has explict values,
+        Get values list, to prepare insert-query.
+
+        First for all values set defaults.
+        Then, if row has explict values,
         change defaults to current values
         """
         types = self._get_row_types()
@@ -84,7 +91,7 @@ class Datasaver:
         i = 0
         for row_name in row_names:
             try:
-                defaults[i] = row[row_name][1:-1] if row[row_name][0] == "'" else row[row_name]
+                defaults[i] = self._unquoted_value(row[row_name])
             except KeyError:
                 # means we need default value here
                 pass
@@ -94,9 +101,12 @@ class Datasaver:
 
     def fill_model_by_csv_data(self):
         """
-        Opens CSV-file and read it to database
-        Use raw-insert to database (not creating any models) to make the insert-precess faster
-        1. For given table we need to have fields-list (select from service table)
+        Open CSV-file and read it to database.
+
+        Use raw-insert to database (not creating any models)
+        to make the insert-precess faster
+        1. For given table we need to have fields-list
+        (select from service table)
         2. This list also have fields types
         3. We need a list with defaults for types
         4. for each field we set default value
@@ -104,7 +114,8 @@ class Datasaver:
         6. create insert statement
         """
         for row in self._data_iterator():
-            rows_list = self._get_row_names() + ['field_in_2013', 'field_in_2011', 'export_year']
+            extra_fields = ['field_in_2013', 'field_in_2011', 'export_year']
+            rows_list = self._get_row_names() + extra_fields
             insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES ".format(table_name=self.base_name,
                                                                                    rows=', '.join(rows_list))
             row_values = self._get_values_list(row) + self._which_year() + [str(self.year)]
@@ -120,9 +131,7 @@ class Datasaver:
                         # print "Error with:" + insert + values
 
     def check(self):
-        """
-        Count lines in csv-files and in corresponding tables
-        """
+        """Count lines in csv-files and in corresponding tables."""
         print "---> Testing count of %s(%d)" % (self.base_name, self.year)
         count_query = "SELECT COUNT(*) from ahs_{table_name} where export_year={year};".format(table_name=self.base_name,
                                                                                                year=self.year)
