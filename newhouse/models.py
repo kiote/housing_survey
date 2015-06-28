@@ -8,7 +8,7 @@ class Newhouse(models.Model):
             ['control', 'export_year'],
             ['field_in_2013', 'field_in_2011']
         ]
-        unique_together = ('control', 'export_year')
+        # unique_together = ('control', 'export_year')
 
     control = models.BigIntegerField(db_column='CONTROL')
 

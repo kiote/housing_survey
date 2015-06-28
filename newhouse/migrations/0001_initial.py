@@ -980,10 +980,6 @@ class Migration(migrations.Migration):
                 'db_table': 'ahs_newhouse',
             },
         ),
-        migrations.AlterUniqueTogether(
-            name='newhouse',
-            unique_together=set([('control', 'export_year')]),
-        ),
         migrations.AlterIndexTogether(
             name='newhouse',
             index_together=set([('control', 'export_year'), ('field_in_2013', 'field_in_2011')]),
