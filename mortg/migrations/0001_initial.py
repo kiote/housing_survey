@@ -13,7 +13,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Mortg',
             fields=[
-                ('control', models.BigIntegerField(unique=True, serialize=False, primary_key=True, db_column=b'CONTROL')),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('control', models.BigIntegerField(db_column=b'CONTROL')),
                 ('addtn2', models.SmallIntegerField(null=True, db_column=b'ADDTN2')),
                 ('addtn3', models.SmallIntegerField(null=True, db_column=b'ADDTN3')),
                 ('addtns', models.SmallIntegerField(null=True, db_column=b'ADDTNS')),

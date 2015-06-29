@@ -1,9 +1,9 @@
+"""Loads data from CSV-files to database."""
 import django_init
-
-from django.db import connection
 from datatype.saver.models import Datasaver
 
-files = ['homimp', 'mortg', 'newhouse', 'omov', 'owner', 'person', 'ratiov', 'repwgt', 'rmov', 'topical']
+files = ['homimp', 'mortg', 'newhouse', 'omov', 'owner', 'person', 'ratiov',
+         'repwgt', 'rmov', 'topical']
 
 years = [2013, 2011]
 

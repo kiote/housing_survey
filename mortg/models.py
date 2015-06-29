@@ -9,7 +9,8 @@ class Mortg(models.Model):
             ['field_in_2013', 'field_in_2011']
         ]
 
-    control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
+    control = models.BigIntegerField(db_column='CONTROL')
+    # unique_together = ('control', 'export_year')
 
     addtn2 = models.SmallIntegerField(db_column='ADDTN2', null=True)
     addtn3 = models.SmallIntegerField(db_column='ADDTN3', null=True)
