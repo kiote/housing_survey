@@ -1,6 +1,4 @@
-"""
-constants to locate remote files
-"""
+"""constants to locate remote files"""
 import urllib2
 
 AHS_ADDRESS = 'http://www2.census.gov/'
@@ -14,3 +12,8 @@ Y2011 = {'file_name': urllib2.quote('AHS 2011 National and Metropolitan PUF v1.4
          'path': 'programs-surveys/ahs/2011/'}
 
 Y2011_FULL_PATH = AHS_ADDRESS + Y2011['path'] + Y2011['file_name']
+
+Y2009 = {'file_name': urllib2.quote('AHS 2009 National PUF v1.1 CSV.zip'),
+         'path': 'programs-surveys/ahs/2009/'}
+
+Y2009_FULL_PATH = AHS_ADDRESS + Y2009['path'] + Y2009['file_name']

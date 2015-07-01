@@ -13,7 +13,10 @@ class Downloader:
               'local_path': local.Y2013_CSV_PATH},
              {'remote': remote.Y2011_FULL_PATH,
               'zip_file': local.Y2011_PATH + remote.Y2011['file_name'],
-              'local_path': local.Y2011_CSV_PATH}]
+              'local_path': local.Y2011_CSV_PATH},
+             {'remote': remote.Y2009_FULL_PATH,
+              'zip_file': local.Y2009_PATH + remote.Y2009['file_name'],
+              'local_path': local.Y2009_CSV_PATH}]
 
     def download(self):
         self._makedirs()
@@ -38,7 +41,7 @@ class Downloader:
         """
         Creates directories for data files, if this directories did not exist yet
         """
-        for mdir in [local.Y2013_CSV_PATH, local.Y2011_CSV_PATH]:
+        for mdir in [local.Y2013_CSV_PATH, local.Y2011_CSV_PATH, local.Y2009_CSV_PATH]:
             try:
                 os.makedirs(mdir)
             except OSError as exc:
@@ -49,7 +52,7 @@ class Downloader:
 
     @staticmethod
     def _file_iterator():
-        for mdir in [local.Y2013_CSV_PATH, local.Y2011_CSV_PATH]:
+        for mdir in [local.Y2013_CSV_PATH, local.Y2011_CSV_PATH, local.Y2009_CSV_PATH]:
             for mfile in os.listdir(local.FULL_PATH + '/' + mdir):
                 os.chdir(local.FULL_PATH + '/' + mdir)
                 yield mfile
@@ -78,4 +81,3 @@ class Downloader:
             if os.path.getsize(mfile) > 300000000:
                 print '---> Chunking big file %s' % mfile
                 os.system('split -l 30000 %s %s-segment-' % (mfile, mfile))
-
