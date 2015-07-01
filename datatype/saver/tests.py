@@ -7,6 +7,8 @@ from newhouse.models import Newhouse
 
 
 class AbstractDatasaverTestCase(TestCase):
+    fixtures = ['datatype']
+
     def setUp(self):
         Datasaver(2013, 'newhouse', True).fill_model_by_csv_data()
         self.newhouse = Newhouse.objects.get(control='100003130103')
