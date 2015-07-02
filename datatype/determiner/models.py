@@ -30,7 +30,7 @@ class AbstractDatatype:
 
         with open(self.file_path, 'rb') as csvfile:
             reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
-            
+
             for row in reader:
                 for column in row.keys():
                     try:
@@ -39,7 +39,7 @@ class AbstractDatatype:
                         prev_type = ''
 
                     headers_with_types[column] = DataTypeFactory(row[column], prev_type).produce()
-                    
+
         return headers_with_types
 
     def _write_types(self):
@@ -81,4 +81,3 @@ class AbstractDatatype:
                 prepared_string = "%s = models.%s(db_column='%s'%s)\n" % \
                     (field.field_name.lower(), field.field_type, field.field_name, more_params)
                 f.write(prepared_string)
-
