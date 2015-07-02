@@ -1,12 +1,17 @@
 """
 This module provides main work on defining field's datatype.
-To define datatype it does:
-1) assume by default datatype = PositiveSmallInteger ("smallest" of possible datatypes);
-2) if we have some value, which is beyond the limits of current datatype, then we make current datatype
-    to equals "next" datatype, the order for next is:
-    PositiveSmallInteger -> SmallInteger -> PositiveInteger -> Integer -> Decimal
 
-Main class here is DataTypeFactory which trying to "produce" right type based on the value.
+To define datatype it does:
+1) assume by default datatype = PositiveSmallInteger
+    ("smallest" of possible datatypes);
+2) if we have some value, which is beyond the limits of current datatype,
+    then we make current datatype
+    to equals "next" datatype, the order for next is:
+    PositiveSmallInteger -> SmallInteger -> PositiveInteger
+        -> Integer -> Decimal
+
+Main class here is DataTypeFactory which trying to "produce" right type
+    based on the value.
 Value is just one of the column values.
 """
 from decimal import *
@@ -122,22 +127,39 @@ class DecimalField(Field):
 
 class DataTypeFactory:
     def __init__(self, value, prev_type=''):
-        self.value = value
+        self.value = self._clear_value(value)
         self.prev_type = prev_type
-        self._clear_value()
 
     def produce(self):
         if not self.prev_type:
-            self.prev_type = 'PositiveSmallIntegerField' if self.value >= 0 else 'SmallIntegerField'
+            self.prev_type = 'PositiveSmallIntegerField' \
+                if self.value >= 0 else 'SmallIntegerField'
 
         data_type = data_type_by_name(self.prev_type)
         return data_type(self.value).next().name
 
-    def _clear_value(self):
-        if self.value[0] == "'":
-            self.value = self.value[1:-1]
+    def _clear_value(self, value):
+        """Remove quotes and make int/decimal value"""
+        if value[0] == "'":
+            value = value[1:-1]
 
         try:
-            self.value = int(self.value)
+            value = int(value)
         except ValueError:
-            self.value = Decimal(self.value)
+            try:
+                value = Decimal(value)
+            except InvalidOperation:
+                value = self._char_to_int(value)
+        return value
+
+    def _char_to_int(self, value):
+        """
+        If value contains on of the "B" or "" (blank) then it set to -6 or -9
+
+        Here we assume that whatever strange we would have,
+        it will be turned to -9
+        """
+        if value == 'B' or value == 'b':
+            value = -6
+        else:
+            value = -9
