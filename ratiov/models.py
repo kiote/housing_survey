@@ -10,8 +10,7 @@ class Ratiov(models.Model):
         ]
         unique_together = ('control', 'export_year')
 
-    control = models.BigIntegerField(db_column='CONTROL')
-
+    control = models.BigIntegerField(db_column='CONTROL', null=True)
     rcarp = models.SmallIntegerField(db_column='RCARP', null=True)
     rclot = models.SmallIntegerField(db_column='RCLOT', null=True)
     rcost = models.SmallIntegerField(db_column='RCOST', null=True)

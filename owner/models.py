@@ -9,8 +9,7 @@ class Owner(models.Model):
             ['field_in_2013', 'field_in_2011']
         ]
 
-    control = models.BigIntegerField(db_column='CONTROL')
-
+    control = models.BigIntegerField(db_column='CONTROL', null=True)
     jwnher = models.SmallIntegerField(db_column='JWNHER', null=True)
     ownhere = models.SmallIntegerField(db_column='OWNHERE', null=True)
 

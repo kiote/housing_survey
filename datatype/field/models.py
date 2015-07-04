@@ -104,15 +104,31 @@ class PositiveIntegerField(Field):
 
 
 class IntegerField(Field):
+    val_min = -2000000000
+    val_max = 2000000000
     name = 'IntegerField'
 
     def next(self):
+        if not(self.in_range()):
+            return BigIntegerField(self.value).next()
+
         return IntegerField(self.value)
 
     @staticmethod
     def default():
         return -255
 
+class BigIntegerField(Field):
+    val_min = -900000000000000000
+    val_max = 9000000000000000000
+    name = 'BigIntegerField'
+
+    def next(self):
+        return BigIntegerField(self.value)
+
+    @staticmethod
+    def default():
+        return -255
 
 class DecimalField(Field):
     name = 'DecimalField'

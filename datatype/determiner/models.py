@@ -25,7 +25,7 @@ class AbstractDatatype:
             self.columns_generated_file_path = 'data/sample/puf2013/newhouse.gen'
 
     def _generate_types(self):
-        """Opens original CSV-file with the data and sets columns datatypes"""
+        """Open original CSV-file with the data and set columns datatypes"""
         headers_with_types = {}
 
         with open(self.file_path, 'rb') as csvfile:
@@ -69,8 +69,9 @@ class AbstractDatatype:
 
     def generate_columns(self):
         """
-        Read saved to table data with column names and data types and then generate
-        Python-like statements, based on this data
+        Read saved to table data with column names and data types.
+
+        And then generate Python-like statements, based on this data
         """
         self._write_types()
         table_name = self.base_name

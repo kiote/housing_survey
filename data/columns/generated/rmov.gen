@@ -1,4 +1,4 @@
-control = models.IntegerField(db_column='CONTROL', null=True)
+control = models.BigIntegerField(db_column='CONTROL', null=True)
 dbinreas = models.SmallIntegerField(db_column='DBINREAS', null=True)
 dbinvol = models.SmallIntegerField(db_column='DBINVOL', null=True)
 dbinwher = models.SmallIntegerField(db_column='DBINWHER', null=True)

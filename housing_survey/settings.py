@@ -98,6 +98,7 @@ if os.getenv('BUILD_ON_TRAVIS', None):
             'USER': 'travis',
             'PASSWORD': '',
             'HOST': '127.0.0.1',
+            'OPTIONS': {'init_command': 'SET storage_engine=MYISAM'}
         }
     }
 else:
@@ -108,6 +109,7 @@ else:
             'USER': 'ahs',
             'PASSWORD': '12345',
             'HOST': '127.0.0.1',
+            'OPTIONS': {'init_command': 'SET storage_engine=MYISAM'}
         }
     }
 

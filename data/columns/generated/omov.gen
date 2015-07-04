@@ -1,4 +1,4 @@
-control = models.IntegerField(db_column='CONTROL', null=True)
+control = models.BigIntegerField(db_column='CONTROL', null=True)
 dbgrpcnt = models.PositiveSmallIntegerField(db_column='DBGRPCNT', null=True)
 dboutlen = models.SmallIntegerField(db_column='DBOUTLEN', null=True)
 dboutreas = models.SmallIntegerField(db_column='DBOUTREAS', null=True)

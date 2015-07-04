@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             name='Rmov',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('control', models.BigIntegerField(db_column=b'CONTROL', db_index=True)),
+                ('control', models.BigIntegerField(null=True, db_column=b'CONTROL')),
                 ('dbinreas', models.SmallIntegerField(null=True, db_column=b'DBINREAS')),
                 ('dbinvol', models.SmallIntegerField(null=True, db_column=b'DBINVOL')),
                 ('dbinwher', models.SmallIntegerField(null=True, db_column=b'DBINWHER')),
@@ -28,7 +28,9 @@ class Migration(migrations.Migration):
                 ('jxper', models.SmallIntegerField(null=True, db_column=b'JXPER')),
                 ('jxten', models.SmallIntegerField(null=True, db_column=b'JXTEN')),
                 ('jxunit', models.SmallIntegerField(null=True, db_column=b'JXUNIT')),
+                ('movgrp', models.PositiveSmallIntegerField(null=True, db_column=b'MOVGRP')),
                 ('mvg', models.PositiveSmallIntegerField(null=True, db_column=b'MVG')),
+                ('rmov', models.SmallIntegerField(null=True, db_column=b'RMOV')),
                 ('xcond', models.SmallIntegerField(null=True, db_column=b'XCOND')),
                 ('xcoop', models.SmallIntegerField(null=True, db_column=b'XCOOP')),
                 ('xcost', models.SmallIntegerField(null=True, db_column=b'XCOST')),

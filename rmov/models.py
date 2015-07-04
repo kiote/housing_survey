@@ -9,8 +9,7 @@ class Rmov(models.Model):
             ['field_in_2013', 'field_in_2011']
         ]
 
-    control = models.BigIntegerField(db_column='CONTROL', db_index=True)
-
+    control = models.BigIntegerField(db_column='CONTROL', null=True)
     dbinreas = models.SmallIntegerField(db_column='DBINREAS', null=True)
     dbinvol = models.SmallIntegerField(db_column='DBINVOL', null=True)
     dbinwher = models.SmallIntegerField(db_column='DBINWHER', null=True)
@@ -24,7 +23,9 @@ class Rmov(models.Model):
     jxper = models.SmallIntegerField(db_column='JXPER', null=True)
     jxten = models.SmallIntegerField(db_column='JXTEN', null=True)
     jxunit = models.SmallIntegerField(db_column='JXUNIT', null=True)
+    movgrp = models.PositiveSmallIntegerField(db_column='MOVGRP', null=True)
     mvg = models.PositiveSmallIntegerField(db_column='MVG', null=True)
+    rmov = models.SmallIntegerField(db_column='RMOV', null=True)
     xcond = models.SmallIntegerField(db_column='XCOND', null=True)
     xcoop = models.SmallIntegerField(db_column='XCOOP', null=True)
     xcost = models.SmallIntegerField(db_column='XCOST', null=True)
