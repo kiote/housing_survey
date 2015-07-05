@@ -30,7 +30,7 @@ class Datasaver:
         Work with chunked files.
 
         If files are too big we have them chunked.
-        Here we trying to get "main" file and chunks.
+        Here we trying to get chunks. If there are no chunks, we get main file.
         """
         chunks = []
 
@@ -85,14 +85,12 @@ class Datasaver:
 
         defaults = [default_value_by_name(dtype) for dtype in types]
 
-        i = 0
-        for row_name in row_names:
+        for i, row_name in enumerate(row_names):
             try:
                 defaults[i] = self._unquoted_value(row[row_name])
             except KeyError:
                 # means we need default value here
                 pass
-            i += 1
 
         key_values = dict(zip(row_names, defaults))
         # sorten list of fields for debug
@@ -109,13 +107,11 @@ class Datasaver:
         """
         for row in self._data_iterator():
             key_values = self._get_assigned(row)
-            extra_fields = ['export_year']
-            rows_list = key_values.keys() + extra_fields
+            rows_list = key_values.keys() + ['export_year']
             insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES "
             insert = insert.format(table_name=self.base_name,
                                    rows=', '.join(rows_list))
-            rows_value = key_values.values()
-            rows_value += [str(self.year)]
+            rows_value = key_values.values() + [str(self.year)]
             values = "(%s)" % ', '.join(rows_value)
 
             # debug result dict to be inserted

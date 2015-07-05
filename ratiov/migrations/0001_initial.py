@@ -23,20 +23,14 @@ class Migration(migrations.Migration):
                 ('rmedi', models.SmallIntegerField(null=True, db_column=b'RMEDI')),
                 ('rothe', models.SmallIntegerField(null=True, db_column=b'ROTHE')),
                 ('rutil', models.SmallIntegerField(null=True, db_column=b'RUTIL')),
-                ('field_in_2013', models.BooleanField(default=False)),
-                ('field_in_2011', models.BooleanField(default=False)),
                 ('export_year', models.PositiveSmallIntegerField(null=True, db_index=True)),
             ],
             options={
                 'db_table': 'ahs_ratiov',
             },
         ),
-        migrations.AlterUniqueTogether(
-            name='ratiov',
-            unique_together=set([('control', 'export_year')]),
-        ),
         migrations.AlterIndexTogether(
             name='ratiov',
-            index_together=set([('control', 'export_year'), ('field_in_2013', 'field_in_2011')]),
+            index_together=set([('control', 'export_year')]),
         ),
     ]

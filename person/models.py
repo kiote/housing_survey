@@ -6,8 +6,7 @@ class Person(models.Model):
         db_table = 'ahs_person'
         index_together = [
             ['control', 'pline'],
-            ['control', 'export_year'],
-            ['field_in_2013', 'field_in_2011']
+            ['control', 'export_year']
         ]
 
     control = models.BigIntegerField(db_column='CONTROL', db_index=True, null=True)
@@ -109,8 +108,5 @@ class Person(models.Model):
     spos = models.SmallIntegerField(db_column='SPOS', null=True)
     ten = models.SmallIntegerField(db_column='TEN', null=True)
     wlineq = models.SmallIntegerField(db_column='WLINEQ', null=True)
-
-    field_in_2013 = models.BooleanField(default=False)
-    field_in_2011 = models.BooleanField(default=False)
 
     export_year = models.PositiveSmallIntegerField(null=True, db_index=True)

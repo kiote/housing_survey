@@ -5,8 +5,7 @@ class Mortg(models.Model):
     class Meta:
         db_table = 'ahs_mortg'
         index_together = [
-            ['control', 'export_year'],
-            ['field_in_2013', 'field_in_2011']
+            ['control', 'export_year']
         ]
     # unique_together = ('control', 'export_year')
 
@@ -391,8 +390,5 @@ class Mortg(models.Model):
     yrmor = models.IntegerField(db_column='YRMOR', null=True)
     yrmor2 = models.IntegerField(db_column='YRMOR2', null=True)
     yrmor3 = models.IntegerField(db_column='YRMOR3', null=True)
-
-    field_in_2013 = models.BooleanField(default=False)
-    field_in_2011 = models.BooleanField(default=False)
 
     export_year = models.PositiveSmallIntegerField(null=True, db_index=True)

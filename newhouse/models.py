@@ -5,10 +5,8 @@ class Newhouse(models.Model):
     class Meta:
         db_table = 'ahs_newhouse'
         index_together = [
-            ['control', 'export_year'],
-            ['field_in_2013', 'field_in_2011']
+            ['control', 'export_year']
         ]
-        # unique_together = ('control', 'export_year')
 
     access = models.SmallIntegerField(db_column='ACCESS', null=True)
     accessb = models.SmallIntegerField(db_column='ACCESSB', null=True)
@@ -1032,8 +1030,5 @@ class Newhouse(models.Model):
     zmvgrp = models.SmallIntegerField(db_column='ZMVGRP', null=True)
     zone = models.PositiveIntegerField(db_column='ZONE', null=True)
     zsmhc = models.IntegerField(db_column='ZSMHC', null=True)
-
-    field_in_2013 = models.BooleanField(default=False)
-    field_in_2011 = models.BooleanField(default=False)
 
     export_year = models.PositiveSmallIntegerField(null=True, db_index=True)

@@ -5,8 +5,7 @@ class Repwgt(models.Model):
     class Meta:
         db_table = 'ahs_repwgt'
         index_together = [
-            ['control', 'export_year'],
-            ['field_in_2013', 'field_in_2011']
+            ['control', 'export_year']
         ]
         # unique_together = ('control', 'export_year')
 
@@ -494,8 +493,5 @@ class Repwgt(models.Model):
     splt2wgt97 = models.PositiveIntegerField(db_column='SPLT2WGT97', null=True)
     splt2wgt98 = models.PositiveIntegerField(db_column='SPLT2WGT98', null=True)
     splt2wgt99 = models.PositiveIntegerField(db_column='SPLT2WGT99', null=True)
-
-    field_in_2013 = models.BooleanField(default=False)
-    field_in_2011 = models.BooleanField(default=False)
 
     export_year = models.PositiveSmallIntegerField(null=True, db_index=True)

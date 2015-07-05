@@ -498,8 +498,6 @@ class Migration(migrations.Migration):
                 ('splt2wgt97', models.PositiveIntegerField(null=True, db_column=b'SPLT2WGT97')),
                 ('splt2wgt98', models.PositiveIntegerField(null=True, db_column=b'SPLT2WGT98')),
                 ('splt2wgt99', models.PositiveIntegerField(null=True, db_column=b'SPLT2WGT99')),
-                ('field_in_2013', models.BooleanField(default=False)),
-                ('field_in_2011', models.BooleanField(default=False)),
                 ('export_year', models.PositiveSmallIntegerField(null=True, db_index=True)),
             ],
             options={
@@ -508,6 +506,6 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterIndexTogether(
             name='repwgt',
-            index_together=set([('control', 'export_year'), ('field_in_2013', 'field_in_2011')]),
+            index_together=set([('control', 'export_year')]),
         ),
     ]

@@ -5,8 +5,7 @@ class Topical(models.Model):
     class Meta:
         db_table = 'ahs_topical'
         index_together = [
-            ['control', 'export_year'],
-            ['field_in_2013', 'field_in_2011']
+            ['control', 'export_year']
         ]
 
     control = models.BigIntegerField(db_column='CONTROL', unique=True, primary_key=True)
@@ -124,8 +123,5 @@ class Topical(models.Model):
     wbsidewalk = models.SmallIntegerField(db_column='WBSIDEWALK', null=True)
     wbwkschl = models.SmallIntegerField(db_column='WBWKSCHL', null=True)
     wfprop = models.SmallIntegerField(db_column='WFPROP', null=True)
-
-    field_in_2013 = models.BooleanField(default=False)
-    field_in_2011 = models.BooleanField(default=False)
 
     export_year = models.PositiveSmallIntegerField(null=True, db_index=True)

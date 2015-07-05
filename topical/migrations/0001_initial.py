@@ -127,8 +127,6 @@ class Migration(migrations.Migration):
                 ('wbsidewalk', models.SmallIntegerField(null=True, db_column=b'WBSIDEWALK')),
                 ('wbwkschl', models.SmallIntegerField(null=True, db_column=b'WBWKSCHL')),
                 ('wfprop', models.SmallIntegerField(null=True, db_column=b'WFPROP')),
-                ('field_in_2013', models.BooleanField(default=False)),
-                ('field_in_2011', models.BooleanField(default=False)),
                 ('export_year', models.PositiveSmallIntegerField(null=True, db_index=True)),
             ],
             options={
@@ -137,6 +135,6 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterIndexTogether(
             name='topical',
-            index_together=set([('control', 'export_year'), ('field_in_2013', 'field_in_2011')]),
+            index_together=set([('control', 'export_year')]),
         ),
     ]

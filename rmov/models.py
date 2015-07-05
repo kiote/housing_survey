@@ -5,8 +5,7 @@ class Rmov(models.Model):
     class Meta:
         db_table = 'ahs_rmov'
         index_together = [
-            ['control', 'export_year'],
-            ['field_in_2013', 'field_in_2011']
+            ['control', 'export_year']
         ]
 
     control = models.BigIntegerField(db_column='CONTROL', null=True)
@@ -35,8 +34,5 @@ class Rmov(models.Model):
     xrel = models.SmallIntegerField(db_column='XREL', null=True)
     xten = models.SmallIntegerField(db_column='XTEN', null=True)
     xunit = models.SmallIntegerField(db_column='XUNIT', null=True)
-
-    field_in_2013 = models.BooleanField(default=False)
-    field_in_2011 = models.BooleanField(default=False)
 
     export_year = models.PositiveSmallIntegerField(null=True, db_index=True)
