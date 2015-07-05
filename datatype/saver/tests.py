@@ -2,12 +2,13 @@ from decimal import *
 import csv
 
 from django.test import TestCase
+
 from datatype.saver.models import Datasaver
 from newhouse.models import Newhouse
 
 
 class AbstractDatasaverTestCase(TestCase):
-    fixtures = ['datatype']
+    fixtures = ['datatype.json']
 
     def setUp(self):
         Datasaver(2013, 'newhouse', True).fill_model_by_csv_data()
