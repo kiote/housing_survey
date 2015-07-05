@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'rmov',
     'topical',
     'datatype',
+    'datatype.year',
     'test_without_migrations'
 ]
 

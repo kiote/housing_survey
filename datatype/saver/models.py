@@ -25,12 +25,6 @@ class Datasaver:
         if sample:
             self.file_path = 'data/sample/puf2013/' + base_name + '.csv'
 
-    def _which_year(self):
-        if self.year == 2013:
-            return ['1', '0']
-        elif self.year == 2011:
-            return ['0', '1']
-
     def _get_file_and_chunks(self):
         """
         Work with chunked files.
@@ -115,13 +109,12 @@ class Datasaver:
         """
         for row in self._data_iterator():
             key_values = self._get_assigned(row)
-            extra_fields = ['field_in_2013', 'field_in_2011', 'export_year']
+            extra_fields = ['export_year']
             rows_list = key_values.keys() + extra_fields
             insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES "
             insert = insert.format(table_name=self.base_name,
                                    rows=', '.join(rows_list))
             rows_value = key_values.values()
-            rows_value += self._which_year()
             rows_value += [str(self.year)]
             values = "(%s)" % ', '.join(rows_value)
 

@@ -11,7 +11,8 @@
 """
 import django_init
 
-from datatype.determiner.models import AbstractDatatype
+from datatype.determiner.models import DatabaseSaver
+from datatype.determiner.models import FileSaver
 
 files = ['homimp', 'mortg', 'newhouse', 'omov', 'owner', 'person', 'ratiov', 'repwgt', 'rmov', 'topical']
 years = [2013, 2011, 2009]
@@ -20,7 +21,8 @@ for year in years:
     for base_name in files:
         print "%d: %s" % (year, base_name)
         try:
-            AbstractDatatype(year, base_name).generate_columns()
+            DatabaseSaver(year, base_name).write_types()
+            FileSaver(year, base_name).generate_columns()
         except IOError:
             print "No file %s.csv for year %d, skipping..." % (base_name, year)
 
