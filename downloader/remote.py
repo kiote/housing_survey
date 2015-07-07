@@ -17,3 +17,8 @@ Y2009 = {'file_name': urllib2.quote('AHS 2009 National PUF v1.1 CSV.zip'),
          'path': 'programs-surveys/ahs/2009/'}
 
 Y2009_FULL_PATH = AHS_ADDRESS + Y2009['path'] + Y2009['file_name']
+
+Y2007 = {'file_name': urllib2.quote('AHS 2007 National PUF V1.1 CSV.zip'),
+         'path': 'programs-surveys/ahs/2007/'}
+
+Y2007_FULL_PATH = AHS_ADDRESS + Y2007['path'] + Y2007['file_name']

@@ -5,7 +5,7 @@ from datatype.saver.models import Datasaver
 files = ['homimp', 'mortg', 'newhouse', 'omov', 'owner', 'person', 'ratiov',
          'repwgt', 'rmov', 'topical']
 
-years = [2013, 2011, 2009]
+years = [2013, 2011, 2009, 2007]
 
 for year in years:
     for base_name in files:
