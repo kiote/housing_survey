@@ -5,7 +5,11 @@ class Newhouse(models.Model):
     class Meta:
         db_table = 'ahs_newhouse'
         index_together = [
-            ['control', 'export_year']
+            ['control', 'export_year'],
+            ['division'],
+            ['region'],
+            ['metro3'],
+            ['cmsa']
         ]
 
     access = models.SmallIntegerField(db_column='ACCESS', null=True)
