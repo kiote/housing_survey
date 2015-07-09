@@ -8,7 +8,8 @@ class Rmov(models.Model):
             ['control', 'export_year']
         ]
 
-    control = models.BigIntegerField(db_column='CONTROL', null=True)
+    control = models.BigIntegerField(db_column='CONTROL', null=False, db_index=True)
+
     dbinreas = models.SmallIntegerField(db_column='DBINREAS', null=True)
     dbinvol = models.SmallIntegerField(db_column='DBINVOL', null=True)
     dbinwher = models.SmallIntegerField(db_column='DBINWHER', null=True)

@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             name='Repwgt',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('control', models.BigIntegerField(null=True, db_column=b'CONTROL')),
+                ('control', models.BigIntegerField(db_column=b'CONTROL', db_index=True)),
                 ('repwgt0', models.DecimalField(null=True, decimal_places=10, max_digits=20, db_column=b'REPWGT0')),
                 ('repwgt1', models.DecimalField(null=True, decimal_places=10, max_digits=20, db_column=b'REPWGT1')),
                 ('repwgt10', models.DecimalField(null=True, decimal_places=10, max_digits=20, db_column=b'REPWGT10')),

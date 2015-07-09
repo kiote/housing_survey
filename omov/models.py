@@ -8,7 +8,7 @@ class Omov(models.Model):
             ['control', 'export_year']
         ]
 
-    control = models.BigIntegerField(db_column='CONTROL', null=True, db_index=True)
+    control = models.BigIntegerField(db_column='CONTROL', null=False, db_index=True)
 
     dbgrpcnt = models.PositiveSmallIntegerField(db_column='DBGRPCNT', null=True)
     dboutlen = models.SmallIntegerField(db_column='DBOUTLEN', null=True)

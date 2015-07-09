@@ -9,7 +9,7 @@ class Person(models.Model):
             ['control', 'export_year']
         ]
 
-    control = models.BigIntegerField(db_column='CONTROL', db_index=True, null=True)
+    control = models.BigIntegerField(db_column='CONTROL', db_index=True, null=False)
 
     age = models.PositiveSmallIntegerField(db_column='AGE', null=True)
     citshp = models.PositiveSmallIntegerField(db_column='CITSHP', null=True)

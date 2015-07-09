@@ -8,6 +8,7 @@ class Mortg(models.Model):
             ['control', 'export_year']
         ]
     # unique_together = ('control', 'export_year')
+    control = models.BigIntegerField(db_column='CONTROL', null=False, db_index=True)
 
     addtn2 = models.SmallIntegerField(db_column='ADDTN2', null=True)
     addtn3 = models.SmallIntegerField(db_column='ADDTN3', null=True)
@@ -54,7 +55,6 @@ class Mortg(models.Model):
     cash = models.IntegerField(db_column='CASH', null=True)
     cash2 = models.IntegerField(db_column='CASH2', null=True)
     cash3 = models.SmallIntegerField(db_column='CASH3', null=True)
-    control = models.BigIntegerField(db_column='CONTROL', null=True)
     doc = models.SmallIntegerField(db_column='DOC', null=True)
     doc2 = models.SmallIntegerField(db_column='DOC2', null=True)
     doc3 = models.SmallIntegerField(db_column='DOC3', null=True)

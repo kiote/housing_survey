@@ -11,6 +11,7 @@ class Newhouse(models.Model):
             ['metro3'],
             ['cmsa']
         ]
+    control = models.BigIntegerField(db_column='CONTROL', null=False, db_index=True)
 
     access = models.SmallIntegerField(db_column='ACCESS', null=True)
     accessb = models.SmallIntegerField(db_column='ACCESSB', null=True)
@@ -118,7 +119,6 @@ class Newhouse(models.Model):
     commserv = models.SmallIntegerField(db_column='commserv', null=True)
     condo = models.SmallIntegerField(db_column='CONDO', null=True)
     confee = models.IntegerField(db_column='CONFEE', null=True)
-    control = models.BigIntegerField(db_column='CONTROL', null=True)
     controlm = models.BigIntegerField(db_column='CONTROLM', null=True)
     cook = models.SmallIntegerField(db_column='COOK', null=True)
     copwr = models.SmallIntegerField(db_column='COPWR', null=True)

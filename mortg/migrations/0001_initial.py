@@ -14,6 +14,7 @@ class Migration(migrations.Migration):
             name='Mortg',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('control', models.BigIntegerField(db_column=b'CONTROL', db_index=True)),
                 ('addtn2', models.SmallIntegerField(null=True, db_column=b'ADDTN2')),
                 ('addtn3', models.SmallIntegerField(null=True, db_column=b'ADDTN3')),
                 ('addtns', models.SmallIntegerField(null=True, db_column=b'ADDTNS')),
@@ -59,7 +60,6 @@ class Migration(migrations.Migration):
                 ('cash', models.IntegerField(null=True, db_column=b'CASH')),
                 ('cash2', models.IntegerField(null=True, db_column=b'CASH2')),
                 ('cash3', models.SmallIntegerField(null=True, db_column=b'CASH3')),
-                ('control', models.BigIntegerField(null=True, db_column=b'CONTROL')),
                 ('doc', models.SmallIntegerField(null=True, db_column=b'DOC')),
                 ('doc2', models.SmallIntegerField(null=True, db_column=b'DOC2')),
                 ('doc3', models.SmallIntegerField(null=True, db_column=b'DOC3')),

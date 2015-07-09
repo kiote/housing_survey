@@ -14,6 +14,7 @@ class Migration(migrations.Migration):
             name='Newhouse',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('control', models.BigIntegerField(db_column=b'CONTROL', db_index=True)),
                 ('access', models.SmallIntegerField(null=True, db_column=b'ACCESS')),
                 ('accessb', models.SmallIntegerField(null=True, db_column=b'ACCESSB')),
                 ('accessc', models.SmallIntegerField(null=True, db_column=b'ACCESSC')),
@@ -120,7 +121,6 @@ class Migration(migrations.Migration):
                 ('commserv', models.SmallIntegerField(null=True, db_column=b'commserv')),
                 ('condo', models.SmallIntegerField(null=True, db_column=b'CONDO')),
                 ('confee', models.IntegerField(null=True, db_column=b'CONFEE')),
-                ('control', models.BigIntegerField(null=True, db_column=b'CONTROL')),
                 ('controlm', models.BigIntegerField(null=True, db_column=b'CONTROLM')),
                 ('cook', models.SmallIntegerField(null=True, db_column=b'COOK')),
                 ('copwr', models.SmallIntegerField(null=True, db_column=b'COPWR')),
@@ -1044,6 +1044,6 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterIndexTogether(
             name='newhouse',
-            index_together=set([('control', 'export_year')]),
+            index_together=set([('control', 'export_year'), ('region',), ('cmsa',), ('division',), ('metro3',)]),
         ),
     ]

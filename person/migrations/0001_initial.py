@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             name='Person',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('control', models.BigIntegerField(null=True, db_column=b'CONTROL', db_index=True)),
+                ('control', models.BigIntegerField(db_column=b'CONTROL', db_index=True)),
                 ('age', models.PositiveSmallIntegerField(null=True, db_column=b'AGE')),
                 ('citshp', models.PositiveSmallIntegerField(null=True, db_column=b'CITSHP')),
                 ('famnum', models.PositiveSmallIntegerField(null=True, db_column=b'FAMNUM')),

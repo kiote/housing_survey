@@ -8,7 +8,7 @@ class Owner(models.Model):
             ['control', 'export_year']
         ]
 
-    control = models.BigIntegerField(db_column='CONTROL', null=True)
+    control = models.BigIntegerField(db_column='CONTROL', null=False, db_index=True)
     jwnher = models.SmallIntegerField(db_column='JWNHER', null=True)
     ownhere = models.SmallIntegerField(db_column='OWNHERE', null=True)
 

@@ -8,7 +8,8 @@ class Homimp(models.Model):
             ['control', 'export_year']
         ]
 
-    control = models.BigIntegerField(db_column='CONTROL', null=True)
+    control = models.BigIntegerField(db_column='CONTROL', null=False, db_index=True)
+
     jrad = models.SmallIntegerField(db_column='JRAD', null=True)
     jras = models.SmallIntegerField(db_column='JRAS', null=True)
     rad = models.IntegerField(db_column='RAD', null=True)

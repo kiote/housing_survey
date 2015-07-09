@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             name='Ratiov',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('control', models.BigIntegerField(null=True, db_column=b'CONTROL')),
+                ('control', models.BigIntegerField(db_column=b'CONTROL', db_index=True)),
                 ('rcarp', models.SmallIntegerField(null=True, db_column=b'RCARP')),
                 ('rclot', models.SmallIntegerField(null=True, db_column=b'RCLOT')),
                 ('rcost', models.SmallIntegerField(null=True, db_column=b'RCOST')),

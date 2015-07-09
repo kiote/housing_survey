@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             name='Omov',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('control', models.BigIntegerField(null=True, db_column=b'CONTROL', db_index=True)),
+                ('control', models.BigIntegerField(db_column=b'CONTROL', db_index=True)),
                 ('dbgrpcnt', models.PositiveSmallIntegerField(null=True, db_column=b'DBGRPCNT')),
                 ('dboutlen', models.SmallIntegerField(null=True, db_column=b'DBOUTLEN')),
                 ('dboutreas', models.SmallIntegerField(null=True, db_column=b'DBOUTREAS')),

@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             name='Owner',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('control', models.BigIntegerField(null=True, db_column=b'CONTROL')),
+                ('control', models.BigIntegerField(db_column=b'CONTROL', db_index=True)),
                 ('jwnher', models.SmallIntegerField(null=True, db_column=b'JWNHER')),
                 ('ownhere', models.SmallIntegerField(null=True, db_column=b'OWNHERE')),
                 ('export_year', models.PositiveSmallIntegerField(null=True, db_index=True)),
