@@ -89,8 +89,12 @@ class Datasaver:
             try:
                 defaults[i] = self._unquoted_value(row[row_name])
             except KeyError:
-                # means we need default value here
-                pass
+                # maybe we have wrong-cased keys?
+                try:
+                    defaults[i] = self._unquoted_value(row[row_name.lower()])
+                except KeyError:
+                    # no chance, use default
+                    pass
 
         key_values = dict(zip(row_names, defaults))
         # sorten list of fields for debug
