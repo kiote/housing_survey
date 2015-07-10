@@ -1,4 +1,4 @@
-import django_init
+import initializers.framework
 
 from django.db import connection
 

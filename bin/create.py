@@ -9,8 +9,8 @@
 
   And then just run it with python bin/create.py
 """
-import django_init
-import data_init as di
+import initializers.framework
+import initializers.data as di
 
 from datatype.determiner.models import DatabaseSaver
 from datatype.determiner.models import FileSaver

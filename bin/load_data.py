@@ -1,6 +1,6 @@
 """Loads data from CSV-files to database."""
-import django_init
-import data_init as di
+import initializers.framework
+import initializers.data as di
 
 from datatype.saver.models import Datasaver
 
