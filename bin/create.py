@@ -10,15 +10,13 @@
   And then just run it with python bin/create.py
 """
 import django_init
+import data_init as di
 
 from datatype.determiner.models import DatabaseSaver
 from datatype.determiner.models import FileSaver
 
-files = ['homimp', 'mortg', 'newhouse', 'omov', 'owner', 'person', 'ratiov', 'repwgt', 'rmov', 'topical']
-years = [2013, 2011, 2009, 2007]
-
-for year in years:
-    for base_name in files:
+for year in di.YEARS:
+    for base_name in di.FILES:
         print "%d: %s" % (year, base_name)
         try:
             DatabaseSaver(year, base_name).write_types()
