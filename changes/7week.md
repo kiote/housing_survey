@@ -20,4 +20,4 @@ InnoDB engine, so I've switched to MyISAM for all tables.
 
 ## 8 week plan
 
-To import 2008 year.
+To import 2007 year.
