@@ -4,27 +4,26 @@ import zipfile
 import remote
 import local
 
+import initializers.data as di
+
 """
 Downloads remote CSV-files from census.gov and uncompress them
 """
 class Downloader:
-    files = [{'remote': remote.Y2013_FULL_PATH,
-              'zip_file': local.Y2013_PATH + remote.Y2013['file_name'],
-              'local_path': local.Y2013_CSV_PATH},
-             {'remote': remote.Y2011_FULL_PATH,
-              'zip_file': local.Y2011_PATH + remote.Y2011['file_name'],
-              'local_path': local.Y2011_CSV_PATH},
-             {'remote': remote.Y2009_FULL_PATH,
-              'zip_file': local.Y2009_PATH + remote.Y2009['file_name'],
-              'local_path': local.Y2009_CSV_PATH},
-             {'remote': remote.Y2007_FULL_PATH,
-              'zip_file': local.Y2007_PATH + remote.Y2007['file_name'],
-              'local_path': local.Y2007_CSV_PATH}]
+    def get_file_list(self):
+        files = []
+        for y in di.YEARS:
+            remote_attrs = remote.year_attributes(y)
+            local_attrs = local.year_attributes(y)
+            files.append({'remote': remote_attrs['full_path'],
+                          'zip_file': local_attrs['path'] + remote_attrs['file_name'],
+                          'local_path': local_attrs['csv_path']})
+        return files
 
     def download(self):
         self._makedirs()
 
-        for file_info in self.files:
+        for file_info in self.get_file_list():
             print '---> Checking %s to exist locally' % file_info['zip_file']
             if not os.path.isfile(file_info['zip_file']):
                 print '---> Downloading %s' % file_info['remote']
@@ -44,8 +43,8 @@ class Downloader:
         """
         Creates directories for data files, if this directories did not exist yet
         """
-        for mdir in [local.Y2013_CSV_PATH, local.Y2011_CSV_PATH,
-                     local.Y2009_CSV_PATH, local.Y2007_CSV_PATH]:
+        csv_dirs_array = [local.year_attributes(y)['csv_path'] for y in di.YEARS]
+        for mdir in csv_dirs_array:
             try:
                 os.makedirs(mdir)
             except OSError as exc:
@@ -56,8 +55,8 @@ class Downloader:
 
     @staticmethod
     def _file_iterator():
-        for mdir in [local.Y2013_CSV_PATH, local.Y2011_CSV_PATH,
-                     local.Y2009_CSV_PATH, local.Y2007_CSV_PATH]:
+        csv_dirs_array = [local.year_attributes(y)['csv_path'] for y in di.YEARS]
+        for mdir in csv_dirs_array:
             for mfile in os.listdir(local.FULL_PATH + '/' + mdir):
                 os.chdir(local.FULL_PATH + '/' + mdir)
                 yield mfile

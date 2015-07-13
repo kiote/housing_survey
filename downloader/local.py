@@ -8,17 +8,9 @@ FULL_PATH = os.path.abspath(os.path.dirname(__name__))
 PREFIX = 'data/non-git/puf'
 SUFFIX = 'csv_files/'
 
-Y2013_PATH = PREFIX + '2013/'
-Y2013_CSV_PATH = Y2013_PATH + SUFFIX
-
-Y2011_PATH = PREFIX + '2011/'
-Y2011_CSV_PATH = Y2011_PATH + SUFFIX
-
-Y2009_PATH = PREFIX + '2009/'
-Y2009_CSV_PATH = Y2009_PATH + SUFFIX
-
-Y2007_PATH = PREFIX + '2007/'
-Y2007_CSV_PATH = Y2007_PATH + SUFFIX
+def year_attributes(year):
+    return {'path': PREFIX + str(year) + '/',
+            'csv_path': PREFIX + str(year) + '/' + SUFFIX}
 
 def data_path(year):
     return "%s%d/%s" % (PREFIX, year, SUFFIX)
