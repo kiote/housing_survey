@@ -111,7 +111,7 @@ class Datasaver:
         """
         for row in self._data_iterator():
             key_values = self._get_assigned(row)
-            rows_list = key_values.keys() + ['export_year']
+            rows_list = ["`%s`" % key for key in key_values.keys()] + ['`export_year`']
             insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES "
             insert = insert.format(table_name=self.base_name,
                                    rows=', '.join(rows_list))
