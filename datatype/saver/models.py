@@ -68,8 +68,13 @@ class Datasaver:
         return [datatype.field_type for datatype in
                 Datatype.objects.filter(table_name=self.base_name)]
 
-    def _unquoted_value(self, value):
+    @staticmethod
+    def _unquoted_value(value):
         return value[1:-1] if value[0] == "'" else value
+
+    @staticmethod
+    def _numeric_value(value):
+        return '-9' if value == 'B' else value
 
     def _get_assigned(self, row):
         """
@@ -88,10 +93,12 @@ class Datasaver:
         for i, row_name in enumerate(row_names):
             try:
                 defaults[i] = self._unquoted_value(row[row_name])
+                defaults[i] = self._numeric_value(defaults[i])
             except KeyError:
                 # maybe we have wrong-cased keys?
                 try:
                     defaults[i] = self._unquoted_value(row[row_name.lower()])
+                    defaults[i] = self._numeric_value(defaults[i])
                 except KeyError:
                     # no chance, use default
                     pass
