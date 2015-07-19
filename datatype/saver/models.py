@@ -18,10 +18,20 @@ class Datasaver:
         """Some pre-initialization."""
         if base_name == '':
             raise 'Base name should be provided'
+
+        # Full path to csv file
         self.file_path = downloader.local.data_path(year) + base_name + '.csv'
+
+        # Internal name, based on file name
+        # for file newhouse.csv it's newhouse
         self.base_name = base_name
+
+        # Boolean flag, are we in a testing mode?
         self.sample = sample
+
+        # Year to work with
         self.year = year
+
         if sample:
             self.file_path = 'data/sample/puf2013/' + base_name + '.csv'
 
