@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """Loads data from CSV-files to database."""
 import initializers.framework
 import initializers.data as di

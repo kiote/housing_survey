@@ -59,14 +59,16 @@ class Datasaver:
                 for row in reader:
                     yield row
 
+    def _fields_by_table(self):
+        rows = Datatype.objects.filter(table_name=self.base_name)
+        return [row for row in rows]
+
     def _get_row_names(self):
         """Get rows list from service table, to prepare insert-query."""
-        return [row.field_name for row in
-                Datatype.objects.filter(table_name=self.base_name)]
+        return [row.field_name for row in self._fields_by_table()]
 
     def _get_row_types(self):
-        return [datatype.field_type for datatype in
-                Datatype.objects.filter(table_name=self.base_name)]
+        return [row.field_type for row in self._fields_by_table()]
 
     @staticmethod
     def _unquoted_value(value):

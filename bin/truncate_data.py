@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import initializers.framework
 
 from django.db import connection

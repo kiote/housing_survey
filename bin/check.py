@@ -1,5 +1,8 @@
+#!/usr/bin/env python
+
 """
  This script will check the data saved to MySQL against datafile.
+
  It simply counts number of rows for every table and compares
  it with line numbers of corresponding files.
 

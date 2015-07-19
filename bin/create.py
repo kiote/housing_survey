@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """
  This script will generate files with Python-syntax to generate models.
 
