@@ -29,31 +29,22 @@ class Cell:
         return self.cell
 
 
+class DataFile:
 
-class Datasaver:
-
-    """The base class to save CSV-files to database."""
+    """Read from file."""
 
     def __init__(self, year=2013, base_name='', sample=False):
-        """Some pre-initialization."""
-        if base_name == '':
-            raise 'Base name should be provided'
-
         # Full path to csv file
         self.file_path = downloader.local.data_path(year) + base_name + '.csv'
-
-        # Internal name, based on file name
-        # for file newhouse.csv it's newhouse
-        self.base_name = base_name
 
         # Boolean flag, are we in a testing mode?
         self.sample = sample
 
-        # Year to work with
-        self.year = year
-
         if sample:
             self.file_path = 'data/sample/puf2013/' + base_name + '.csv'
+
+        # Year to work with
+        self.year = year
 
     def _get_file_and_chunks(self):
         """
@@ -76,7 +67,7 @@ class Datasaver:
 
         return chunks
 
-    def _data_iterator(self):
+    def rows(self):
         """Iterating through data files and return iterator (row)."""
         files = self._get_file_and_chunks()
 
@@ -88,6 +79,25 @@ class Datasaver:
 
                 for row in reader:
                     yield row
+
+
+class Datasaver:
+
+    """The base class to save CSV-files to database."""
+
+    def __init__(self, year=2013, base_name='', sample=False):
+        if base_name == '':
+            raise 'Base name should be provided'
+
+        # Internal name, based on file name
+        # for file newhouse.csv it's newhouse
+        self.base_name = base_name
+
+        # Year to work with
+        self.year = year
+
+        # Object to work with file information
+        self.file = DataFile(year, base_name, sample)
 
     def _get_assigned(self, row):
         """
@@ -127,7 +137,7 @@ class Datasaver:
         Use raw-insert to database (not creating any models)
         to make the insert-precess faster.
         """
-        for row in self._data_iterator():
+        for row in self.file.rows():
             key_values = self._get_assigned(row)
             rows_list = ["`%s`" % key for key in key_values.keys()] + ['`export_year`']
             insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES "
