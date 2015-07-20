@@ -10,6 +10,26 @@ from datatype.models import Datatype
 from datatype.field.models import default_value_by_name
 
 
+class Cell:
+
+    """Represent one particular cell of the data."""
+
+    def __init__(self, cell):
+        self.cell = cell
+
+    def _unquoted_value(self):
+        self.cell = self.cell[1:-1] if self.cell[0] == "'" else self.cell
+
+    def _numeric_value(self):
+        self.cell = '-9' if self.cell == 'B' else self.cell
+
+    def clear(self):
+        self._unquoted_value()
+        self._numeric_value()
+        return self.cell
+
+
+
 class Datasaver:
 
     """The base class to save CSV-files to database."""
@@ -69,25 +89,6 @@ class Datasaver:
                 for row in reader:
                     yield row
 
-    def _fields_by_table(self):
-        rows = Datatype.objects.filter(table_name=self.base_name)
-        return [row for row in rows]
-
-    def _get_row_names(self):
-        """Get rows list from service table, to prepare insert-query."""
-        return [row.field_name for row in self._fields_by_table()]
-
-    def _get_row_types(self):
-        return [row.field_type for row in self._fields_by_table()]
-
-    @staticmethod
-    def _unquoted_value(value):
-        return value[1:-1] if value[0] == "'" else value
-
-    @staticmethod
-    def _numeric_value(value):
-        return '-9' if value == 'B' else value
-
     def _get_assigned(self, row):
         """
         For given row readed from file gives dictionary.
@@ -97,20 +98,18 @@ class Datasaver:
         with default values for given datatype
         or with values readed from file.
         """
-        types = self._get_row_types()
-        row_names = self._get_row_names()
+        types = Datatype.get_row_types(self.base_name)
+        row_names = Datatype.get_row_names(self.base_name)
 
         defaults = [default_value_by_name(dtype) for dtype in types]
 
         for i, row_name in enumerate(row_names):
             try:
-                defaults[i] = self._unquoted_value(row[row_name])
-                defaults[i] = self._numeric_value(defaults[i])
+                defaults[i] = Cell(row[row_name]).clear()
             except KeyError:
                 # maybe we have wrong-cased keys?
                 try:
-                    defaults[i] = self._unquoted_value(row[row_name.lower()])
-                    defaults[i] = self._numeric_value(defaults[i])
+                    defaults[i] = Cell(row[row_name.lower()]).clear()
                 except KeyError:
                     # no chance, use default
                     pass
@@ -134,11 +133,11 @@ class Datasaver:
             insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES "
             insert = insert.format(table_name=self.base_name,
                                    rows=', '.join(rows_list))
-            rows_value = key_values.values() + [str(self.year)]
-            values = "(%s)" % ', '.join(rows_value)
+            row_values = key_values.values() + [str(self.year)]
+            values = "(%s)" % ', '.join(row_values)
 
             # debug result dict to be inserted
-            # print dict(zip(rows_list, rows_value))['NEWC']
+            # print dict(zip(rows_list, row_values))['NEWC']
             with connection.cursor() as c:
                 with warnings.catch_warnings():
                     warnings.filterwarnings('error')

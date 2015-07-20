@@ -12,11 +12,15 @@ class Datatype(models.Model):
     extra_params = models.CharField(max_length=350)
 
     @staticmethod
-    def get_fields_for(table_name, year):
-        """
-        Return array with fields for particular table and year
-        """
-        fields = Datatype.objects.filter(table_name=table_name,
-                                         export_year=year)
+    def fields_by_table(table_name):
+        """Return array with fields for particular table."""
+        return Datatype.objects.filter(table_name=table_name)
 
-        return [field.field_name for field in fields]
+    @staticmethod
+    def get_row_names(table_name):
+        """Get rows list from service table, to prepare insert-query."""
+        return [row.field_name for row in Datatype.fields_by_table(table_name)]
+
+    @staticmethod
+    def get_row_types(table_name):
+        return [row.field_type for row in Datatype.fields_by_table(table_name)]
