@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'topical',
     'datatype',
     'datatype.year',
-    'test_without_migrations'
+    'test_without_migrations',
+    'houshld'
 ]
 
 MIDDLEWARE_CLASSES = [
