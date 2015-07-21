@@ -15,11 +15,12 @@
 import initializers.framework
 import initializers.data as di
 
-from datatype.saver.models import Datasaver
+from datatype.saver.models import Checker, Settings
 
 for year in di.YEARS:
     for base_name in di.FILES:
         try:
-            Datasaver(year, base_name).check()
+            settings = Settings(year, base_name)
+            Checker(settings).check()
         except IOError:
             print "No file %s.csv for year %d, skipping..." % (base_name, year)

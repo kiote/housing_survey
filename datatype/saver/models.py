@@ -10,6 +10,31 @@ from datatype.models import Datatype
 from datatype.field.models import default_value_by_name
 
 
+class Settings:
+
+    """Store general settings that is changing with year file."""
+
+    def __init__(self, year=2013, base_name='', sample=False):
+        if base_name == '':
+            raise 'Base name should be provided'
+
+        # Short name, based on table name
+        # for newhouse.csv it's newhouse
+        self.base_name = base_name
+
+        # Full path to csv file
+        self.file_path = downloader.local.data_path(year) + base_name + '.csv'
+
+        # Boolean flag, are we in a testing mode?
+        self.sample = sample
+
+        if sample:
+            self.file_path = 'data/sample/puf2013/' + base_name + '.csv'
+
+        # Year to work with
+        self.year = year
+
+
 class Cell:
 
     """Represent one particular cell of the data."""
@@ -31,20 +56,10 @@ class Cell:
 
 class DataFile:
 
-    """Read from file."""
+    """Read data from particular file."""
 
-    def __init__(self, year=2013, base_name='', sample=False):
-        # Full path to csv file
-        self.file_path = downloader.local.data_path(year) + base_name + '.csv'
-
-        # Boolean flag, are we in a testing mode?
-        self.sample = sample
-
-        if sample:
-            self.file_path = 'data/sample/puf2013/' + base_name + '.csv'
-
-        # Year to work with
-        self.year = year
+    def __init__(self, settings):
+        self.settings = settings
 
     def _get_file_and_chunks(self):
         """
@@ -56,14 +71,14 @@ class DataFile:
         chunks = []
 
         for i in range(20):
-            chunk = self.file_path + '-segment-a' + chr(ord('a') + i)
+            chunk = self.settings.file_path + '-segment-a' + chr(ord('a') + i)
             if os.path.exists(chunk):
                 chunks.append(chunk)
             else:
                 break
 
         if not len(chunks):
-            chunks = [self.file_path]
+            chunks = [self.settings.file_path]
 
         return chunks
 
@@ -81,45 +96,34 @@ class DataFile:
                     yield row
 
 
-class Datasaver:
+class Row:
 
-    """The base class to save CSV-files to database."""
+    """Represent one row of a data."""
 
-    def __init__(self, year=2013, base_name='', sample=False):
-        if base_name == '':
-            raise 'Base name should be provided'
+    def __init__(self, row, settings):
+        self.row = row
+        self.settings = settings
 
-        # Internal name, based on file name
-        # for file newhouse.csv it's newhouse
-        self.base_name = base_name
-
-        # Year to work with
-        self.year = year
-
-        # Object to work with file information
-        self.file = DataFile(year, base_name, sample)
-
-    def _get_assigned(self, row):
+    def get_assigned(self):
         """
-        For given row readed from file gives dictionary.
+        For given row return {name: value} dictionary.
 
-        This dictionary contains row values and default values.
-        Return dictionary initialized either
+        This dictionary initialized either
         with default values for given datatype
         or with values readed from file.
         """
-        types = Datatype.get_row_types(self.base_name)
-        row_names = Datatype.get_row_names(self.base_name)
+        types = Datatype.get_row_types(self.settings.base_name)
+        row_names = Datatype.get_row_names(self.settings.base_name)
 
         defaults = [default_value_by_name(dtype) for dtype in types]
 
         for i, row_name in enumerate(row_names):
             try:
-                defaults[i] = Cell(row[row_name]).clear()
+                defaults[i] = Cell(self.row[row_name]).clear()
             except KeyError:
                 # maybe we have wrong-cased keys?
                 try:
-                    defaults[i] = Cell(row[row_name.lower()]).clear()
+                    defaults[i] = Cell(self.row[row_name.lower()]).clear()
                 except KeyError:
                     # no chance, use default
                     pass
@@ -130,43 +134,47 @@ class Datasaver:
         # print key_values
         return key_values
 
-    def fill_model_by_csv_data(self):
-        """
-        Open CSV-file and read it to database.
 
-        Use raw-insert to database (not creating any models)
-        to make the insert-precess faster.
-        """
-        for row in self.file.rows():
-            key_values = self._get_assigned(row)
-            rows_list = ["`%s`" % key for key in key_values.keys()] + ['`export_year`']
-            insert = "INSERT IGNORE INTO ahs_{table_name} ({rows}) VALUES "
-            insert = insert.format(table_name=self.base_name,
-                                   rows=', '.join(rows_list))
-            row_values = key_values.values() + [str(self.year)]
-            values = "(%s)" % ', '.join(row_values)
+class InsertMaker:
 
-            # debug result dict to be inserted
-            # print dict(zip(rows_list, row_values))['NEWC']
-            with connection.cursor() as c:
-                with warnings.catch_warnings():
-                    warnings.filterwarnings('error')
-                    try:
-                        c.execute(insert + values)
-                        sys.stdout.write('.')
-                    except Exception as e:
-                        print e
-                        # print "Error with:" + insert + values
+    """Prepare INSERT statement for MySQL."""
+
+    def __init__(self, dict, settings):
+        # Dictionary contains { row_name: row_value }
+        self.dict = dict
+
+        self.settings = settings
+
+    def prepare(self):
+        rows_list = ["`%s`" % key for key in self.dict.keys()] + ['`export_year`']
+        insert = "INSERT INTO ahs_{table_name} ({rows}) VALUES "
+        insert = insert.format(table_name=self.settings.base_name,
+                               rows=', '.join(rows_list))
+        row_values = self.dict.values() + [str(self.settings.year)]
+        values = "(%s)" % ', '.join(row_values)
+
+        # debug result dict to be inserted
+        # print dict(zip(rows_list, row_values))['NEWC']
+
+        return insert + values
+
+
+class Checker:
+
+    """Check if we have the same about of data in files and in tables"""
+
+    def __init__(self, settings):
+        self.settings = settings
 
     def check(self):
         """Count lines in csv-files and in corresponding tables."""
-        print "---> Testing count of %s(%d)" % (self.base_name, self.year)
+        print "---> Testing count of %s(%d)" % (self.settings.base_name, self.settings.year)
         count_query = ("SELECT COUNT(*) from ahs_{table_name} "
                        "where export_year={year};")
-        count_query = count_query.format(table_name=self.base_name,
-                                         year=self.year)
+        count_query = count_query.format(table_name=self.settings.base_name,
+                                         year=self.settings.year)
         try:
-            count_file = os.popen("wc -l %s" % self.file_path).read()
+            count_file = os.popen("wc -l %s" % self.settings.file_path).read()
             count_file = int(count_file.split(" ")[0]) - 1  # 1 for header
         except ValueError:
             count_file = 0
@@ -179,3 +187,36 @@ class Datasaver:
         else:
             print "---> ERROR (%d in db and %d in file)" % (count_db,
                                                             count_file)
+
+
+class Datasaver:
+
+    """The base class to save CSV-files to database."""
+
+    def __init__(self, settings):
+        self.settings = settings
+        self.file = DataFile(settings)
+
+    def fill_model_by_csv_data(self):
+        """
+        Open CSV-file and read it to database.
+
+        Use raw-insert to database (not creating any models)
+        to make the insert-precess faster.
+        """
+        for row in self.file.rows():
+            # Make insert data ready to be placed into the query
+            key_values = Row(row, self.settings).get_assigned()
+
+            # Prepare insert with data
+            insert = InsertMaker(key_values, self.settings).prepare()
+
+            with connection.cursor() as c:
+                with warnings.catch_warnings():
+                    warnings.filterwarnings('error')
+                    try:
+                        c.execute(insert)
+                        sys.stdout.write('.')
+                    except Exception as e:
+                        print e
+                        # print "Error with:" + insert + values

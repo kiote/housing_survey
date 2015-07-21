@@ -3,7 +3,7 @@ import csv
 
 from django.test import TestCase
 
-from datatype.saver.models import Datasaver
+from datatype.saver.models import Datasaver, Settings
 from newhouse.models import Newhouse
 
 
@@ -11,7 +11,8 @@ class AbstractDatasaverTestCase(TestCase):
     fixtures = ['datatype.json']
 
     def setUp(self):
-        Datasaver(2013, 'newhouse', True).fill_model_by_csv_data()
+        settings = Settings(2013, 'newhouse', True)
+        Datasaver(settings).fill_model_by_csv_data()
         self.newhouse = Newhouse.objects.get(control='100003130103')
 
     def test_set_valid_control_value(self):
@@ -24,7 +25,8 @@ class AbstractDatasaverTestCase(TestCase):
         Are we save the data correctly?
         Assume we have only one entry in the file for testing
         """
-        with open(Datasaver(2013, 'newhouse', True).file_path, 'rb') as csvfile:
+        settings = Settings(2013, 'newhouse', True)
+        with open(settings.file_path, 'rb') as csvfile:
             reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
             for row in reader:
                 for rowname in row.keys():
