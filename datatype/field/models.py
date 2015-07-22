@@ -46,6 +46,8 @@ class Field:
         return self.val_min <= self.value <= self.val_max
 
     def is_decimal(self):
+        if self.value is None:
+            return False
         return not(Decimal(self.value) % 1 == 0)
 
 
