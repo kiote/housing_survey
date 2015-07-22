@@ -89,7 +89,8 @@ class DatabaseSaver(AbstractSaver):
         headers_with_types = {}
 
         with open(self.file_path, 'rb') as csvfile:
-            reader = csv.DictReader(csvfile, delimiter=',', skipinitialspace=True)
+            reader = csv.DictReader((line.replace('\0', '') for line in csvfile),
+                                    delimiter=',', skipinitialspace=True)
 
             for row in reader:
                 for column in row.keys():
