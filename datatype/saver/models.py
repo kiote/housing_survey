@@ -6,7 +6,7 @@ import sys
 import downloader.local
 
 from django.db import connection
-from datatype.models import Datatype
+from datatype.models import Datatype, ParticularTable
 from datatype.field.models import default_value_by_name
 
 
@@ -89,7 +89,8 @@ class DataFile:
         for mfile in files:
             print '---> Processing file %s' % mfile
             with open(mfile, 'rb') as csvfile:
-                reader = csv.DictReader(csvfile, delimiter=',',
+                reader = csv.DictReader((line.replace('\0', '') for line in csvfile),
+                                        delimiter=',',
                                         skipinitialspace=True)
 
                 for row in reader:
@@ -112,8 +113,9 @@ class Row:
         with default values for given datatype
         or with values readed from file.
         """
-        types = Datatype.get_row_types(self.settings.base_name)
-        row_names = Datatype.get_row_names(self.settings.base_name)
+        table = ParticularTable(self.settings.base_name)
+        types = table.get_row_types()
+        row_names = table.get_row_names()
 
         defaults = [default_value_by_name(dtype) for dtype in types]
 
@@ -132,6 +134,8 @@ class Row:
         # sorten list of fields for debug
         # key_values = {'CONTROL': key_values['CONTROL']}
         # print key_values
+        if key_values['JEQUIP'] == '':
+            key_values['JEQUIP'] = '-9'
         return key_values
 
 
@@ -219,4 +223,4 @@ class Datasaver:
                         sys.stdout.write('.')
                     except Exception as e:
                         print e
-                        # print "Error with:" + insert + values
+                        print key_values

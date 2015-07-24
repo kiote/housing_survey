@@ -16,5 +16,7 @@ class Homimp(models.Model):
     rah = models.SmallIntegerField(db_column='RAH', null=True)
     rahk = models.SmallIntegerField(db_column='RAHK', null=True)
     ras = models.PositiveSmallIntegerField(db_column='RAS', null=True)
+    raw = models.SmallIntegerField(db_column='RAW', null=True)
+    ray = models.IntegerField(db_column='RAY', null=True)
 
     export_year = models.PositiveSmallIntegerField(null=True, db_index=True)

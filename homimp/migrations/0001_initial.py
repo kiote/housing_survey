@@ -21,6 +21,8 @@ class Migration(migrations.Migration):
                 ('rah', models.SmallIntegerField(null=True, db_column=b'RAH')),
                 ('rahk', models.SmallIntegerField(null=True, db_column=b'RAHK')),
                 ('ras', models.PositiveSmallIntegerField(null=True, db_column=b'RAS')),
+                ('raw', models.SmallIntegerField(null=True, db_column=b'RAW')),
+                ('ray', models.IntegerField(null=True, db_column=b'RAY')),
                 ('export_year', models.PositiveSmallIntegerField(null=True, db_index=True)),
             ],
             options={
