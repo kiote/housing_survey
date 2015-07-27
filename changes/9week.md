@@ -7,7 +7,7 @@ to the MySQL database.
 
 ## Problems
 
-I faces with "1999 year's problem" means this year has no newhouse table, which had been the main
+I faced with "1999 year's problem" means this year has no newhouse table, which had been the main
 table for all previous years.
 
 ## 10 week plan
