@@ -134,8 +134,11 @@ class Row:
         # sorten list of fields for debug
         # key_values = {'CONTROL': key_values['CONTROL']}
         # print key_values
-        if key_values['JEQUIP'] == '':
-            key_values['JEQUIP'] = '-9'
+        try:
+            if key_values['JEQUIP'] == '':
+                key_values['JEQUIP'] = '-9'
+        except KeyError:
+            pass
         return key_values
 
 
