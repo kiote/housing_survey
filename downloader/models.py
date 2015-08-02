@@ -13,27 +13,27 @@ class Downloader:
         self.full_path = full_path
 
     def _get_file_params(self):
-        files = []
-        files.append({'remote': self.remote_attrs['full_path'],
-                      'zip_file': self.local_attrs['path'] + self.remote_attrs['file_name'],
-                      'local_path': self.local_attrs['csv_path']})
-        return files
+        file_info = {'remote': self.remote_attrs['full_path'],
+                     'zip_file': self.local_attrs['path'] + self.remote_attrs['file_name'],
+                     'local_path': self.local_attrs['csv_path']}
+        return file_info
 
     def download(self):
         """Download and unpack zip archive."""
         self._makedirs()
 
-        for file_info in self._get_file_params():
-            print '---> Checking %s to exist locally' % file_info['zip_file']
-            # do nothing if file exists already
-            if os.path.isfile(file_info['zip_file']):
-                continue
+        file_info = self._get_file_params()
 
-            self._dowload_remote(file_info)
-            self._extract_archive(file_info)
+        print '---> Checking %s to exist locally' % file_info['zip_file']
+        # do nothing if file exists already
+        if os.path.isfile(file_info['zip_file']):
+            return 1
 
-            self._rename_files()
-            self._chunk_files()
+        self._dowload_remote(file_info)
+        self._extract_archive(file_info)
+
+        self._rename_files()
+        self._chunk_files()
 
     @staticmethod
     def _dowload_remote(file_info):
