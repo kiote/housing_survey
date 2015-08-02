@@ -25,18 +25,29 @@ class Downloader:
 
         for file_info in self.get_file_list():
             print '---> Checking %s to exist locally' % file_info['zip_file']
-            if not os.path.isfile(file_info['zip_file']):
-                print '---> Downloading %s' % file_info['remote']
-                response = urllib2.urlopen(file_info['remote'])
-                result = response.read()
-                with open(file_info['zip_file'], 'wb') as result_file:
-                    result_file.write(result)
-            print '---> Extracting archive %s' % file_info['zip_file']
-            with zipfile.ZipFile(file_info['zip_file']) as zf:
-                zf.extractall(file_info['local_path'])
+            # do nothing if file exists already
+            if os.path.isfile(file_info['zip_file']):
+                continue
 
-        self._rename_files()
-        self._chunk_files()
+            self._dowload_remote(file_info)
+            self._extract_archive(file_info)
+
+            self._rename_files()
+            self._chunk_files()
+
+    @staticmethod
+    def _dowload_remote(file_info):
+        print '---> Downloading %s' % file_info['remote']
+        response = urllib2.urlopen(file_info['remote'])
+        result = response.read()
+        with open(file_info['zip_file'], 'wb') as result_file:
+            result_file.write(result)
+
+    @staticmethod
+    def _extract_archive(file_info):
+        print '---> Extracting archive %s' % file_info['zip_file']
+        with zipfile.ZipFile(file_info['zip_file']) as zf:
+            zf.extractall(file_info['local_path'])
 
     @staticmethod
     def _makedirs():
